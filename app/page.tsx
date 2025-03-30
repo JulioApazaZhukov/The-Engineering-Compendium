@@ -60,7 +60,7 @@ const featuredResources = [
 ]
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { language, t } = useLanguage()
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -80,7 +80,7 @@ export default function Home() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="/resources">Resources</Link>
+                  <Link href="/resources">{t("nav.resources")}</Link>
                 </Button>
               </div>
             </div>
@@ -103,8 +103,9 @@ export default function Home() {
           <div className="flex flex-col items-center text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">{t("landing.topics")}</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Explore our comprehensive collection of engineering topics, from fundamental principles to advanced
-              applications.
+              {language === "es"
+                ? "Explora nuestra colección completa de temas de ingeniería, desde principios fundamentales hasta aplicaciones avanzadas."
+                : "Explore our comprehensive collection of engineering topics, from fundamental principles to advanced applications."}
             </p>
           </div>
 
@@ -116,14 +117,16 @@ export default function Home() {
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${topic.color} mb-4`}>
                       <topic.icon className="h-6 w-6" />
                     </div>
-                    <CardTitle>{topic.name}</CardTitle>
+                    <CardTitle>{topic.name === "Mathematics" ? t("math.title") : topic.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base">{topic.description}</CardDescription>
+                    <CardDescription className="text-base">
+                      {topic.name === "Mathematics" ? t("math.description") : topic.description}
+                    </CardDescription>
                   </CardContent>
                   <CardFooter>
                     <span className="text-sm font-medium text-primary flex items-center group-hover:underline">
-                      Explore topic
+                      {language === "es" ? "Explorar tema" : "Explore topic"}
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </CardFooter>
@@ -134,7 +137,9 @@ export default function Home() {
 
           <div className="flex justify-center mt-10">
             <Button variant="outline" asChild>
-              <Link href="/topics">View all topics</Link>
+              <Link href="/topics">
+                {language === "es" ? "Ver todos los temas" : "View all topics"}
+              </Link>
             </Button>
           </div>
         </div>
@@ -146,7 +151,9 @@ export default function Home() {
           <div className="flex flex-col items-center text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">{t("landing.featured")}</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Discover our most popular tools, tutorials, and learning resources to enhance your engineering knowledge.
+              {language === "es"
+                ? "Descubre nuestras herramientas, tutoriales y recursos de aprendizaje más populares para mejorar tus conocimientos de ingeniería."
+                : "Discover our most popular tools, tutorials, and learning resources to enhance your engineering knowledge."}
             </p>
           </div>
 
@@ -162,7 +169,9 @@ export default function Home() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle>{resource.title}</CardTitle>
+                  <CardTitle>
+                    {resource.title === "Formula Database" ? t("common.formula_database") : resource.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <CardDescription className="text-base">{resource.description}</CardDescription>
@@ -170,7 +179,7 @@ export default function Home() {
                 <CardFooter>
                   <Button variant="ghost" className="w-full justify-start p-0 h-auto" asChild>
                     <Link href={resource.href} className="flex items-center text-primary">
-                      Explore resource
+                      {language === "es" ? "Explorar recurso" : "Explore resource"}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -185,17 +194,15 @@ export default function Home() {
       <section className="py-16 bg-muted/50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Stay Updated with Engineering Insights</h2>
-            <p className="text-muted-foreground mb-8">
-              Subscribe to our newsletter to receive the latest engineering articles, tutorials, and resources.
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight mb-4">{t("newsletter.title")}</h2>
+            <p className="text-muted-foreground mb-8">{t("newsletter.subtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("newsletter.placeholder")}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               />
-              <Button>Subscribe</Button>
+              <Button>{t("newsletter.button")}</Button>
             </div>
           </div>
         </div>

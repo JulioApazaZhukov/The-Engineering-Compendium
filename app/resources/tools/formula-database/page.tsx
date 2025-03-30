@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Search, Filter, Copy, BookOpen } from "lucide-react"
 import { MathDisplay } from "@/components/math-display"
+import { useLanguage } from "@/components/language-provider"
 
 // Formula data structure
 interface Formula {
@@ -148,6 +149,15 @@ const categories = [
   { value: "statistics", label: "Statistics" },
 ]
 
+const categoriesEs = [
+  { value: "all", label: "Todas las Categorías" },
+  { value: "calculus", label: "Cálculo" },
+  { value: "trigonometry", label: "Trigonometría" },
+  { value: "algebra", label: "Álgebra" },
+  { value: "geometry", label: "Geometría" },
+  { value: "statistics", label: "Estadística" },
+]
+
 const subcategories = {
   calculus: [
     { value: "all", label: "All Subcategories" },
@@ -182,7 +192,42 @@ const subcategories = {
   ],
 }
 
+const subcategoriesEs = {
+  calculus: [
+    { value: "all", label: "Todas las Subcategorías" },
+    { value: "differentiation", label: "Diferenciación" },
+    { value: "integration", label: "Integración" },
+    { value: "limits", label: "Límites" },
+    { value: "series", label: "Series" },
+  ],
+  trigonometry: [
+    { value: "all", label: "Todas las Subcategorías" },
+    { value: "identities", label: "Identidades" },
+    { value: "functions", label: "Funciones" },
+    { value: "equations", label: "Ecuaciones" },
+  ],
+  algebra: [
+    { value: "all", label: "Todas las Subcategorías" },
+    { value: "equations", label: "Ecuaciones" },
+    { value: "expansions", label: "Expansiones" },
+    { value: "factorization", label: "Factorización" },
+  ],
+  geometry: [
+    { value: "all", label: "Todas las Subcategorías" },
+    { value: "plane", label: "Geometría Plana" },
+    { value: "solid", label: "Geometría Sólida" },
+    { value: "analytic", label: "Geometría Analítica" },
+  ],
+  statistics: [
+    { value: "all", label: "Todas las Subcategorías" },
+    { value: "descriptive", label: "Estadística Descriptiva" },
+    { value: "probability", label: "Probabilidad" },
+    { value: "distributions", label: "Distribuciones" },
+  ],
+}
+
 export default function FormulaDatabase() {
+  const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
   const [activeSubcategory, setActiveSubcategory] = useState("all")
@@ -192,12 +237,18 @@ export default function FormulaDatabase() {
   // Update subcategories when category changes
   useEffect(() => {
     if (activeCategory === "all") {
-      setAvailableSubcategories([{ value: "all", label: "All Subcategories" }])
+      setAvailableSubcategories([
+        { value: "all", label: language === "es" ? "Todas las Subcategorías" : "All Subcategories" },
+      ])
     } else {
-      setAvailableSubcategories(subcategories[activeCategory as keyof typeof subcategories] || [])
+      setAvailableSubcategories(
+        language === "es"
+          ? subcategoriesEs[activeCategory as keyof typeof subcategoriesEs] || []
+          : subcategories[activeCategory as keyof typeof subcategories] || [],
+      )
     }
     setActiveSubcategory("all")
-  }, [activeCategory])
+  }, [activeCategory, language])
 
   // Filter formulas based on search query and selected category/subcategory
   useEffect(() => {
@@ -232,7 +283,7 @@ export default function FormulaDatabase() {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        alert("Formula copied to clipboard!")
+        alert(language === "es" ? "¡Fórmula copiada al portapapeles!" : "Formula copied to clipboard!")
       })
       .catch((err) => {
         console.error("Failed to copy formula: ", err)
@@ -243,10 +294,8 @@ export default function FormulaDatabase() {
     <div className="container py-12">
       <div className="space-y-8">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight">Engineering Formula Database</h1>
-          <p className="text-muted-foreground">
-            Access a comprehensive collection of mathematical and engineering formulas
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight">{t("formula.title")}</h1>
+          <p className="text-muted-foreground">{t("formula.subtitle")}</p>
         </div>
 
         {/* Search and Filter Section */}
@@ -255,7 +304,7 @@ export default function FormulaDatabase() {
             <div className="relative flex-grow">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search formulas..."
+                placeholder={t("formula.search")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10"
@@ -265,10 +314,10 @@ export default function FormulaDatabase() {
             <div className="flex flex-col sm:flex-row gap-2">
               <Select value={activeCategory} onValueChange={setActiveCategory}>
                 <SelectTrigger className="w-full sm:w-[180px]">
-                  <SelectValue placeholder="Select Category" />
+                  <SelectValue placeholder={language === "es" ? "Seleccionar Categoría" : "Select Category"} />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map((category) => (
+                  {(language === "es" ? categoriesEs : categories).map((category) => (
                     <SelectItem key={category.value} value={category.value}>
                       {category.label}
                     </SelectItem>
@@ -278,7 +327,7 @@ export default function FormulaDatabase() {
 
               <Select value={activeSubcategory} onValueChange={setActiveSubcategory}>
                 <SelectTrigger className="w-full sm:w-[180px]">
-                  <SelectValue placeholder="Select Subcategory" />
+                  <SelectValue placeholder={language === "es" ? "Seleccionar Subcategoría" : "Select Subcategory"} />
                 </SelectTrigger>
                 <SelectContent>
                   {availableSubcategories.map((subcategory) => (
@@ -293,14 +342,14 @@ export default function FormulaDatabase() {
 
           <div className="flex items-center gap-2">
             <Filter className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm font-medium">Quick Filters:</span>
+            <span className="text-sm font-medium">{t("formula.filters")}</span>
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant="outline"
                 className="cursor-pointer hover:bg-primary/10"
                 onClick={() => setActiveCategory("calculus")}
               >
-                Calculus
+                {language === "es" ? "Cálculo" : "Calculus"}
               </Badge>
               <Badge
                 variant="outline"
@@ -310,7 +359,7 @@ export default function FormulaDatabase() {
                   setActiveSubcategory("differentiation")
                 }}
               >
-                Differentiation
+                {language === "es" ? "Diferenciación" : "Differentiation"}
               </Badge>
               <Badge
                 variant="outline"
@@ -320,21 +369,21 @@ export default function FormulaDatabase() {
                   setActiveSubcategory("integration")
                 }}
               >
-                Integration
+                {language === "es" ? "Integración" : "Integration"}
               </Badge>
               <Badge
                 variant="outline"
                 className="cursor-pointer hover:bg-primary/10"
                 onClick={() => setActiveCategory("trigonometry")}
               >
-                Trigonometry
+                {language === "es" ? "Trigonometría" : "Trigonometry"}
               </Badge>
               <Badge
                 variant="outline"
                 className="cursor-pointer hover:bg-primary/10"
                 onClick={() => setActiveCategory("algebra")}
               >
-                Algebra
+                {language === "es" ? "Álgebra" : "Algebra"}
               </Badge>
             </div>
           </div>
@@ -344,12 +393,20 @@ export default function FormulaDatabase() {
         <div>
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold">
-              {filteredFormulas.length} {filteredFormulas.length === 1 ? "Formula" : "Formulas"} Found
+              {filteredFormulas.length}{" "}
+              {filteredFormulas.length === 1
+                ? language === "es"
+                  ? "Fórmula"
+                  : "Formula"
+                : language === "es"
+                  ? "Fórmulas"
+                  : "Formulas"}{" "}
+              {t("formula.results")}
             </h2>
             <Tabs defaultValue="grid" className="w-auto">
               <TabsList className="grid w-[120px] grid-cols-2">
-                <TabsTrigger value="grid">Grid</TabsTrigger>
-                <TabsTrigger value="list">List</TabsTrigger>
+                <TabsTrigger value="grid">{language === "es" ? "Cuadrícula" : "Grid"}</TabsTrigger>
+                <TabsTrigger value="list">{language === "es" ? "Lista" : "List"}</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -363,12 +420,13 @@ export default function FormulaDatabase() {
                       <CardTitle className="text-lg">{formula.title}</CardTitle>
                       <Button variant="ghost" size="icon" onClick={() => copyToClipboard(formula.formula)}>
                         <Copy className="h-4 w-4" />
-                        <span className="sr-only">Copy formula</span>
+                        <span className="sr-only">{language === "es" ? "Copiar fórmula" : "Copy formula"}</span>
                       </Button>
                     </div>
                     <div className="flex flex-wrap gap-1 mt-1">
                       <Badge variant="secondary" className="text-xs">
-                        {categories.find((c) => c.value === formula.category)?.label || formula.category}
+                        {(language === "es" ? categoriesEs : categories).find((c) => c.value === formula.category)
+                          ?.label || formula.category}
                       </Badge>
                       <Badge variant="outline" className="text-xs">
                         {formula.subcategory}
@@ -387,10 +445,8 @@ export default function FormulaDatabase() {
           ) : (
             <div className="text-center py-12 bg-muted/30 rounded-lg">
               <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-medium mb-2">No formulas found</h3>
-              <p className="text-muted-foreground max-w-md mx-auto">
-                Try adjusting your search or filters to find what you're looking for.
-              </p>
+              <h3 className="text-lg font-medium mb-2">{t("formula.no_results")}</h3>
+              <p className="text-muted-foreground max-w-md mx-auto">{t("formula.try_adjusting")}</p>
               <Button
                 variant="outline"
                 className="mt-4"
@@ -400,7 +456,7 @@ export default function FormulaDatabase() {
                   setActiveSubcategory("all")
                 }}
               >
-                Reset Filters
+                {t("formula.reset")}
               </Button>
             </div>
           )}
@@ -408,13 +464,12 @@ export default function FormulaDatabase() {
 
         {/* Suggestion Section */}
         <div className="bg-muted/50 p-6 rounded-lg text-center">
-          <h3 className="text-lg font-medium mb-2">Can't find what you're looking for?</h3>
-          <p className="text-muted-foreground mb-4">
-            Our formula database is constantly growing. Let us know if you need a specific formula that's not listed.
-          </p>
-          <Button>Suggest a Formula</Button>
+          <h3 className="text-lg font-medium mb-2">{t("formula.suggest")}</h3>
+          <p className="text-muted-foreground mb-4">{t("formula.suggest_desc")}</p>
+          <Button>{t("formula.suggest_button")}</Button>
         </div>
       </div>
     </div>
   )
 }
+
