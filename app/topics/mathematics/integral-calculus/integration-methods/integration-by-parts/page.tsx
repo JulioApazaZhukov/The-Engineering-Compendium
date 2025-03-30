@@ -2,11 +2,9 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, BookOpen, Calculator, FileText, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Calculator, FileText, ChevronRight } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
@@ -45,9 +43,7 @@ export default function IntegrationByPartsPage() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">Integration by Parts</h1>
-          <p className="text-muted-foreground">
-            A technique for integrating products of functions
-          </p>
+          <p className="text-muted-foreground">A technique for integrating products of functions</p>
         </div>
         <Button variant="outline" size="sm" asChild>
           <Link href="/topics/mathematics/integral-calculus" className="flex items-center">
@@ -66,30 +62,33 @@ export default function IntegrationByPartsPage() {
             <h2 className="text-2xl font-bold mb-4">Introduction to Integration by Parts</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
-                Integration by parts is a technique used to find the integral of a product of functions. 
-                It is based on the product rule of differentiation and is particularly useful when direct 
-                integration is difficult or impossible.
+                Integration by parts is a technique used to find the integral of a product of functions. It is based on
+                the product rule of differentiation and is particularly useful when direct integration is difficult or
+                impossible.
               </p>
-              <p>
-                The formula for integration by parts is:
-              </p>
+              <p>The formula for integration by parts is:</p>
               <div className="my-4 text-center">
                 <MathDisplay math="\int u(x) \, v'(x) \, dx = u(x)v(x) - \int v(x) \, u'(x) \, dx" />
               </div>
-              <p>
-                This is often written in the more compact form:
-              </p>
+              <p>This is often written in the more compact form:</p>
               <div className="my-4 text-center">
                 <MathDisplay math="\int u \, dv = uv - \int v \, du" />
               </div>
-              <p>
-                Where:
-              </p>
+              <p>Where:</p>
               <ul>
-                <li><MathDisplay math="u" display={false} /> is the first function you choose</li>
-                <li><MathDisplay math="dv" display={false} /> is the differential of the second function</li>
-                <li><MathDisplay math="v" display={false} /> is the integral of <MathDisplay math="dv" display={false} /></li>
-                <li><MathDisplay math="du" display={false} /> is the differential of <MathDisplay math="u" display={false} /></li>
+                <li>
+                  <MathDisplay math="u" display={false} /> is the first function you choose
+                </li>
+                <li>
+                  <MathDisplay math="dv" display={false} /> is the differential of the second function
+                </li>
+                <li>
+                  <MathDisplay math="v" display={false} /> is the integral of <MathDisplay math="dv" display={false} />
+                </li>
+                <li>
+                  <MathDisplay math="du" display={false} /> is the differential of{" "}
+                  <MathDisplay math="u" display={false} />
+                </li>
               </ul>
             </div>
           </section>
@@ -98,33 +97,49 @@ export default function IntegrationByPartsPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4">When to Use Integration by Parts</h2>
             <div className="prose dark:prose-invert max-w-none">
-              <p>
-                Integration by parts is particularly useful for integrals of the following forms:
-              </p>
+              <p>Integration by parts is particularly useful for integrals of the following forms:</p>
               <ul>
                 <li>
-                  Products of algebraic and transcendental functions: <MathDisplay math="\int x^n e^x \, dx, \int x^n \ln(x) \, dx, \int x^n \sin(x) \, dx" display={false} />
+                  Products of algebraic and transcendental functions:{" "}
+                  <MathDisplay
+                    math="\int x^n e^x \, dx, \int x^n \ln(x) \, dx, \int x^n \sin(x) \, dx"
+                    display={false}
+                  />
                 </li>
                 <li>
-                  Products of logarithmic and algebraic functions: <MathDisplay math="\int \ln(x) \, dx, \int x \ln(x) \, dx" display={false} />
+                  Products of logarithmic and algebraic functions:{" "}
+                  <MathDisplay math="\int \ln(x) \, dx, \int x \ln(x) \, dx" display={false} />
                 </li>
                 <li>
-                  Products involving inverse trigonometric functions: <MathDisplay math="\int x \arctan(x) \, dx, \int \arcsin(x) \, dx" display={false} />
+                  Products involving inverse trigonometric functions:{" "}
+                  <MathDisplay math="\int x \arctan(x) \, dx, \int \arcsin(x) \, dx" display={false} />
                 </li>
               </ul>
               <p>
-                The key to successfully applying integration by parts is choosing the right functions for <MathDisplay math="u" display={false} /> and <MathDisplay math="dv" display={false} />. 
-                A helpful mnemonic for choosing <MathDisplay math="u" display={false} /> is "LIATE":
+                The key to successfully applying integration by parts is choosing the right functions for{" "}
+                <MathDisplay math="u" display={false} /> and <MathDisplay math="dv" display={false} />. A helpful
+                mnemonic for choosing <MathDisplay math="u" display={false} /> is "LIATE":
               </p>
               <ul>
-                <li><strong>L</strong>: Logarithmic functions (ln(x), log₁₀(x))</li>
-                <li><strong>I</strong>: Inverse trigonometric functions (arcsin(x), arctan(x))</li>
-                <li><strong>A</strong>: Algebraic functions (x, x², √x)</li>
-                <li><strong>T</strong>: Trigonometric functions (sin(x), cos(x))</li>
-                <li><strong>E</strong>: Exponential functions (eˣ, aˣ)</li>
+                <li>
+                  <strong>L</strong>: Logarithmic functions (ln(x), log₁₀(x))
+                </li>
+                <li>
+                  <strong>I</strong>: Inverse trigonometric functions (arcsin(x), arctan(x))
+                </li>
+                <li>
+                  <strong>A</strong>: Algebraic functions (x, x², √x)
+                </li>
+                <li>
+                  <strong>T</strong>: Trigonometric functions (sin(x), cos(x))
+                </li>
+                <li>
+                  <strong>E</strong>: Exponential functions (eˣ, aˣ)
+                </li>
               </ul>
               <p>
-                Functions higher in this list are generally better choices for <MathDisplay math="u" display={false} />, while functions lower in the list are better for <MathDisplay math="dv" display={false} />.
+                Functions higher in this list are generally better choices for <MathDisplay math="u" display={false} />,
+                while functions lower in the list are better for <MathDisplay math="dv" display={false} />.
               </p>
             </div>
           </section>
@@ -132,32 +147,37 @@ export default function IntegrationByPartsPage() {
           {/* Examples Section */}
           <section>
             <h2 className="text-2xl font-bold mb-4">Examples</h2>
-            
+
             <div className="space-y-4">
               {/* Example 1 */}
               <Card className="overflow-hidden">
-                <div 
+                <div
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(1)}
                 >
                   <h3 className="font-medium">Example 1: Basic Integration by Parts</h3>
-                  <ChevronRight 
-                    className={`h-5 w-5 transition-transform ${activeExample === 1 ? 'rotate-90' : ''}`} 
-                  />
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
                 </div>
-                
+
                 {activeExample === 1 && (
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
-                      <p>Evaluate <MathDisplay math="\int x \sin(x) \, dx" display={false} /></p>
-                      
-                      <p><strong>Solution:</strong></p>
+                      <p>
+                        Evaluate <MathDisplay math="\int x \sin(x) \, dx" display={false} />
+                      </p>
+
+                      <p>
+                        <strong>Solution:</strong>
+                      </p>
                       <p>Let's apply the integration by parts formula:</p>
                       <div className="my-2">
                         <MathDisplay math="\int u \, dv = uv - \int v \, du" />
                       </div>
-                      
-                      <p>We need to choose <MathDisplay math="u" display={false} /> and <MathDisplay math="dv" display={false} />:</p>
+
+                      <p>
+                        We need to choose <MathDisplay math="u" display={false} /> and{" "}
+                        <MathDisplay math="dv" display={false} />:
+                      </p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="u = x \quad \Rightarrow \quad du = dx" />
@@ -166,7 +186,7 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="dv = \sin(x) \, dx \quad \Rightarrow \quad v = \int \sin(x) \, dx = -\cos(x)" />
                         </div>
                       </div>
-                      
+
                       <p>Now we substitute these into the integration by parts formula:</p>
                       <div className="space-y-2">
                         <div>
@@ -179,12 +199,12 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="= -x\cos(x) + \sin(x) + C" />
                         </div>
                       </div>
-                      
+
                       <p>Therefore:</p>
                       <div>
                         <MathDisplay math="\int x \sin(x) \, dx = -x\cos(x) + \sin(x) + C" />
                       </div>
-                      
+
                       <p>We can verify this by differentiating the result:</p>
                       <div className="space-y-2">
                         <div>
@@ -200,37 +220,42 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="= x\sin(x)" />
                         </div>
                       </div>
-                      
+
                       <p>Which confirms our answer is correct.</p>
                     </div>
                   </CardContent>
                 )}
               </Card>
-              
+
               {/* Example 2 */}
               <Card className="overflow-hidden">
-                <div 
+                <div
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(2)}
                 >
                   <h3 className="font-medium">Example 2: Logarithmic Function</h3>
-                  <ChevronRight 
-                    className={`h-5 w-5 transition-transform ${activeExample === 2 ? 'rotate-90' : ''}`} 
-                  />
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 2 ? "rotate-90" : ""}`} />
                 </div>
-                
+
                 {activeExample === 2 && (
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
-                      <p>Evaluate <MathDisplay math="\int \ln(x) \, dx" display={false} /></p>
-                      
-                      <p><strong>Solution:</strong></p>
+                      <p>
+                        Evaluate <MathDisplay math="\int \ln(x) \, dx" display={false} />
+                      </p>
+
+                      <p>
+                        <strong>Solution:</strong>
+                      </p>
                       <p>Let's apply the integration by parts formula:</p>
                       <div className="my-2">
                         <MathDisplay math="\int u \, dv = uv - \int v \, du" />
                       </div>
-                      
-                      <p>We need to choose <MathDisplay math="u" display={false} /> and <MathDisplay math="dv" display={false} />:</p>
+
+                      <p>
+                        We need to choose <MathDisplay math="u" display={false} /> and{" "}
+                        <MathDisplay math="dv" display={false} />:
+                      </p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="u = \ln(x) \quad \Rightarrow \quad du = \frac{1}{x} \, dx" />
@@ -239,7 +264,7 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="dv = dx \quad \Rightarrow \quad v = \int dx = x" />
                         </div>
                       </div>
-                      
+
                       <p>Now we substitute these into the integration by parts formula:</p>
                       <div className="space-y-2">
                         <div>
@@ -252,7 +277,7 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="= x\ln(x) - x + C" />
                         </div>
                       </div>
-                      
+
                       <p>Therefore:</p>
                       <div>
                         <MathDisplay math="\int \ln(x) \, dx = x\ln(x) - x + C" />
@@ -261,27 +286,32 @@ export default function IntegrationByPartsPage() {
                   </CardContent>
                 )}
               </Card>
-              
+
               {/* Example 3 */}
               <Card className="overflow-hidden">
-                <div 
+                <div
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(3)}
                 >
                   <h3 className="font-medium">Example 3: Repeated Integration by Parts</h3>
-                  <ChevronRight 
-                    className={`h-5 w-5 transition-transform ${activeExample === 3 ? 'rotate-90' : ''}`} 
-                  />
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 3 ? "rotate-90" : ""}`} />
                 </div>
-                
+
                 {activeExample === 3 && (
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
-                      <p>Evaluate <MathDisplay math="\int x^2 e^x \, dx" display={false} /></p>
-                      
-                      <p><strong>Solution:</strong></p>
-                      <p>This example requires applying integration by parts twice. Let's start with the first application:</p>
-                      
+                      <p>
+                        Evaluate <MathDisplay math="\int x^2 e^x \, dx" display={false} />
+                      </p>
+
+                      <p>
+                        <strong>Solution:</strong>
+                      </p>
+                      <p>
+                        This example requires applying integration by parts twice. Let's start with the first
+                        application:
+                      </p>
+
                       <p>First application:</p>
                       <div className="space-y-2">
                         <div>
@@ -291,16 +321,19 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="dv = e^x \, dx \quad \Rightarrow \quad v = e^x" />
                         </div>
                       </div>
-                      
+
                       <div className="my-2">
                         <MathDisplay math="\int x^2 e^x \, dx = x^2 e^x - \int e^x \cdot 2x \, dx" />
                       </div>
                       <div className="my-2">
                         <MathDisplay math="= x^2 e^x - 2\int x e^x \, dx" />
                       </div>
-                      
-                      <p>Now we need to evaluate <MathDisplay math="\int x e^x \, dx" display={false} /> using integration by parts again:</p>
-                      
+
+                      <p>
+                        Now we need to evaluate <MathDisplay math="\int x e^x \, dx" display={false} /> using
+                        integration by parts again:
+                      </p>
+
                       <p>Second application:</p>
                       <div className="space-y-2">
                         <div>
@@ -310,14 +343,14 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="dv = e^x \, dx \quad \Rightarrow \quad v = e^x" />
                         </div>
                       </div>
-                      
+
                       <div className="my-2">
                         <MathDisplay math="\int x e^x \, dx = x e^x - \int e^x \, dx" />
                       </div>
                       <div className="my-2">
                         <MathDisplay math="= x e^x - e^x + C_1" />
                       </div>
-                      
+
                       <p>Now we substitute this result back into our first equation:</p>
                       <div className="space-y-2">
                         <div>
@@ -330,9 +363,11 @@ export default function IntegrationByPartsPage() {
                           <MathDisplay math="= e^x(x^2 - 2x + 2) + C" />
                         </div>
                       </div>
-                      
-                      <p>Where <MathDisplay math="C = -2C_1" display={false} /> is our constant of integration.</p>
-                      
+
+                      <p>
+                        Where <MathDisplay math="C = -2C_1" display={false} /> is our constant of integration.
+                      </p>
+
                       <p>Therefore:</p>
                       <div>
                         <MathDisplay math="\int x^2 e^x \, dx = e^x(x^2 - 2x + 2) + C" />
@@ -349,10 +384,10 @@ export default function IntegrationByPartsPage() {
             <h2 className="text-2xl font-bold mb-4">Tabular Method</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
-                For integrals requiring multiple applications of integration by parts, the tabular method 
-                (also known as the "DI" method) provides a more organized approach.
+                For integrals requiring multiple applications of integration by parts, the tabular method (also known as
+                the "DI" method) provides a more organized approach.
               </p>
-              
+
               <p>To use the tabular method:</p>
               <ol>
                 <li>Create a table with two columns labeled D (derivatives) and I (integrals)</li>
@@ -361,9 +396,12 @@ export default function IntegrationByPartsPage() {
                 <li>Multiply entries diagonally, alternating signs (+ - + - ...)</li>
                 <li>Sum the products to get the final result</li>
               </ol>
-              
-              <p>Example: Let's evaluate <MathDisplay math="\int x^2 e^x \, dx" display={false} /> using the tabular method:</p>
-              
+
+              <p>
+                Example: Let's evaluate <MathDisplay math="\int x^2 e^x \, dx" display={false} /> using the tabular
+                method:
+              </p>
+
               <div className="overflow-x-auto my-4">
                 <table className="min-w-[50%] border-collapse">
                   <thead>
@@ -392,7 +430,7 @@ export default function IntegrationByPartsPage() {
                   </tbody>
                 </table>
               </div>
-              
+
               <p>Now we multiply diagonally with alternating signs:</p>
               <div className="space-y-2">
                 <div>
@@ -402,10 +440,10 @@ export default function IntegrationByPartsPage() {
                   <MathDisplay math="= e^x(x^2 - 2x + 2) + C" />
                 </div>
               </div>
-              
+
               <p>
-                This gives us the same result as the repeated application of integration by parts, 
-                but in a more systematic and less error-prone way.
+                This gives us the same result as the repeated application of integration by parts, but in a more
+                systematic and less error-prone way.
               </p>
             </div>
           </section>
@@ -413,33 +451,49 @@ export default function IntegrationByPartsPage() {
           {/* Practice Problems */}
           <section>
             <h2 className="text-2xl font-bold mb-4">Practice Problems</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card>
                 <CardContent className="pt-6">
-                  <p className="mb-2">Evaluate <MathDisplay math="\int x \cos(x) \, dx" display={false} /></p>
-                  <Button variant="outline" className="w-full mt-2">Show Solution</Button>
+                  <p className="mb-2">
+                    Evaluate <MathDisplay math="\int x \cos(x) \, dx" display={false} />
+                  </p>
+                  <Button variant="outline" className="w-full mt-2">
+                    Show Solution
+                  </Button>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardContent className="pt-6">
-                  <p className="mb-2">Evaluate <MathDisplay math="\int x^2 \ln(x) \, dx" display={false} /></p>
-                  <Button variant="outline" className="w-full mt-2">Show Solution</Button>
+                  <p className="mb-2">
+                    Evaluate <MathDisplay math="\int x^2 \ln(x) \, dx" display={false} />
+                  </p>
+                  <Button variant="outline" className="w-full mt-2">
+                    Show Solution
+                  </Button>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardContent className="pt-6">
-                  <p className="mb-2">Evaluate <MathDisplay math="\int e^x \sin(x) \, dx" display={false} /></p>
-                  <Button variant="outline" className="w-full mt-2">Show Solution</Button>
+                  <p className="mb-2">
+                    Evaluate <MathDisplay math="\int e^x \sin(x) \, dx" display={false} />
+                  </p>
+                  <Button variant="outline" className="w-full mt-2">
+                    Show Solution
+                  </Button>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardContent className="pt-6">
-                  <p className="mb-2">Evaluate <MathDisplay math="\int x \arctan(x) \, dx" display={false} /></p>
-                  <Button variant="outline" className="w-full mt-2">Show Solution</Button>
+                  <p className="mb-2">
+                    Evaluate <MathDisplay math="\int x \arctan(x) \, dx" display={false} />
+                  </p>
+                  <Button variant="outline" className="w-full mt-2">
+                    Show Solution
+                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -454,19 +508,29 @@ export default function IntegrationByPartsPage() {
               <h3 className="font-semibold mb-3">On This Page</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">Introduction</a>
+                  <a href="#" className="text-primary hover:underline">
+                    Introduction
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">When to Use Integration by Parts</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    When to Use Integration by Parts
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">Examples</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Examples
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">Tabular Method</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Tabular Method
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">Practice Problems</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Practice Problems
+                  </a>
                 </li>
               </ul>
             </CardContent>
@@ -478,19 +542,28 @@ export default function IntegrationByPartsPage() {
               <h3 className="font-semibold mb-3">Related Methods</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution" className="text-primary hover:underline flex items-center">
+                  <Link
+                    href="/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution"
+                    className="text-primary hover:underline flex items-center"
+                  >
                     <ChevronRight className="h-3 w-3 mr-1" />
                     Integration by Substitution
                   </Link>
                 </li>
                 <li>
-                  <Link href="/topics/mathematics/integral-calculus/integration-methods/trigonometric-substitution" className="text-primary hover:underline flex items-center">
+                  <Link
+                    href="/topics/mathematics/integral-calculus/integration-methods/trigonometric-substitution"
+                    className="text-primary hover:underline flex items-center"
+                  >
                     <ChevronRight className="h-3 w-3 mr-1" />
                     Trigonometric Substitution
                   </Link>
                 </li>
                 <li>
-                  <Link href="/topics/mathematics/integral-calculus/integration-methods/universal-substitution" className="text-primary hover:underline flex items-center">
+                  <Link
+                    href="/topics/mathematics/integral-calculus/integration-methods/universal-substitution"
+                    className="text-primary hover:underline flex items-center"
+                  >
                     <ChevronRight className="h-3 w-3 mr-1" />
                     Universal Substitution
                   </Link>
@@ -516,7 +589,7 @@ export default function IntegrationByPartsPage() {
           <Card>
             <CardContent className="pt-6">
               <h3 className="font-semibold mb-3">Learning Resources</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="bg-primary/10 p-2 rounded-md">
@@ -525,12 +598,15 @@ export default function IntegrationByPartsPage() {
                   <div>
                     <h4 className="text-sm font-medium">Solved Problems</h4>
                     <p className="text-xs text-muted-foreground mb-1">More practice with step-by-step solutions</p>
-                    <Link href="/resources/solved-problems?topic=integration-by-parts" className="text-xs text-primary hover:underline">
+                    <Link
+                      href="/resources/solved-problems?topic=integration-by-parts"
+                      className="text-xs text-primary hover:underline"
+                    >
                       View problems
                     </Link>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-3">
                   <div className="bg-primary/10 p-2 rounded-md">
                     <Calculator className="h-4 w-4 text-primary" />
@@ -538,7 +614,10 @@ export default function IntegrationByPartsPage() {
                   <div>
                     <h4 className="text-sm font-medium">Integration Calculator</h4>
                     <p className="text-xs text-muted-foreground mb-1">Interactive tool for calculating integrals</p>
-                    <Link href="/resources/tools/integration-calculator" className="text-xs text-primary hover:underline">
+                    <Link
+                      href="/resources/tools/integration-calculator"
+                      className="text-xs text-primary hover:underline"
+                    >
                       Use calculator
                     </Link>
                   </div>
@@ -552,7 +631,7 @@ export default function IntegrationByPartsPage() {
       {/* Next Steps */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-4">Continue Learning</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
@@ -561,16 +640,17 @@ export default function IntegrationByPartsPage() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Next Method</h3>
-                <Link href="/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution" className="text-primary hover:underline text-lg">
+                <Link
+                  href="/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution"
+                  className="text-primary hover:underline text-lg"
+                >
                   Integration by Substitution
                 </Link>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Learn another powerful integration technique
-                </p>
+                <p className="text-sm text-muted-foreground mt-1">Learn another powerful integration technique</p>
               </div>
             </div>
           </Card>
-          
+
           <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
@@ -590,6 +670,5 @@ export default function IntegrationByPartsPage() {
         </div>
       </section>
     </div>
-  );
+  )
 }
-// code to be reviewed and solved code alpha0001
