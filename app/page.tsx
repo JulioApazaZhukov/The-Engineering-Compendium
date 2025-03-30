@@ -40,10 +40,10 @@ const topics = [
 
 const featuredResources = [
   {
-    title: "Differential Equations Solver",
-    description: "Interactive tool to solve and visualize differential equations",
+    title: "Formula Database",
+    description: "Comprehensive collection of engineering formulas and equations",
     image: "/placeholder.svg?height=200&width=400",
-    href: "/resources/tools/differential-equations",
+    href: "/resources/tools/formula-database",
   },
   {
     title: "Material Properties Database",
@@ -52,10 +52,10 @@ const featuredResources = [
     href: "/resources/tools/materials-database",
   },
   {
-    title: "Circuit Simulator",
-    description: "Design and analyze electrical circuits with this interactive simulator",
+    title: "Calculator Index",
+    description: "Collection of specialized calculators for various engineering problems",
     image: "/placeholder.svg?height=200&width=400",
-    href: "/resources/tools/circuit-simulator",
+    href: "/resources/tools/calculators",
   },
 ]
 
@@ -203,4 +203,3 @@ export default function Home() {
     </div>
   )
 }
-
