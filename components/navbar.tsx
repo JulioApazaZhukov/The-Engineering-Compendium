@@ -11,6 +11,11 @@ import { cn } from "@/lib/utils"
 
 const topics = [
   {
+    name: "All topics",
+    href: "/topics",
+    subtopics: ["Classical Mechanics", "Thermodynamics", "Electromagnetism", "Optics", "Modern Physics"],
+  },
+  {
     name: "Mathematics",
     href: "/topics/mathematics",
     subtopics: [

@@ -28,7 +28,7 @@ const translations = {
     "nav.topics": "Temas",
     "nav.resources": "Recursos",
     "nav.blog": "Blog",
-    "landing.title": "El Compendio de Ingeniería",
+    "landing.title": "The Engineering Compendium",
     "landing.subtitle": "Tu recurso integral para la educación en ingeniería",
     "landing.explore": "Explorar Temas",
     "landing.featured": "Recursos Destacados",
