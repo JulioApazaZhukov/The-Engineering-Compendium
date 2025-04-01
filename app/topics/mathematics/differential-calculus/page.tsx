@@ -11,7 +11,7 @@ import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
 export default function DifferentialCalculusPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [activeExample, setActiveExample] = useState<number | null>(null)
 
   const toggleExample = (index: number) => {
@@ -23,30 +23,38 @@ export default function DifferentialCalculusPage() {
       {/* Breadcrumb Navigation */}
       <div className="flex items-center text-sm text-muted-foreground mb-6">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {language === "es" ? "Inicio" : "Home"}
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
         <Link href="/topics" className="hover:text-foreground">
-          Topics
+          {t("nav.topics")}
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
         <Link href="/topics/mathematics" className="hover:text-foreground">
-          Mathematics
+          {t("math.title")}
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
-        <span className="text-foreground font-medium">Differential Calculus</span>
+        <span className="text-foreground font-medium">
+          {language === "es" ? "Cálculo Diferencial" : "Differential Calculus"}
+        </span>
       </div>
 
       {/* Page Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Differential Calculus</h1>
-          <p className="text-muted-foreground">The study of rates of change and slopes of curves</p>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">
+            {language === "es" ? "Cálculo Diferencial" : "Differential Calculus"}
+          </h1>
+          <p className="text-muted-foreground">
+            {language === "es"
+              ? "El estudio de las tasas de cambio y pendientes de curvas"
+              : "The study of rates of change and slopes of curves"}
+          </p>
         </div>
         <Button variant="outline" size="sm" asChild>
           <Link href="/topics/mathematics" className="flex items-center">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Mathematics
+            {language === "es" ? "Volver a Matemáticas" : "Back to Mathematics"}
           </Link>
         </Button>
       </div>
@@ -57,106 +65,127 @@ export default function DifferentialCalculusPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">Introduction to Differential Calculus</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {language === "es" ? "Introducción al Cálculo Diferencial" : "Introduction to Differential Calculus"}
+            </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
-                Differential calculus is a branch of calculus that studies rates of change and slopes of curves. It
-                focuses on the concept of the derivative, which represents an instantaneous rate of change. The
-                derivative of a function at a specific point measures the rate at which the function's value changes as
-                its input changes.
+                {language === "es"
+                  ? "El cálculo diferencial es una rama del cálculo que estudia las tasas de cambio y las pendientes de curvas. Se centra en el concepto de la derivada, que representa una tasa instantánea de cambio. La derivada de una función en un punto específico mide la velocidad a la que cambia el valor de la función a medida que cambia su entrada."
+                  : "Differential calculus is a branch of calculus that studies rates of change and slopes of curves. It focuses on the concept of the derivative, which represents an instantaneous rate of change. The derivative of a function at a specific point measures the rate at which the function's value changes as its input changes."}
               </p>
               <p>
-                The fundamental concept in differential calculus is the limit. The derivative is defined as a limit of
-                the difference quotient:
+                {language === "es"
+                  ? "El concepto fundamental en el cálculo diferencial es el límite. La derivada se define como un límite del cociente de diferencias:"
+                  : "The fundamental concept in differential calculus is the limit. The derivative is defined as a limit of the difference quotient:"}
               </p>
               <div className="my-4 text-center">
                 <MathDisplay math="f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}" />
               </div>
               <p>
-                This limit, if it exists, gives us the derivative of the function f at the point x. The derivative
-                represents the slope of the tangent line to the graph of f at the point (x, f(x)).
+                {language === "es"
+                  ? "Este límite, si existe, nos da la derivada de la función f en el punto x. La derivada representa la pendiente de la línea tangente a la gráfica de f en el punto (x, f(x))."
+                  : "This limit, if it exists, gives us the derivative of the function f at the point x. The derivative represents the slope of the tangent line to the graph of f at the point (x, f(x))."}
               </p>
             </div>
           </section>
 
           {/* Key Concepts Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">Key Concepts</h2>
+            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Conceptos Clave" : "Key Concepts"}</h2>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2">The Derivative</h3>
+                <h3 className="text-xl font-semibold mb-2">{language === "es" ? "La Derivada" : "The Derivative"}</h3>
                 <div className="prose dark:prose-invert max-w-none">
                   <p>
-                    The derivative of a function f with respect to x is denoted by f'(x) or{" "}
-                    <MathDisplay math="\frac{df}{dx}" display={false} />. It represents the instantaneous rate of change
-                    of f with respect to x.
+                    {language === "es"
+                      ? "La derivada de una función f con respecto a x se denota como f'(x) o "
+                      : "The derivative of a function f with respect to x is denoted by f'(x) or "}
+                    <MathDisplay math="\frac{df}{dx}" display={false} />
+                    {language === "es"
+                      ? ". Representa la tasa instantánea de cambio de f con respecto a x."
+                      : ". It represents the instantaneous rate of change of f with respect to x."}
                   </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2">Basic Differentiation Rules</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {language === "es" ? "Reglas Básicas de Diferenciación" : "Basic Differentiation Rules"}
+                </h3>
                 <Card>
                   <CardContent className="pt-6">
                     <div className="space-y-4">
                       <div>
-                        <p className="font-medium">Constant Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla de la Constante:" : "Constant Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}[c] = 0" />
                         </div>
-                        <p className="text-sm text-muted-foreground">The derivative of a constant is zero.</p>
+                        <p className="text-sm text-muted-foreground">
+                          {language === "es"
+                            ? "La derivada de una constante es cero."
+                            : "The derivative of a constant is zero."}
+                        </p>
                       </div>
 
                       <div>
-                        <p className="font-medium">Power Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla de la Potencia:" : "Power Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}[x^n] = nx^{n-1}" />
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          For any real number n, the derivative of x^n is n times x^(n-1).
+                          {language === "es"
+                            ? "Para cualquier número real n, la derivada de x^n es n veces x^(n-1)."
+                            : "For any real number n, the derivative of x^n is n times x^(n-1)."}
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium">Sum Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla de la Suma:" : "Sum Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}[f(x) + g(x)] = \frac{d}{dx}[f(x)] + \frac{d}{dx}[g(x)]" />
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          The derivative of a sum is the sum of the derivatives.
+                          {language === "es"
+                            ? "La derivada de una suma es la suma de las derivadas."
+                            : "The derivative of a sum is the sum of the derivatives."}
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium">Product Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla del Producto:" : "Product Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}[f(x) \cdot g(x)] = f(x) \cdot \frac{d}{dx}[g(x)] + g(x) \cdot \frac{d}{dx}[f(x)]" />
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          The derivative of a product is the first function times the derivative of the second, plus the
-                          second function times the derivative of the first.
+                          {language === "es"
+                            ? "La derivada de un producto es la primera función por la derivada de la segunda, más la segunda función por la derivada de la primera."
+                            : "The derivative of a product is the first function times the derivative of the second, plus the second function times the derivative of the first."}
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium">Quotient Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla del Cociente:" : "Quotient Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x) \cdot \frac{d}{dx}[f(x)] - f(x) \cdot \frac{d}{dx}[g(x)]}{[g(x)]^2}" />
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          The derivative of a quotient follows this formula where the denominator is squared.
+                          {language === "es"
+                            ? "La derivada de un cociente sigue esta fórmula donde el denominador está elevado al cuadrado."
+                            : "The derivative of a quotient follows this formula where the denominator is squared."}
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium">Chain Rule:</p>
+                        <p className="font-medium">{language === "es" ? "Regla de la Cadena:" : "Chain Rule:"}</p>
                         <div className="my-2 text-center">
                           <MathDisplay math="\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)" />
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          The derivative of a composite function is the derivative of the outer function evaluated at
-                          the inner function, multiplied by the derivative of the inner function.
+                          {language === "es"
+                            ? "La derivada de una función compuesta es la derivada de la función externa evaluada en la función interna, multiplicada por la derivada de la función interna."
+                            : "The derivative of a composite function is the derivative of the outer function evaluated at the inner function, multiplied by the derivative of the inner function."}
                         </p>
                       </div>
                     </div>
@@ -165,12 +194,16 @@ export default function DifferentialCalculusPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2">Common Derivatives</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {language === "es" ? "Derivadas Comunes" : "Common Derivatives"}
+                </h3>
                 <Card>
                   <CardContent className="pt-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <p className="font-medium">Trigonometric Functions:</p>
+                        <p className="font-medium">
+                          {language === "es" ? "Funciones Trigonométricas:" : "Trigonometric Functions:"}
+                        </p>
                         <div className="space-y-2 mt-2">
                           <div className="text-center">
                             <MathDisplay math="\frac{d}{dx}[\sin(x)] = \cos(x)" />
@@ -185,7 +218,9 @@ export default function DifferentialCalculusPage() {
                       </div>
 
                       <div>
-                        <p className="font-medium">Exponential and Logarithmic:</p>
+                        <p className="font-medium">
+                          {language === "es" ? "Exponencial y Logarítmica:" : "Exponential and Logarithmic:"}
+                        </p>
                         <div className="space-y-2 mt-2">
                           <div className="text-center">
                             <MathDisplay math="\frac{d}{dx}[e^x] = e^x" />
@@ -210,7 +245,7 @@ export default function DifferentialCalculusPage() {
 
           {/* Examples Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">Examples</h2>
+            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
 
             <div className="space-y-4">
               {/* Example 1 */}
@@ -219,7 +254,9 @@ export default function DifferentialCalculusPage() {
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(1)}
                 >
-                  <h3 className="font-medium">Example 1: Power Rule</h3>
+                  <h3 className="font-medium">
+                    {language === "es" ? "Ejemplo 1: Regla de la Potencia" : "Example 1: Power Rule"}
+                  </h3>
                   <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
                 </div>
 
@@ -227,13 +264,18 @@ export default function DifferentialCalculusPage() {
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
-                        Find the derivative of <MathDisplay math="f(x) = 3x^4 - 2x^2 + 5x - 7" display={false} />
+                        {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                        <MathDisplay math="f(x) = 3x^4 - 2x^2 + 5x - 7" display={false} />
                       </p>
 
                       <p>
-                        <strong>Solution:</strong>
+                        <strong>{language === "es" ? "Solución:" : "Solution:"}</strong>
                       </p>
-                      <p>We can apply the power rule and the sum rule:</p>
+                      <p>
+                        {language === "es"
+                          ? "Podemos aplicar la regla de la potencia y la regla de la suma:"
+                          : "We can apply the power rule and the sum rule:"}
+                      </p>
 
                       <div className="space-y-2">
                         <div>
@@ -250,7 +292,11 @@ export default function DifferentialCalculusPage() {
                         </div>
                       </div>
 
-                      <p>Now, we add all these derivatives:</p>
+                      <p>
+                        {language === "es"
+                          ? "Ahora, sumamos todas estas derivadas:"
+                          : "Now, we add all these derivatives:"}
+                      </p>
                       <div>
                         <MathDisplay math="f'(x) = 12x^3 - 4x + 5" />
                       </div>
@@ -265,7 +311,9 @@ export default function DifferentialCalculusPage() {
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(2)}
                 >
-                  <h3 className="font-medium">Example 2: Product Rule</h3>
+                  <h3 className="font-medium">
+                    {language === "es" ? "Ejemplo 2: Regla del Producto" : "Example 2: Product Rule"}
+                  </h3>
                   <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 2 ? "rotate-90" : ""}`} />
                 </div>
 
@@ -273,23 +321,30 @@ export default function DifferentialCalculusPage() {
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
-                        Find the derivative of <MathDisplay math="f(x) = x^2 \cdot \sin(x)" display={false} />
+                        {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                        <MathDisplay math="f(x) = x^2 \cdot \sin(x)" display={false} />
                       </p>
 
                       <p>
-                        <strong>Solution:</strong>
+                        <strong>{language === "es" ? "Solución:" : "Solution:"}</strong>
                       </p>
-                      <p>We need to use the product rule:</p>
+                      <p>
+                        {language === "es"
+                          ? "Necesitamos usar la regla del producto:"
+                          : "We need to use the product rule:"}
+                      </p>
                       <div>
                         <MathDisplay math="\frac{d}{dx}[f(x) \cdot g(x)] = f(x) \cdot \frac{d}{dx}[g(x)] + g(x) \cdot \frac{d}{dx}[f(x)]" />
                       </div>
 
                       <p>
-                        Let <MathDisplay math="f(x) = x^2" display={false} /> and{" "}
+                        {language === "es" ? "Sea " : "Let "}
+                        <MathDisplay math="f(x) = x^2" display={false} />
+                        {language === "es" ? " y " : " and "}
                         <MathDisplay math="g(x) = \sin(x)" display={false} />
                       </p>
 
-                      <p>We know:</p>
+                      <p>{language === "es" ? "Sabemos:" : "We know:"}</p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="\frac{d}{dx}[x^2] = 2x" />
@@ -299,7 +354,7 @@ export default function DifferentialCalculusPage() {
                         </div>
                       </div>
 
-                      <p>Applying the product rule:</p>
+                      <p>{language === "es" ? "Aplicando la regla del producto:" : "Applying the product rule:"}</p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="\frac{d}{dx}[x^2 \cdot \sin(x)] = x^2 \cdot \frac{d}{dx}[\sin(x)] + \sin(x) \cdot \frac{d}{dx}[x^2]" />
@@ -322,7 +377,9 @@ export default function DifferentialCalculusPage() {
                   className="p-4 bg-muted cursor-pointer flex justify-between items-center"
                   onClick={() => toggleExample(3)}
                 >
-                  <h3 className="font-medium">Example 3: Chain Rule</h3>
+                  <h3 className="font-medium">
+                    {language === "es" ? "Ejemplo 3: Regla de la Cadena" : "Example 3: Chain Rule"}
+                  </h3>
                   <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 3 ? "rotate-90" : ""}`} />
                 </div>
 
@@ -330,24 +387,32 @@ export default function DifferentialCalculusPage() {
                   <CardContent className="pt-4">
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
-                        Find the derivative of <MathDisplay math="f(x) = \sin(x^2)" display={false} />
+                        {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                        <MathDisplay math="f(x) = \sin(x^2)" display={false} />
                       </p>
 
                       <p>
-                        <strong>Solution:</strong>
+                        <strong>{language === "es" ? "Solución:" : "Solution:"}</strong>
                       </p>
-                      <p>We need to use the chain rule:</p>
+                      <p>
+                        {language === "es"
+                          ? "Necesitamos usar la regla de la cadena:"
+                          : "We need to use the chain rule:"}
+                      </p>
                       <div>
                         <MathDisplay math="\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)" />
                       </div>
 
                       <p>
-                        Let <MathDisplay math="f(u) = \sin(u)" display={false} /> and{" "}
-                        <MathDisplay math="g(x) = x^2" display={false} />, so{" "}
+                        {language === "es" ? "Sea " : "Let "}
+                        <MathDisplay math="f(u) = \sin(u)" display={false} />
+                        {language === "es" ? " y " : " and "}
+                        <MathDisplay math="g(x) = x^2" display={false} />
+                        {language === "es" ? ", así que " : ", so "}
                         <MathDisplay math="f(g(x)) = \sin(x^2)" display={false} />
                       </p>
 
-                      <p>We know:</p>
+                      <p>{language === "es" ? "Sabemos:" : "We know:"}</p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="f'(u) = \frac{d}{du}[\sin(u)] = \cos(u)" />
@@ -357,7 +422,7 @@ export default function DifferentialCalculusPage() {
                         </div>
                       </div>
 
-                      <p>Applying the chain rule:</p>
+                      <p>{language === "es" ? "Aplicando la regla de la cadena:" : "Applying the chain rule:"}</p>
                       <div className="space-y-2">
                         <div>
                           <MathDisplay math="\frac{d}{dx}[\sin(x^2)] = f'(g(x)) \cdot g'(x) = \cos(x^2) \cdot 2x = 2x\cos(x^2)" />
@@ -372,35 +437,52 @@ export default function DifferentialCalculusPage() {
 
           {/* Applications Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">Applications</h2>
+            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Aplicaciones" : "Applications"}</h2>
 
             <div className="prose dark:prose-invert max-w-none">
-              <p>Differential calculus has numerous applications in engineering and science:</p>
+              <p>
+                {language === "es"
+                  ? "El cálculo diferencial tiene numerosas aplicaciones en ingeniería y ciencia:"
+                  : "Differential calculus has numerous applications in engineering and science:"}
+              </p>
 
               <ul>
                 <li>
-                  <strong>Rate of Change Analysis:</strong> Determining how quickly quantities change with respect to
-                  time or other variables.
+                  <strong>{language === "es" ? "Análisis de Tasas de Cambio:" : "Rate of Change Analysis:"}</strong>{" "}
+                  {language === "es"
+                    ? "Determinar qué tan rápido cambian las cantidades con respecto al tiempo u otras variables."
+                    : "Determining how quickly quantities change with respect to time or other variables."}
                 </li>
                 <li>
-                  <strong>Optimization Problems:</strong> Finding maximum or minimum values of functions to optimize
-                  designs or processes.
+                  <strong>{language === "es" ? "Problemas de Optimización:" : "Optimization Problems:"}</strong>{" "}
+                  {language === "es"
+                    ? "Encontrar valores máximos o mínimos de funciones para optimizar diseños o procesos."
+                    : "Finding maximum or minimum values of functions to optimize designs or processes."}
                 </li>
                 <li>
-                  <strong>Motion Analysis:</strong> Calculating velocity and acceleration from position functions.
+                  <strong>{language === "es" ? "Análisis de Movimiento:" : "Motion Analysis:"}</strong>{" "}
+                  {language === "es"
+                    ? "Calcular velocidad y aceleración a partir de funciones de posición."
+                    : "Calculating velocity and acceleration from position functions."}
                 </li>
                 <li>
-                  <strong>Curve Sketching:</strong> Analyzing the behavior of functions to sketch their graphs.
+                  <strong>{language === "es" ? "Trazado de Curvas:" : "Curve Sketching:"}</strong>{" "}
+                  {language === "es"
+                    ? "Analizar el comportamiento de funciones para trazar sus gráficas."
+                    : "Analyzing the behavior of functions to sketch their graphs."}
                 </li>
                 <li>
-                  <strong>Approximation Methods:</strong> Using linear approximation and differentials to estimate
-                  function values.
+                  <strong>{language === "es" ? "Métodos de Aproximación:" : "Approximation Methods:"}</strong>{" "}
+                  {language === "es"
+                    ? "Usar aproximación lineal y diferenciales para estimar valores de funciones."
+                    : "Using linear approximation and differentials to estimate function values."}
                 </li>
               </ul>
 
               <p>
-                In engineering, differential calculus is essential for analyzing rates of change in physical systems,
-                optimizing designs, and modeling dynamic behavior.
+                {language === "es"
+                  ? "En ingeniería, el cálculo diferencial es esencial para analizar tasas de cambio en sistemas físicos, optimizar diseños y modelar comportamientos dinámicos."
+                  : "In engineering, differential calculus is essential for analyzing rates of change in physical systems, optimizing designs, and modeling dynamic behavior."}
               </p>
             </div>
           </section>
@@ -411,43 +493,43 @@ export default function DifferentialCalculusPage() {
           {/* Table of Contents */}
           <Card>
             <CardContent className="pt-6">
-              <h3 className="font-semibold mb-3">On This Page</h3>
+              <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="#" className="text-primary hover:underline">
-                    Introduction
+                    {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-primary">
-                    Key Concepts
+                    {language === "es" ? "Conceptos Clave" : "Key Concepts"}
                   </a>
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
                       <a href="#" className="text-muted-foreground hover:text-primary">
-                        The Derivative
+                        {language === "es" ? "La Derivada" : "The Derivative"}
                       </a>
                     </li>
                     <li>
                       <a href="#" className="text-muted-foreground hover:text-primary">
-                        Basic Differentiation Rules
+                        {language === "es" ? "Reglas Básicas de Diferenciación" : "Basic Differentiation Rules"}
                       </a>
                     </li>
                     <li>
                       <a href="#" className="text-muted-foreground hover:text-primary">
-                        Common Derivatives
+                        {language === "es" ? "Derivadas Comunes" : "Common Derivatives"}
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-primary">
-                    Examples
+                    {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-primary">
-                    Applications
+                    {language === "es" ? "Aplicaciones" : "Applications"}
                   </a>
                 </li>
               </ul>
@@ -457,7 +539,7 @@ export default function DifferentialCalculusPage() {
           {/* Related Topics */}
           <Card>
             <CardContent className="pt-6">
-              <h3 className="font-semibold mb-3">Related Topics</h3>
+              <h3 className="font-semibold mb-3">{language === "es" ? "Temas Relacionados" : "Related Topics"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
@@ -465,7 +547,7 @@ export default function DifferentialCalculusPage() {
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    Integral Calculus
+                    {language === "es" ? "Cálculo Integral" : "Integral Calculus"}
                   </Link>
                 </li>
                 <li>
@@ -474,13 +556,13 @@ export default function DifferentialCalculusPage() {
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    Differential Equations
+                    {language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}
                   </Link>
                 </li>
                 <li>
                   <Link href="/topics/mathematics/limits" className="text-primary hover:underline flex items-center">
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    Limits and Continuity
+                    {language === "es" ? "Límites y Continuidad" : "Limits and Continuity"}
                   </Link>
                 </li>
                 <li>
@@ -489,7 +571,7 @@ export default function DifferentialCalculusPage() {
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    Classical Mechanics
+                    {language === "es" ? "Mecánica Clásica" : "Classical Mechanics"}
                   </Link>
                 </li>
               </ul>
@@ -499,7 +581,9 @@ export default function DifferentialCalculusPage() {
           {/* Resources */}
           <Card>
             <CardContent className="pt-6">
-              <h3 className="font-semibold mb-3">Learning Resources</h3>
+              <h3 className="font-semibold mb-3">
+                {language === "es" ? "Recursos de Aprendizaje" : "Learning Resources"}
+              </h3>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -507,13 +591,19 @@ export default function DifferentialCalculusPage() {
                     <FileText className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium">Solved Problems</h4>
-                    <p className="text-xs text-muted-foreground mb-1">Practice with step-by-step solutions</p>
+                    <h4 className="text-sm font-medium">
+                      {language === "es" ? "Problemas Resueltos" : "Solved Problems"}
+                    </h4>
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {language === "es"
+                        ? "Practica con soluciones paso a paso"
+                        : "Practice with step-by-step solutions"}
+                    </p>
                     <Link
                       href="/resources/solved-problems?topic=differential-calculus"
                       className="text-xs text-primary hover:underline"
                     >
-                      View problems
+                      {language === "es" ? "Ver problemas" : "View problems"}
                     </Link>
                   </div>
                 </div>
@@ -523,13 +613,19 @@ export default function DifferentialCalculusPage() {
                     <BookOpen className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium">Recommended Reading</h4>
-                    <p className="text-xs text-muted-foreground mb-1">Books and articles on differential calculus</p>
+                    <h4 className="text-sm font-medium">
+                      {language === "es" ? "Lecturas Recomendadas" : "Recommended Reading"}
+                    </h4>
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {language === "es"
+                        ? "Libros y artículos sobre cálculo diferencial"
+                        : "Books and articles on differential calculus"}
+                    </p>
                     <Link
                       href="/resources/bibliography?topic=differential-calculus"
                       className="text-xs text-primary hover:underline"
                     >
-                      View bibliography
+                      {language === "es" ? "Ver bibliografía" : "View bibliography"}
                     </Link>
                   </div>
                 </div>
@@ -539,13 +635,19 @@ export default function DifferentialCalculusPage() {
                     <Calculator className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium">Derivative Calculator</h4>
-                    <p className="text-xs text-muted-foreground mb-1">Interactive tool for calculating derivatives</p>
+                    <h4 className="text-sm font-medium">
+                      {language === "es" ? "Calculadora de Derivadas" : "Derivative Calculator"}
+                    </h4>
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {language === "es"
+                        ? "Herramienta interactiva para calcular derivadas"
+                        : "Interactive tool for calculating derivatives"}
+                    </p>
                     <Link
                       href="/resources/tools/derivative-calculator"
                       className="text-xs text-primary hover:underline"
                     >
-                      Use calculator
+                      {language === "es" ? "Usar calculadora" : "Use calculator"}
                     </Link>
                   </div>
                 </div>
@@ -558,14 +660,16 @@ export default function DifferentialCalculusPage() {
             <div className="relative h-48">
               <Image
                 src="/placeholder.svg?height=200&width=400"
-                alt="Derivative visualization"
+                alt={language === "es" ? "Visualización de derivada" : "Derivative visualization"}
                 fill
                 className="object-cover"
               />
             </div>
             <CardContent className="pt-4">
               <p className="text-sm text-center text-muted-foreground">
-                Visualization of a function (blue) and its derivative (red)
+                {language === "es"
+                  ? "Visualización de una función (azul) y su derivada (roja)"
+                  : "Visualization of a function (blue) and its derivative (red)"}
               </p>
             </CardContent>
           </Card>
@@ -574,27 +678,34 @@ export default function DifferentialCalculusPage() {
 
       {/* Interactive Practice Section */}
       <section className="mt-12 bg-muted/50 p-6 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Interactive Practice</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          {language === "es" ? "Práctica Interactiva" : "Interactive Practice"}
+        </h2>
 
         <Tabs defaultValue="basic" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="basic">Basic Derivatives</TabsTrigger>
-            <TabsTrigger value="intermediate">Intermediate</TabsTrigger>
-            <TabsTrigger value="advanced">Advanced</TabsTrigger>
+            <TabsTrigger value="basic">{language === "es" ? "Derivadas Básicas" : "Basic Derivatives"}</TabsTrigger>
+            <TabsTrigger value="intermediate">{language === "es" ? "Intermedio" : "Intermediate"}</TabsTrigger>
+            <TabsTrigger value="advanced">{language === "es" ? "Avanzado" : "Advanced"}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="basic" className="p-4">
             <div className="space-y-4">
-              <p className="font-medium">Practice finding derivatives of basic functions:</p>
+              <p className="font-medium">
+                {language === "es"
+                  ? "Practica encontrando derivadas de funciones básicas:"
+                  : "Practice finding derivatives of basic functions:"}
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find the derivative of <MathDisplay math="f(x) = 5x^3 - 2x + 7" display={false} />
+                      {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                      <MathDisplay math="f(x) = 5x^3 - 2x + 7" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -602,10 +713,11 @@ export default function DifferentialCalculusPage() {
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find the derivative of <MathDisplay math="f(x) = \sin(x) + \cos(x)" display={false} />
+                      {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                      <MathDisplay math="f(x) = \sin(x) + \cos(x)" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -615,16 +727,21 @@ export default function DifferentialCalculusPage() {
 
           <TabsContent value="intermediate" className="p-4">
             <div className="space-y-4">
-              <p className="font-medium">Practice with product and quotient rules:</p>
+              <p className="font-medium">
+                {language === "es"
+                  ? "Practica con reglas del producto y cociente:"
+                  : "Practice with product and quotient rules:"}
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find the derivative of <MathDisplay math="f(x) = x^2e^x" display={false} />
+                      {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                      <MathDisplay math="f(x) = x^2e^x" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -632,10 +749,11 @@ export default function DifferentialCalculusPage() {
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find the derivative of <MathDisplay math="f(x) = \frac{x^2 + 1}{x - 3}" display={false} />
+                      {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                      <MathDisplay math="f(x) = \frac{x^2 + 1}{x - 3}" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -645,16 +763,21 @@ export default function DifferentialCalculusPage() {
 
           <TabsContent value="advanced" className="p-4">
             <div className="space-y-4">
-              <p className="font-medium">Practice with chain rule and implicit differentiation:</p>
+              <p className="font-medium">
+                {language === "es"
+                  ? "Practica con regla de la cadena y diferenciación implícita:"
+                  : "Practice with chain rule and implicit differentiation:"}
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find the derivative of <MathDisplay math="f(x) = \ln(\sin(x^2 + 1))" display={false} />
+                      {language === "es" ? "Encuentra la derivada de " : "Find the derivative of "}
+                      <MathDisplay math="f(x) = \ln(\sin(x^2 + 1))" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -662,11 +785,13 @@ export default function DifferentialCalculusPage() {
                 <Card>
                   <CardContent className="pt-6">
                     <p className="mb-2">
-                      Find <MathDisplay math="\frac{dy}{dx}" display={false} /> if{" "}
+                      {language === "es" ? "Encuentra " : "Find "}
+                      <MathDisplay math="\frac{dy}{dx}" display={false} />
+                      {language === "es" ? " si " : " if "}
                       <MathDisplay math="x^2 + y^2 = 25" display={false} />
                     </p>
                     <Button variant="outline" className="w-full mt-2">
-                      Show Solution
+                      {language === "es" ? "Mostrar Solución" : "Show Solution"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -678,7 +803,7 @@ export default function DifferentialCalculusPage() {
 
       {/* Next Steps */}
       <section className="mt-12">
-        <h2 className="text-2xl font-bold mb-4">Continue Learning</h2>
+        <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Continuar Aprendiendo" : "Continue Learning"}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="overflow-hidden">
@@ -687,12 +812,14 @@ export default function DifferentialCalculusPage() {
                 <Calculator className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Next Topic</h3>
+                <h3 className="font-semibold mb-1">{language === "es" ? "Siguiente Tema" : "Next Topic"}</h3>
                 <Link href="/topics/mathematics/integral-calculus" className="text-primary hover:underline text-lg">
-                  Integral Calculus
+                  {language === "es" ? "Cálculo Integral" : "Integral Calculus"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Learn about antiderivatives and the definite integral
+                  {language === "es"
+                    ? "Aprende sobre antiderivadas y la integral definida"
+                    : "Learn about antiderivatives and the definite integral"}
                 </p>
               </div>
             </div>
@@ -704,12 +831,16 @@ export default function DifferentialCalculusPage() {
                 <FileText className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Related Application</h3>
+                <h3 className="font-semibold mb-1">
+                  {language === "es" ? "Aplicación Relacionada" : "Related Application"}
+                </h3>
                 <Link href="/topics/physics/classical-mechanics" className="text-primary hover:underline text-lg">
-                  Classical Mechanics
+                  {language === "es" ? "Mecánica Clásica" : "Classical Mechanics"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
-                  See how differential calculus is applied in physics
+                  {language === "es"
+                    ? "Observa cómo se aplica el cálculo diferencial en física"
+                    : "See how differential calculus is applied in physics"}
                 </p>
               </div>
             </div>
@@ -719,4 +850,3 @@ export default function DifferentialCalculusPage() {
     </div>
   )
 }
-

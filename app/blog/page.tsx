@@ -85,7 +85,7 @@ const categories = [
 ]
 
 export default function BlogPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
 
@@ -97,20 +97,36 @@ export default function BlogPage() {
     return matchesSearch && matchesCategory
   })
 
+  // Update the categories array to use translations
+  const categories = [
+    { value: "all", label: language === "es" ? "Todas las Categorías" : "All Categories" },
+    { value: "mathematics", label: language === "es" ? "Matemáticas" : "Mathematics" },
+    { value: "physics", label: language === "es" ? "Física" : "Physics" },
+    { value: "materials", label: language === "es" ? "Materiales" : "Materials" },
+    { value: "mechanical", label: language === "es" ? "Mecánica" : "Mechanical" },
+    { value: "electrical", label: language === "es" ? "Eléctrica" : "Electrical" },
+    { value: "software", label: language === "es" ? "Software" : "Software" },
+    { value: "industrial", label: language === "es" ? "Industrial" : "Industrial" },
+  ]
+
   return (
     <div className="container py-12">
       <div className="space-y-6">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight">Engineering Blog</h1>
+          <h1 className="text-3xl font-bold tracking-tight">
+            {language === "es" ? "Blog de Ingeniería" : "Engineering Blog"}
+          </h1>
           <p className="text-muted-foreground">
-            Explore the latest articles, insights, and tutorials on engineering topics
+            {language === "es"
+              ? "Explora los últimos artículos, ideas y tutoriales sobre temas de ingeniería"
+              : "Explore the latest articles, insights, and tutorials on engineering topics"}
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <div className="w-full md:w-auto">
             <Input
-              placeholder="Search articles..."
+              placeholder={language === "es" ? "Buscar artículos..." : "Search articles..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full md:w-[300px]"
@@ -160,7 +176,7 @@ export default function BlogPage() {
                 <CardFooter>
                   <Button variant="ghost" className="w-full justify-start p-0 h-auto" asChild>
                     <Link href={`/blog/${post.id}`} className="flex items-center text-primary">
-                      Read article
+                      {language === "es" ? "Leer artículo" : "Read article"}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -184,18 +200,21 @@ export default function BlogPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <h3 className="text-lg font-medium mb-2">No articles found</h3>
+            <h3 className="text-lg font-medium mb-2">
+              {language === "es" ? "No se encontraron artículos" : "No articles found"}
+            </h3>
             <p className="text-muted-foreground">
-              Try adjusting your search or filter to find what you're looking for.
+              {language === "es"
+                ? "Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
+                : "Try adjusting your search or filter to find what you're looking for."}
             </p>
           </div>
         )}
 
         <div className="flex justify-center mt-8">
-          <Button variant="outline">Load More Articles</Button>
+          <Button variant="outline">{language === "es" ? "Cargar Más Artículos" : "Load More Articles"}</Button>
         </div>
       </div>
     </div>
   )
 }
-
