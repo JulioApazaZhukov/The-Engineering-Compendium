@@ -405,7 +405,7 @@ export default function FormulaDatabase() {
             </h2>
             <Tabs defaultValue="grid" className="w-auto">
               <TabsList className="grid w-[120px] grid-cols-2">
-                <TabsTrigger value="grid">{language === "es" ? "Cuadrícula" : "Grid"}</TabsTrigger>
+                <TabsTrigger value="grid">{language === "es" ? "Tabla" : "Grid"}</TabsTrigger>
                 <TabsTrigger value="list">{language === "es" ? "Lista" : "List"}</TabsTrigger>
               </TabsList>
             </Tabs>
