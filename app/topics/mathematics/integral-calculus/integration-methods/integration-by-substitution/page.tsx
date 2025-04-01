@@ -67,7 +67,7 @@ export default function IntegrationBySubstitutionPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Introducción a la Integración por Sustitución"
                 : "Introduction to Integration by Substitution"}
@@ -114,7 +114,7 @@ export default function IntegrationBySubstitutionPage() {
 
           {/* When to Use Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="when-to-use" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Cuándo Usar la Integración por Sustitución"
                 : "When to Use Integration by Substitution"}
@@ -170,7 +170,7 @@ export default function IntegrationBySubstitutionPage() {
 
           {/* Steps for Integration by Substitution */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="steps" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Pasos para la Integración por Sustitución"
                 : "Steps for Integration by Substitution"}
@@ -217,7 +217,9 @@ export default function IntegrationBySubstitutionPage() {
 
           {/* Examples Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Ejemplos" : "Examples"}
+            </h2>
 
             <div className="space-y-4">
               {/* Example 1 */}
@@ -474,7 +476,7 @@ export default function IntegrationBySubstitutionPage() {
 
           {/* Common Substitutions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="common-substitutions" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Sustituciones Comunes" : "Common Substitutions"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -561,7 +563,7 @@ export default function IntegrationBySubstitutionPage() {
 
           {/* Practice Problems */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="practice-problems" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
             </h2>
 
@@ -625,36 +627,36 @@ export default function IntegrationBySubstitutionPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#when-to-use" className="text-muted-foreground hover:text-primary">
                     {language === "es"
                       ? "Cuándo Usar Integración por Sustitución"
                       : "When to Use Integration by Substitution"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#steps" className="text-muted-foreground hover:text-primary">
                     {language === "es"
                       ? "Pasos para la Integración por Sustitución"
                       : "Steps for Integration by Substitution"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#common-substitutions" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Sustituciones Comunes" : "Common Substitutions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#practice-problems" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
                   </a>
                 </li>

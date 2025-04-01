@@ -58,7 +58,7 @@ export default function DifferentialEquationsPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Introducción a las Ecuaciones Diferenciales"
                 : "Introduction to Differential Equations"}
@@ -87,11 +87,13 @@ export default function DifferentialEquationsPage() {
 
           {/* Key Topics Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-6">{language === "es" ? "Temas Principales" : "Key Topics"}</h2>
+            <h2 id="key-topics" className="text-2xl font-bold mb-6 scroll-mt-16">
+              {language === "es" ? "Temas Principales" : "Key Topics"}
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* First-Order Differential Equations */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
                     {language === "es"
@@ -104,7 +106,7 @@ export default function DifferentialEquationsPage() {
                       : "Equations containing only the first derivative"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\frac{dy}{dx} = f(x, y)" />
                   </div>
@@ -124,7 +126,7 @@ export default function DifferentialEquationsPage() {
               </Card>
 
               {/* Second-Order Differential Equations */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
                     {language === "es"
@@ -137,7 +139,7 @@ export default function DifferentialEquationsPage() {
                       : "Equations containing second derivatives"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\frac{d^2y}{dx^2} + p\frac{dy}{dx} + qy = g(x)" />
                   </div>
@@ -157,7 +159,7 @@ export default function DifferentialEquationsPage() {
               </Card>
 
               {/* Higher-Order Differential Equations */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
                     {language === "es"
@@ -170,7 +172,7 @@ export default function DifferentialEquationsPage() {
                       : "Equations with higher-order derivatives"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\frac{d^ny}{dx^n} + a_{n-1}\frac{d^{n-1}y}{dx^{n-1}} + \ldots + a_1\frac{dy}{dx} + a_0y = f(x)" />
                   </div>
@@ -190,7 +192,7 @@ export default function DifferentialEquationsPage() {
               </Card>
 
               {/* Systems of Differential Equations */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
                     {language === "es" ? "Sistemas de Ecuaciones Diferenciales" : "Systems of Differential Equations"}
@@ -201,7 +203,7 @@ export default function DifferentialEquationsPage() {
                       : "Multiple interrelated differential equations"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\begin{cases} \frac{dx}{dt} = f(x, y, t) \\ \frac{dy}{dt} = g(x, y, t) \end{cases}" />
                   </div>
@@ -221,7 +223,7 @@ export default function DifferentialEquationsPage() {
               </Card>
 
               {/* Laplace Transforms */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{language === "es" ? "Transformadas de Laplace" : "Laplace Transforms"}</CardTitle>
                   <CardDescription>
@@ -230,7 +232,7 @@ export default function DifferentialEquationsPage() {
                       : "Technique for solving differential equations"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\mathcal{L}\{f(t)\} = F(s) = \int_0^{\infty} e^{-st}f(t) \, dt" />
                   </div>
@@ -250,7 +252,7 @@ export default function DifferentialEquationsPage() {
               </Card>
 
               {/* Partial Differential Equations */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
                     {language === "es" ? "Ecuaciones Diferenciales Parciales" : "Partial Differential Equations"}
@@ -259,7 +261,7 @@ export default function DifferentialEquationsPage() {
                     {language === "es" ? "Ecuaciones con derivadas parciales" : "Equations with partial derivatives"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0" />
                   </div>
@@ -282,7 +284,9 @@ export default function DifferentialEquationsPage() {
 
           {/* Applications Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Aplicaciones" : "Applications"}</h2>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Aplicaciones" : "Applications"}
+            </h2>
 
             <div className="prose dark:prose-invert max-w-none">
               <p>
@@ -347,34 +351,34 @@ export default function DifferentialEquationsPage() {
               <h3 className="font-semibold mb-3">{t("common.on_this_page")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {t("common.introduction")}
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                <li className="group">
+                  <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
                     {language === "es" ? "Temas Principales" : "Key Topics"}
                   </a>
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
                         {language === "es" ? "Ecuaciones de Primer Orden" : "First-Order Equations"}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
                         {language === "es" ? "Ecuaciones de Segundo Orden" : "Second-Order Equations"}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
                         {language === "es" ? "Transformadas de Laplace" : "Laplace Transforms"}
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#applications" className="text-muted-foreground hover:text-primary">
                     {t("common.applications")}
                   </a>
                 </li>

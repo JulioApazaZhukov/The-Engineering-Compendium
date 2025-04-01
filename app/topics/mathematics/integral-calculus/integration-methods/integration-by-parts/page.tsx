@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Calculator, FileText, ChevronRight } from "lucide-react"
@@ -15,6 +15,20 @@ export default function IntegrationByPartsPage() {
   const toggleExample = (index: number) => {
     setActiveExample(activeExample === index ? null : index)
   }
+
+  // Add scroll margin to section headings
+  useEffect(() => {
+    const style = document.createElement("style")
+    style.innerHTML = `
+      section[id] {
+        scroll-margin-top: 80px;
+      }
+    `
+    document.head.appendChild(style)
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
 
   return (
     <div className="container py-12">
@@ -66,7 +80,7 @@ export default function IntegrationByPartsPage() {
         {/* Main Content Column */}
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
-          <section>
+          <section id="introduction">
             <h2 className="text-2xl font-bold mb-4">
               {language === "es" ? "Introducción a la Integración por Partes" : "Introduction to Integration by Parts"}
             </h2>
@@ -119,7 +133,7 @@ export default function IntegrationByPartsPage() {
           </section>
 
           {/* When to Use Section */}
-          <section>
+          <section id="when-to-use">
             <h2 className="text-2xl font-bold mb-4">
               {language === "es" ? "Cuándo Usar la Integración por Partes" : "When to Use Integration by Parts"}
             </h2>
@@ -208,7 +222,7 @@ export default function IntegrationByPartsPage() {
           </section>
 
           {/* Examples Section */}
-          <section>
+          <section id="examples">
             <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
 
             <div className="space-y-4">
@@ -498,7 +512,7 @@ export default function IntegrationByPartsPage() {
           </section>
 
           {/* Tabular Method Section */}
-          <section>
+          <section id="tabular-method">
             <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Método Tabular" : "Tabular Method"}</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
@@ -594,7 +608,7 @@ export default function IntegrationByPartsPage() {
           </section>
 
           {/* Practice Problems */}
-          <section>
+          <section id="practice-problems">
             <h2 className="text-2xl font-bold mb-4">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
             </h2>
@@ -659,27 +673,27 @@ export default function IntegrationByPartsPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#when-to-use" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Cuándo Usar Integración por Partes" : "When to Use Integration by Parts"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#tabular-method" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Método Tabular" : "Tabular Method"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#practice-problems" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
                   </a>
                 </li>

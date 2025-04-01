@@ -67,7 +67,7 @@ export default function TrigonometricSubstitutionPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Introducción a la Sustitución Trigonométrica"
                 : "Introduction to Trigonometric Substitution"}
@@ -92,7 +92,7 @@ export default function TrigonometricSubstitutionPage() {
 
           {/* Key Substitutions Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="key-substitutions" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Sustituciones Trigonométricas Clave" : "Key Trigonometric Substitutions"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -185,7 +185,9 @@ export default function TrigonometricSubstitutionPage() {
 
           {/* Examples Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Ejemplos" : "Examples"}
+            </h2>
 
             <div className="space-y-4">
               {/* Example 1 */}
@@ -537,7 +539,7 @@ export default function TrigonometricSubstitutionPage() {
 
           {/* Tips and Tricks Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="tips" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es"
                 ? "Consejos para la Sustitución Trigonométrica"
                 : "Tips for Trigonometric Substitution"}
@@ -595,7 +597,7 @@ export default function TrigonometricSubstitutionPage() {
 
           {/* Practice Problems */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="practice-problems" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
             </h2>
 
@@ -659,29 +661,29 @@ export default function TrigonometricSubstitutionPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#key-substitutions" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Sustituciones Trigonométricas Clave" : "Key Trigonometric Substitutions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#tips" className="text-muted-foreground hover:text-primary">
                     {language === "es"
                       ? "Consejos para la Sustitución Trigonométrica"
                       : "Tips for Trigonometric Substitution"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#practice-problems" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
                   </a>
                 </li>

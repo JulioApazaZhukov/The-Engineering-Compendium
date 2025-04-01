@@ -59,7 +59,9 @@ export default function BasicFormulasPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Introducción" : "Introduction"}</h2>
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Introducción" : "Introduction"}
+            </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
@@ -76,7 +78,9 @@ export default function BasicFormulasPage() {
 
           {/* Basic Power Rule Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Regla de la Potencia" : "Power Rule"}</h2>
+            <h2 id="power-rule" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Regla de la Potencia" : "Power Rule"}
+            </h2>
             <Card>
               <CardContent className="pt-6">
                 <div className="space-y-6">
@@ -140,7 +144,7 @@ export default function BasicFormulasPage() {
 
           {/* Exponential and Logarithmic Functions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="exponential-logarithmic" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Funciones Exponenciales y Logarítmicas" : "Exponential and Logarithmic Functions"}
             </h2>
             <Card>
@@ -200,7 +204,7 @@ export default function BasicFormulasPage() {
 
           {/* Trigonometric Functions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="trigonometric" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Funciones Trigonométricas" : "Trigonometric Functions"}
             </h2>
             <Card>
@@ -270,7 +274,7 @@ export default function BasicFormulasPage() {
 
           {/* Inverse Trigonometric Functions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="inverse-trigonometric" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Funciones Trigonométricas Inversas" : "Inverse Trigonometric Functions"}
             </h2>
             <Card>
@@ -290,7 +294,6 @@ export default function BasicFormulasPage() {
                     <div className="bg-muted/50 p-3 rounded-lg">
                       <div className="text-center">
                       <MathDisplay math="\int \frac{1}{x\sqrt{x^2-1}} \, dx = \arccos\frac{1}{x} + C = \operatorname{arcsec} x + C" />
-
                       </div>
                     </div>
                   </div>
@@ -306,7 +309,7 @@ export default function BasicFormulasPage() {
 
           {/* Hyperbolic Functions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="hyperbolic" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Funciones Hiperbólicas" : "Hyperbolic Functions"}
             </h2>
             <Card>
@@ -346,7 +349,9 @@ export default function BasicFormulasPage() {
 
           {/* Special Forms */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Formas Especiales" : "Special Forms"}</h2>
+            <h2 id="special-forms" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Formas Especiales" : "Special Forms"}
+            </h2>
             <Card>
               <CardContent className="pt-6">
                 <div className="space-y-6">
@@ -391,39 +396,39 @@ export default function BasicFormulasPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#power-rule" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Regla de la Potencia" : "Power Rule"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#exponential-logarithmic" className="text-muted-foreground hover:text-primary">
                     {language === "es"
                       ? "Funciones Exponenciales y Logarítmicas"
                       : "Exponential and Logarithmic Functions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#trigonometric" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Funciones Trigonométricas" : "Trigonometric Functions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#inverse-trigonometric" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Funciones Trigonométricas Inversas" : "Inverse Trigonometric Functions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#hyperbolic" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Funciones Hiperbólicas" : "Hyperbolic Functions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#special-forms" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Formas Especiales" : "Special Forms"}
                   </a>
                 </li>

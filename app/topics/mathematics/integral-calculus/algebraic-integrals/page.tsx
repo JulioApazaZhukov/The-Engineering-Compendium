@@ -61,7 +61,9 @@ export default function AlgebraicIntegralsPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Introducción" : "Introduction"}</h2>
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Introducción" : "Introduction"}
+            </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
@@ -78,7 +80,7 @@ export default function AlgebraicIntegralsPage() {
 
           {/* Polynomial Integrals */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="polynomial" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Integrales de Polinomios" : "Polynomial Integrals"}
             </h2>
             <Card>
@@ -119,7 +121,7 @@ export default function AlgebraicIntegralsPage() {
 
           {/* Rational Functions */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="rational" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Funciones Racionales" : "Rational Functions"}
             </h2>
             <Card>
@@ -236,7 +238,7 @@ export default function AlgebraicIntegralsPage() {
 
           {/* Integrals with Roots */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="roots" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Integrales con Raíces" : "Integrals with Roots"}
             </h2>
             <Card>
@@ -329,22 +331,22 @@ export default function AlgebraicIntegralsPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#polynomial" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Integrales de Polinomios" : "Polynomial Integrals"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#rational" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Funciones Racionales" : "Rational Functions"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#roots" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Integrales con Raíces" : "Integrals with Roots"}
                   </a>
                 </li>

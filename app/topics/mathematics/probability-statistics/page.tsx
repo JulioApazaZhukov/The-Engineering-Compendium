@@ -8,7 +8,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
-export default function LinearAlgebraPage() {
+export default function ProbabilityStatisticsPage() {
   const { t, language } = useLanguage()
 
   return (
@@ -27,19 +27,21 @@ export default function LinearAlgebraPage() {
           {t("math.title")}
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
-        <span className="text-foreground font-medium">{language === "es" ? "Álgebra Lineal" : "Linear Algebra"}</span>
+        <span className="text-foreground font-medium">
+          {language === "es" ? "Probabilidad y Estadística" : "Probability & Statistics"}
+        </span>
       </div>
 
       {/* Page Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">
-            {language === "es" ? "Álgebra Lineal" : "Linear Algebra"}
+            {language === "es" ? "Probabilidad y Estadística" : "Probability & Statistics"}
           </h1>
           <p className="text-muted-foreground">
             {language === "es"
-              ? "El estudio de vectores, matrices y transformaciones lineales"
-              : "The study of vectors, matrices, and linear transformations"}
+              ? "El estudio de la incertidumbre, datos y toma de decisiones"
+              : "The study of uncertainty, data, and decision making"}
           </p>
         </div>
         <Button variant="outline" size="sm" asChild>
@@ -57,26 +59,28 @@ export default function LinearAlgebraPage() {
           {/* Introduction Section */}
           <section>
             <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
-              {language === "es" ? "Introducción al Álgebra Lineal" : "Introduction to Linear Algebra"}
+              {language === "es"
+                ? "Introducción a la Probabilidad y Estadística"
+                : "Introduction to Probability & Statistics"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
-                  ? "El álgebra lineal es una rama de las matemáticas que se ocupa de los espacios vectoriales, las transformaciones lineales, los sistemas de ecuaciones lineales y sus representaciones a través de matrices y determinantes. Es fundamental para la ingeniería, la física, la informática y muchas otras disciplinas."
-                  : "Linear algebra is a branch of mathematics that deals with vector spaces, linear transformations, systems of linear equations, and their representations through matrices and determinants. It is fundamental to engineering, physics, computer science, and many other disciplines."}
+                  ? "La probabilidad y la estadística son ramas de las matemáticas que se ocupan del análisis de fenómenos aleatorios, la recopilación, análisis, interpretación y presentación de datos, y la toma de decisiones en condiciones de incertidumbre. Estas disciplinas son fundamentales en ingeniería, ciencia, economía, y muchos otros campos."
+                  : "Probability and statistics are branches of mathematics that deal with the analysis of random phenomena, the collection, analysis, interpretation, and presentation of data, and decision-making under uncertainty. These disciplines are fundamental in engineering, science, economics, and many other fields."}
               </p>
               <p>
                 {language === "es"
-                  ? "Los conceptos clave del álgebra lineal incluyen vectores, matrices, sistemas de ecuaciones lineales, espacios vectoriales, transformaciones lineales, valores propios y vectores propios. Estos conceptos proporcionan herramientas poderosas para modelar y resolver problemas en diversas áreas de la ciencia y la ingeniería."
-                  : "Key concepts in linear algebra include vectors, matrices, systems of linear equations, vector spaces, linear transformations, eigenvalues, and eigenvectors. These concepts provide powerful tools for modeling and solving problems in various areas of science and engineering."}
+                  ? "La probabilidad proporciona el marco teórico para modelar la incertidumbre y la aleatoriedad, mientras que la estadística ofrece métodos para recopilar, analizar e interpretar datos para hacer inferencias y tomar decisiones."
+                  : "Probability provides the theoretical framework for modeling uncertainty and randomness, while statistics offers methods for collecting, analyzing, and interpreting data to make inferences and decisions."}
               </p>
               <div className="my-4 text-center">
-                <MathDisplay math="A\vec{x} = \vec{b}" />
+                <MathDisplay math="P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}" />
               </div>
               <p>
                 {language === "es"
-                  ? "Esta ecuación representa un sistema de ecuaciones lineales, donde A es una matriz de coeficientes, x es un vector de incógnitas, y b es un vector de términos constantes. Resolver este sistema es uno de los problemas fundamentales del álgebra lineal."
-                  : "This equation represents a system of linear equations, where A is a coefficient matrix, x is a vector of unknowns, and b is a vector of constant terms. Solving this system is one of the fundamental problems in linear algebra."}
+                  ? "Esta es la fórmula del teorema de Bayes, un principio fundamental en probabilidad que relaciona la probabilidad condicional de un evento dado otro evento. Es ampliamente utilizado en ingeniería, aprendizaje automático y análisis de datos."
+                  : "This is the formula for Bayes' theorem, a fundamental principle in probability that relates the conditional probability of an event given another event. It is widely used in engineering, machine learning, and data analysis."}
               </p>
             </div>
           </section>
@@ -88,180 +92,176 @@ export default function LinearAlgebraPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Vectors and Vector Spaces */}
-              <Card id="vectors-and-spaces" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Probability Theory */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Vectores y Espacios Vectoriales" : "Vectors and Vector Spaces"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Teoría de la Probabilidad" : "Probability Theory"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Fundamentos de vectores y sus propiedades"
-                      : "Fundamentals of vectors and their properties"}
+                      ? "Fundamentos de la probabilidad y eventos aleatorios"
+                      : "Fundamentals of probability and random events"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}" />
+                    <MathDisplay math="P(A \cup B) = P(A) + P(B) - P(A \cap B)" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Estudio de vectores, operaciones vectoriales, espacios vectoriales, bases y dimensiones."
-                      : "Study of vectors, vector operations, vector spaces, bases, and dimensions."}
+                      ? "Axiomas de probabilidad, probabilidad condicional, independencia, variables aleatorias y distribuciones."
+                      : "Probability axioms, conditional probability, independence, random variables, and distributions."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/vectors-and-vector-spaces" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/probability-theory" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Matrices and Matrix Operations */}
-              <Card id="matrices-and-operations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Descriptive Statistics */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Matrices y Operaciones Matriciales" : "Matrices and Matrix Operations"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Estadística Descriptiva" : "Descriptive Statistics"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Manipulación y operaciones con matrices"
-                      : "Manipulation and operations with matrices"}
+                      ? "Métodos para resumir y visualizar datos"
+                      : "Methods for summarizing and visualizing data"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}" />
+                    <MathDisplay math="\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Operaciones matriciales, propiedades, tipos especiales de matrices y aplicaciones."
-                      : "Matrix operations, properties, special types of matrices, and applications."}
+                      ? "Medidas de tendencia central, dispersión, visualización de datos y análisis exploratorio."
+                      : "Measures of central tendency, dispersion, data visualization, and exploratory analysis."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/matrices-and-operations" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/descriptive-statistics" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Systems of Linear Equations */}
-              <Card id="systems-of-equations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Probability Distributions */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>
-                    {language === "es" ? "Sistemas de Ecuaciones Lineales" : "Systems of Linear Equations"}
+                    {language === "es" ? "Distribuciones de Probabilidad" : "Probability Distributions"}
                   </CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Métodos para resolver sistemas de ecuaciones"
-                      : "Methods for solving systems of equations"}
+                      ? "Modelos matemáticos para variables aleatorias"
+                      : "Mathematical models for random variables"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\begin{cases} a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\ \vdots \\ a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m \end{cases}" />
+                    <MathDisplay math="f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Métodos de eliminación de Gauss-Jordan, inversión de matrices y regla de Cramer."
-                      : "Gauss-Jordan elimination methods, matrix inversion, and Cramer's rule."}
+                      ? "Distribuciones discretas y continuas, propiedades y aplicaciones en ingeniería."
+                      : "Discrete and continuous distributions, properties, and applications in engineering."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/systems-of-equations" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/distributions" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Linear Transformations */}
-              <Card id="linear-transformations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Statistical Inference */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>{language === "es" ? "Transformaciones Lineales" : "Linear Transformations"}</CardTitle>
+                  <CardTitle>{language === "es" ? "Inferencia Estadística" : "Statistical Inference"}</CardTitle>
                   <CardDescription>
-                    {language === "es" ? "Funciones entre espacios vectoriales" : "Functions between vector spaces"}
+                    {language === "es"
+                      ? "Métodos para hacer conclusiones a partir de datos"
+                      : "Methods for drawing conclusions from data"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="T(\vec{v}) = A\vec{v}" />
+                    <MathDisplay math="\hat{\theta} = \arg\max_{\theta} L(\theta|x)" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Propiedades, representación matricial, núcleo e imagen de transformaciones lineales."
-                      : "Properties, matrix representation, kernel, and image of linear transformations."}
+                      ? "Estimación puntual, intervalos de confianza, pruebas de hipótesis y métodos bayesianos."
+                      : "Point estimation, confidence intervals, hypothesis testing, and Bayesian methods."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/linear-transformations" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/inference" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Eigenvalues and Eigenvectors */}
-              <Card id="eigenvalues-eigenvectors" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Regression Analysis */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Valores y Vectores Propios" : "Eigenvalues and Eigenvectors"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Análisis de Regresión" : "Regression Analysis"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Análisis de valores y vectores característicos"
-                      : "Analysis of characteristic values and vectors"}
+                      ? "Modelado de relaciones entre variables"
+                      : "Modeling relationships between variables"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="A\vec{v} = \lambda\vec{v}" />
+                    <MathDisplay math="y = \beta_0 + \beta_1 x + \varepsilon" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Cálculo de valores y vectores propios, diagonalización y aplicaciones."
-                      : "Calculation of eigenvalues and eigenvectors, diagonalization, and applications."}
+                      ? "Regresión lineal simple y múltiple, evaluación de modelos y predicción."
+                      : "Simple and multiple linear regression, model evaluation, and prediction."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/eigenvalues-eigenvectors" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/regression" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Orthogonality and Least Squares */}
-              <Card id="orthogonality-least-squares" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Experimental Design */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Ortogonalidad y Mínimos Cuadrados" : "Orthogonality and Least Squares"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Diseño Experimental" : "Experimental Design"}</CardTitle>
                   <CardDescription>
-                    {language === "es" ? "Proyecciones y aproximaciones" : "Projections and approximations"}
+                    {language === "es"
+                      ? "Planificación de experimentos para obtener datos válidos"
+                      : "Planning experiments to obtain valid data"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\vec{u} \cdot \vec{v} = 0" />
+                    <MathDisplay math="y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \varepsilon_{ijk}" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Espacios ortogonales, proyecciones, método de mínimos cuadrados y aplicaciones."
-                      : "Orthogonal spaces, projections, least squares method, and applications."}
+                      ? "Principios de diseño, ANOVA, diseños factoriales y optimización de experimentos."
+                      : "Design principles, ANOVA, factorial designs, and experiment optimization."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/orthogonality-least-squares" className="w-full">
+                    <Link href="/topics/mathematics/probability-statistics/experimental-design" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
@@ -279,53 +279,53 @@ export default function LinearAlgebraPage() {
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
-                  ? "El álgebra lineal tiene numerosas aplicaciones en ingeniería y ciencia:"
-                  : "Linear algebra has numerous applications in engineering and science:"}
+                  ? "La probabilidad y la estadística tienen numerosas aplicaciones en ingeniería y ciencia:"
+                  : "Probability and statistics have numerous applications in engineering and science:"}
               </p>
 
               <ul>
                 <li>
-                  <strong>{language === "es" ? "Gráficos por Computadora:" : "Computer Graphics:"}</strong>{" "}
+                  <strong>{language === "es" ? "Control de Calidad:" : "Quality Control:"}</strong>{" "}
                   {language === "es"
-                    ? "Transformaciones, rotaciones y proyecciones en 2D y 3D."
-                    : "Transformations, rotations, and projections in 2D and 3D."}
+                    ? "Muestreo, gráficos de control y análisis de capacidad de procesos."
+                    : "Sampling, control charts, and process capability analysis."}
+                </li>
+                <li>
+                  <strong>{language === "es" ? "Fiabilidad:" : "Reliability:"}</strong>{" "}
+                  {language === "es"
+                    ? "Análisis de fallos, tiempo medio entre fallos y mantenimiento predictivo."
+                    : "Failure analysis, mean time between failures, and predictive maintenance."}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Análisis de Datos:" : "Data Analysis:"}</strong>{" "}
                   {language === "es"
-                    ? "Reducción de dimensionalidad, análisis de componentes principales (PCA)."
-                    : "Dimensionality reduction, principal component analysis (PCA)."}
+                    ? "Minería de datos, aprendizaje automático y análisis predictivo."
+                    : "Data mining, machine learning, and predictive analytics."}
                 </li>
                 <li>
-                  <strong>{language === "es" ? "Aprendizaje Automático:" : "Machine Learning:"}</strong>{" "}
+                  <strong>{language === "es" ? "Investigación de Operaciones:" : "Operations Research:"}</strong>{" "}
                   {language === "es"
-                    ? "Regresión lineal, redes neuronales y algoritmos de clasificación."
-                    : "Linear regression, neural networks, and classification algorithms."}
+                    ? "Teoría de colas, simulación y optimización estocástica."
+                    : "Queueing theory, simulation, and stochastic optimization."}
                 </li>
                 <li>
-                  <strong>{language === "es" ? "Física:" : "Physics:"}</strong>{" "}
+                  <strong>{language === "es" ? "Ingeniería Financiera:" : "Financial Engineering:"}</strong>{" "}
                   {language === "es"
-                    ? "Mecánica cuántica, teoría de circuitos y mecánica de fluidos."
-                    : "Quantum mechanics, circuit theory, and fluid mechanics."}
+                    ? "Gestión de riesgos, valoración de opciones y análisis de inversiones."
+                    : "Risk management, option pricing, and investment analysis."}
                 </li>
                 <li>
-                  <strong>{language === "es" ? "Ingeniería Estructural:" : "Structural Engineering:"}</strong>{" "}
+                  <strong>{language === "es" ? "Bioestadística:" : "Biostatistics:"}</strong>{" "}
                   {language === "es"
-                    ? "Análisis de estructuras, método de elementos finitos."
-                    : "Structural analysis, finite element method."}
-                </li>
-                <li>
-                  <strong>{language === "es" ? "Optimización:" : "Optimization:"}</strong>{" "}
-                  {language === "es"
-                    ? "Programación lineal y problemas de optimización."
-                    : "Linear programming and optimization problems."}
+                    ? "Diseño de ensayos clínicos, epidemiología y análisis de supervivencia."
+                    : "Clinical trial design, epidemiology, and survival analysis."}
                 </li>
               </ul>
 
               <p>
                 {language === "es"
-                  ? "En ingeniería, el álgebra lineal proporciona herramientas esenciales para modelar sistemas, analizar datos y resolver problemas complejos de manera eficiente."
-                  : "In engineering, linear algebra provides essential tools for modeling systems, analyzing data, and solving complex problems efficiently."}
+                  ? "En ingeniería, la probabilidad y la estadística son esenciales para la toma de decisiones basada en datos, la cuantificación de la incertidumbre y la optimización de sistemas y procesos."
+                  : "In engineering, probability and statistics are essential for data-driven decision making, quantifying uncertainty, and optimizing systems and processes."}
               </p>
             </div>
           </section>
@@ -350,17 +350,17 @@ export default function LinearAlgebraPage() {
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Vectores y Espacios Vectoriales" : "Vectors and Vector Spaces"}
+                        {language === "es" ? "Teoría de la Probabilidad" : "Probability Theory"}
                       </a>
                     </li>
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Matrices y Operaciones" : "Matrices and Operations"}
+                        {language === "es" ? "Estadística Descriptiva" : "Descriptive Statistics"}
                       </a>
                     </li>
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Sistemas de Ecuaciones" : "Systems of Equations"}
+                        {language === "es" ? "Inferencia Estadística" : "Statistical Inference"}
                       </a>
                     </li>
                   </ul>
@@ -380,12 +380,9 @@ export default function LinearAlgebraPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "Temas Relacionados" : "Related Topics"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link
-                    href="/topics/mathematics/differential-equations"
-                    className="text-primary hover:underline flex items-center"
-                  >
+                  <Link href="/topics/mathematics/calculus" className="text-primary hover:underline flex items-center">
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    {language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}
+                    {language === "es" ? "Cálculo" : "Calculus"}
                   </Link>
                 </li>
                 <li>
@@ -398,9 +395,9 @@ export default function LinearAlgebraPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/topics/physics/mechanics" className="text-primary hover:underline flex items-center">
+                  <Link href="/topics/software/data-science" className="text-primary hover:underline flex items-center">
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    {language === "es" ? "Mecánica" : "Mechanics"}
+                    {language === "es" ? "Ciencia de Datos" : "Data Science"}
                   </Link>
                 </li>
               </ul>
@@ -425,7 +422,7 @@ export default function LinearAlgebraPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=linear-algebra"
+                      href="/resources/solved-problems?topic=probability-statistics"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -441,11 +438,11 @@ export default function LinearAlgebraPage() {
                     <h4 className="text-sm font-medium">{t("common.recommended_reading")}</h4>
                     <p className="text-xs text-muted-foreground mb-1">
                       {language === "es"
-                        ? "Libros y artículos sobre álgebra lineal"
-                        : "Books and articles on linear algebra"}
+                        ? "Libros y artículos sobre probabilidad y estadística"
+                        : "Books and articles on probability and statistics"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=linear-algebra"
+                      href="/resources/bibliography?topic=probability-statistics"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}
@@ -459,14 +456,17 @@ export default function LinearAlgebraPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium">
-                      {language === "es" ? "Calculadora Matricial" : "Matrix Calculator"}
+                      {language === "es" ? "Calculadora Estadística" : "Statistical Calculator"}
                     </h4>
                     <p className="text-xs text-muted-foreground mb-1">
                       {language === "es"
-                        ? "Herramienta interactiva para operaciones matriciales"
-                        : "Interactive tool for matrix operations"}
+                        ? "Herramienta interactiva para cálculos estadísticos"
+                        : "Interactive tool for statistical calculations"}
                     </p>
-                    <Link href="/resources/tools/matrix-calculator" className="text-xs text-primary hover:underline">
+                    <Link
+                      href="/resources/tools/statistical-calculator"
+                      className="text-xs text-primary hover:underline"
+                    >
                       {t("common.use_calculator")}
                     </Link>
                   </div>
@@ -480,7 +480,7 @@ export default function LinearAlgebraPage() {
             <div className="relative h-48">
               <Image
                 src="/placeholder.svg?height=200&width=400"
-                alt="Linear transformation visualization"
+                alt="Normal distribution visualization"
                 fill
                 className="object-cover"
               />
@@ -488,8 +488,8 @@ export default function LinearAlgebraPage() {
             <CardContent className="pt-4">
               <p className="text-sm text-center text-muted-foreground">
                 {language === "es"
-                  ? "Visualización de una transformación lineal en el plano"
-                  : "Visualization of a linear transformation in the plane"}
+                  ? "Visualización de la distribución normal y sus propiedades"
+                  : "Visualization of the normal distribution and its properties"}
               </p>
             </CardContent>
           </Card>
@@ -503,8 +503,8 @@ export default function LinearAlgebraPage() {
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 {language === "es"
-                  ? "Accede a nuestra colección completa de fórmulas matemáticas, incluyendo fórmulas de álgebra lineal."
-                  : "Access our comprehensive collection of mathematical formulas, including linear algebra formulas."}
+                  ? "Accede a nuestra colección completa de fórmulas matemáticas, incluyendo fórmulas de probabilidad y estadística."
+                  : "Access our comprehensive collection of mathematical formulas, including probability and statistics formulas."}
               </p>
               <Button variant="outline" size="sm" asChild className="w-full">
                 <Link href="/resources/tools/formula-database">{t("common.explore_database")}</Link>
@@ -526,16 +526,13 @@ export default function LinearAlgebraPage() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{language === "es" ? "Siguiente Tema" : "Next Topic"}</h3>
-                <Link
-                  href="/topics/mathematics/differential-equations"
-                  className="text-primary hover:underline text-lg"
-                >
-                  {language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}
+                <Link href="/topics/mathematics/numerical-methods" className="text-primary hover:underline text-lg">
+                  {language === "es" ? "Métodos Numéricos" : "Numerical Methods"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
                   {language === "es"
-                    ? "Aprende sobre ecuaciones que involucran derivadas y sus aplicaciones"
-                    : "Learn about equations involving derivatives and their applications"}
+                    ? "Aprende técnicas computacionales para resolver problemas matemáticos"
+                    : "Learn computational techniques for solving mathematical problems"}
                 </p>
               </div>
             </div>
@@ -550,13 +547,13 @@ export default function LinearAlgebraPage() {
                 <h3 className="font-semibold mb-1">
                   {language === "es" ? "Aplicación Relacionada" : "Related Application"}
                 </h3>
-                <Link href="/topics/physics/mechanics" className="text-primary hover:underline text-lg">
-                  {language === "es" ? "Mecánica" : "Mechanics"}
+                <Link href="/topics/industrial/quality-control" className="text-primary hover:underline text-lg">
+                  {language === "es" ? "Control de Calidad" : "Quality Control"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
                   {language === "es"
-                    ? "Observa cómo se aplica el álgebra lineal en física e ingeniería"
-                    : "See how linear algebra is applied in physics and engineering"}
+                    ? "Observa cómo se aplican la probabilidad y la estadística en ingeniería industrial"
+                    : "See how probability and statistics are applied in industrial engineering"}
                 </p>
               </div>
             </div>

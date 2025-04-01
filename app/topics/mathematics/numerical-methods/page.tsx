@@ -8,7 +8,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
-export default function LinearAlgebraPage() {
+export default function NumericalMethodsPage() {
   const { t, language } = useLanguage()
 
   return (
@@ -27,19 +27,21 @@ export default function LinearAlgebraPage() {
           {t("math.title")}
         </Link>
         <ChevronRight className="h-4 w-4 mx-1" />
-        <span className="text-foreground font-medium">{language === "es" ? "Álgebra Lineal" : "Linear Algebra"}</span>
+        <span className="text-foreground font-medium">
+          {language === "es" ? "Métodos Numéricos" : "Numerical Methods"}
+        </span>
       </div>
 
       {/* Page Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">
-            {language === "es" ? "Álgebra Lineal" : "Linear Algebra"}
+            {language === "es" ? "Métodos Numéricos" : "Numerical Methods"}
           </h1>
           <p className="text-muted-foreground">
             {language === "es"
-              ? "El estudio de vectores, matrices y transformaciones lineales"
-              : "The study of vectors, matrices, and linear transformations"}
+              ? "Técnicas computacionales para resolver problemas matemáticos"
+              : "Computational techniques for solving mathematical problems"}
           </p>
         </div>
         <Button variant="outline" size="sm" asChild>
@@ -57,26 +59,26 @@ export default function LinearAlgebraPage() {
           {/* Introduction Section */}
           <section>
             <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
-              {language === "es" ? "Introducción al Álgebra Lineal" : "Introduction to Linear Algebra"}
+              {language === "es" ? "Introducción a los Métodos Numéricos" : "Introduction to Numerical Methods"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
-                  ? "El álgebra lineal es una rama de las matemáticas que se ocupa de los espacios vectoriales, las transformaciones lineales, los sistemas de ecuaciones lineales y sus representaciones a través de matrices y determinantes. Es fundamental para la ingeniería, la física, la informática y muchas otras disciplinas."
-                  : "Linear algebra is a branch of mathematics that deals with vector spaces, linear transformations, systems of linear equations, and their representations through matrices and determinants. It is fundamental to engineering, physics, computer science, and many other disciplines."}
+                  ? "Los métodos numéricos son técnicas mediante las cuales se formulan problemas matemáticos para que puedan resolverse utilizando operaciones aritméticas. Estos métodos se aplican cuando no es posible o es demasiado complejo obtener soluciones analíticas exactas, o cuando se requieren aproximaciones numéricas eficientes."
+                  : "Numerical methods are techniques by which mathematical problems are formulated so that they can be solved using arithmetic operations. These methods are applied when it is not possible or too complex to obtain exact analytical solutions, or when efficient numerical approximations are required."}
               </p>
               <p>
                 {language === "es"
-                  ? "Los conceptos clave del álgebra lineal incluyen vectores, matrices, sistemas de ecuaciones lineales, espacios vectoriales, transformaciones lineales, valores propios y vectores propios. Estos conceptos proporcionan herramientas poderosas para modelar y resolver problemas en diversas áreas de la ciencia y la ingeniería."
-                  : "Key concepts in linear algebra include vectors, matrices, systems of linear equations, vector spaces, linear transformations, eigenvalues, and eigenvectors. These concepts provide powerful tools for modeling and solving problems in various areas of science and engineering."}
+                  ? "Los métodos numéricos son fundamentales en ingeniería, física, economía y muchas otras disciplinas donde se necesitan soluciones computacionales a problemas matemáticos complejos. Con el aumento de la potencia computacional, estos métodos se han vuelto cada vez más importantes y sofisticados."
+                  : "Numerical methods are fundamental in engineering, physics, economics, and many other disciplines where computational solutions to complex mathematical problems are needed. With the increase in computational power, these methods have become increasingly important and sophisticated."}
               </p>
               <div className="my-4 text-center">
-                <MathDisplay math="A\vec{x} = \vec{b}" />
+                <MathDisplay math="x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}" />
               </div>
               <p>
                 {language === "es"
-                  ? "Esta ecuación representa un sistema de ecuaciones lineales, donde A es una matriz de coeficientes, x es un vector de incógnitas, y b es un vector de términos constantes. Resolver este sistema es uno de los problemas fundamentales del álgebra lineal."
-                  : "This equation represents a system of linear equations, where A is a coefficient matrix, x is a vector of unknowns, and b is a vector of constant terms. Solving this system is one of the fundamental problems in linear algebra."}
+                  ? "Esta es la fórmula del método de Newton-Raphson, una técnica iterativa para encontrar aproximaciones a las raíces de una función real. Es un ejemplo de un método numérico ampliamente utilizado en ingeniería."
+                  : "This is the formula for the Newton-Raphson method, an iterative technique for finding approximations to the roots of a real-valued function. It is an example of a widely used numerical method in engineering."}
               </p>
             </div>
           </section>
@@ -88,180 +90,172 @@ export default function LinearAlgebraPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Vectors and Vector Spaces */}
-              <Card id="vectors-and-spaces" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Root Finding */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Vectores y Espacios Vectoriales" : "Vectors and Vector Spaces"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Búsqueda de Raíces" : "Root Finding"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Fundamentos de vectores y sus propiedades"
-                      : "Fundamentals of vectors and their properties"}
+                      ? "Métodos para encontrar soluciones de ecuaciones"
+                      : "Methods for finding solutions to equations"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}" />
+                    <MathDisplay math="f(x) = 0" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Estudio de vectores, operaciones vectoriales, espacios vectoriales, bases y dimensiones."
-                      : "Study of vectors, vector operations, vector spaces, bases, and dimensions."}
+                      ? "Métodos de bisección, Newton-Raphson, secante y punto fijo para encontrar raíces de ecuaciones no lineales."
+                      : "Bisection, Newton-Raphson, secant, and fixed-point methods for finding roots of nonlinear equations."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/vectors-and-vector-spaces" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/root-finding" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Matrices and Matrix Operations */}
-              <Card id="matrices-and-operations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Linear Systems */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Matrices y Operaciones Matriciales" : "Matrices and Matrix Operations"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Sistemas Lineales" : "Linear Systems"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Manipulación y operaciones con matrices"
-                      : "Manipulation and operations with matrices"}
+                      ? "Resolución de sistemas de ecuaciones lineales"
+                      : "Solving systems of linear equations"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}" />
+                    <MathDisplay math="A\vec{x} = \vec{b}" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Operaciones matriciales, propiedades, tipos especiales de matrices y aplicaciones."
-                      : "Matrix operations, properties, special types of matrices, and applications."}
+                      ? "Métodos directos (eliminación de Gauss, factorización LU) y métodos iterativos (Jacobi, Gauss-Seidel)."
+                      : "Direct methods (Gaussian elimination, LU factorization) and iterative methods (Jacobi, Gauss-Seidel)."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/matrices-and-operations" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/linear-systems" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Systems of Linear Equations */}
-              <Card id="systems-of-equations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Interpolation */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Sistemas de Ecuaciones Lineales" : "Systems of Linear Equations"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Interpolación" : "Interpolation"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Métodos para resolver sistemas de ecuaciones"
-                      : "Methods for solving systems of equations"}
+                      ? "Construcción de funciones a partir de datos discretos"
+                      : "Constructing functions from discrete data"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\begin{cases} a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\ \vdots \\ a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m \end{cases}" />
+                    <MathDisplay math="P_n(x) = \sum_{i=0}^{n} y_i \prod_{j=0, j \neq i}^{n} \frac{x - x_j}{x_i - x_j}" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Métodos de eliminación de Gauss-Jordan, inversión de matrices y regla de Cramer."
-                      : "Gauss-Jordan elimination methods, matrix inversion, and Cramer's rule."}
+                      ? "Interpolación polinómica, splines, interpolación de Lagrange y Newton."
+                      : "Polynomial interpolation, splines, Lagrange and Newton interpolation."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/systems-of-equations" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/interpolation" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Linear Transformations */}
-              <Card id="linear-transformations" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Numerical Integration */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>{language === "es" ? "Transformaciones Lineales" : "Linear Transformations"}</CardTitle>
+                  <CardTitle>{language === "es" ? "Integración Numérica" : "Numerical Integration"}</CardTitle>
                   <CardDescription>
-                    {language === "es" ? "Funciones entre espacios vectoriales" : "Functions between vector spaces"}
+                    {language === "es" ? "Aproximación de integrales definidas" : "Approximating definite integrals"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="T(\vec{v}) = A\vec{v}" />
+                    <MathDisplay math="\int_a^b f(x) \, dx \approx \sum_{i=0}^{n} w_i f(x_i)" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Propiedades, representación matricial, núcleo e imagen de transformaciones lineales."
-                      : "Properties, matrix representation, kernel, and image of linear transformations."}
+                      ? "Reglas de Newton-Cotes (trapecio, Simpson), cuadratura gaussiana y métodos adaptativos."
+                      : "Newton-Cotes rules (trapezoidal, Simpson's), Gaussian quadrature, and adaptive methods."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/linear-transformations" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/integration" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Eigenvalues and Eigenvectors */}
-              <Card id="eigenvalues-eigenvectors" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Differential Equations */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Valores y Vectores Propios" : "Eigenvalues and Eigenvectors"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}</CardTitle>
                   <CardDescription>
                     {language === "es"
-                      ? "Análisis de valores y vectores característicos"
-                      : "Analysis of characteristic values and vectors"}
+                      ? "Solución numérica de ecuaciones diferenciales"
+                      : "Numerical solution of differential equations"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="A\vec{v} = \lambda\vec{v}" />
+                    <MathDisplay math="y_{n+1} = y_n + h f(t_n, y_n)" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Cálculo de valores y vectores propios, diagonalización y aplicaciones."
-                      : "Calculation of eigenvalues and eigenvectors, diagonalization, and applications."}
+                      ? "Métodos de Euler, Runge-Kutta, métodos de paso múltiple y métodos para EDPs."
+                      : "Euler methods, Runge-Kutta methods, multi-step methods, and methods for PDEs."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/eigenvalues-eigenvectors" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/differential-equations" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Orthogonality and Least Squares */}
-              <Card id="orthogonality-least-squares" className="hover:shadow-md transition-shadow h-full flex flex-col">
+              {/* Optimization */}
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle>
-                    {language === "es" ? "Ortogonalidad y Mínimos Cuadrados" : "Orthogonality and Least Squares"}
-                  </CardTitle>
+                  <CardTitle>{language === "es" ? "Optimización" : "Optimization"}</CardTitle>
                   <CardDescription>
-                    {language === "es" ? "Proyecciones y aproximaciones" : "Projections and approximations"}
+                    {language === "es"
+                      ? "Búsqueda de valores óptimos de funciones"
+                      : "Finding optimal values of functions"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center my-4">
-                    <MathDisplay math="\vec{u} \cdot \vec{v} = 0" />
+                    <MathDisplay math="\min_{\vec{x}} f(\vec{x}) \quad \text{subject to} \quad g_i(\vec{x}) \leq 0" />
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
-                      ? "Espacios ortogonales, proyecciones, método de mínimos cuadrados y aplicaciones."
-                      : "Orthogonal spaces, projections, least squares method, and applications."}
+                      ? "Métodos de descenso, algoritmos genéticos, programación lineal y no lineal."
+                      : "Descent methods, genetic algorithms, linear and nonlinear programming."}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link href="/topics/mathematics/linear-algebra/orthogonality-least-squares" className="w-full">
+                    <Link href="/topics/mathematics/numerical-methods/optimization" className="w-full">
                       {language === "es" ? "Aprender Más" : "Learn More"}
                     </Link>
                   </Button>
@@ -279,53 +273,53 @@ export default function LinearAlgebraPage() {
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
-                  ? "El álgebra lineal tiene numerosas aplicaciones en ingeniería y ciencia:"
-                  : "Linear algebra has numerous applications in engineering and science:"}
+                  ? "Los métodos numéricos tienen numerosas aplicaciones en ingeniería y ciencia:"
+                  : "Numerical methods have numerous applications in engineering and science:"}
               </p>
 
               <ul>
                 <li>
-                  <strong>{language === "es" ? "Gráficos por Computadora:" : "Computer Graphics:"}</strong>{" "}
+                  <strong>{language === "es" ? "Análisis Estructural:" : "Structural Analysis:"}</strong>{" "}
                   {language === "es"
-                    ? "Transformaciones, rotaciones y proyecciones en 2D y 3D."
-                    : "Transformations, rotations, and projections in 2D and 3D."}
+                    ? "Método de elementos finitos para analizar tensiones y deformaciones."
+                    : "Finite element method for analyzing stresses and deformations."}
                 </li>
                 <li>
-                  <strong>{language === "es" ? "Análisis de Datos:" : "Data Analysis:"}</strong>{" "}
+                  <strong>{language === "es" ? "Dinámica de Fluidos:" : "Fluid Dynamics:"}</strong>{" "}
                   {language === "es"
-                    ? "Reducción de dimensionalidad, análisis de componentes principales (PCA)."
-                    : "Dimensionality reduction, principal component analysis (PCA)."}
+                    ? "Dinámica de fluidos computacional (CFD) para modelar flujos."
+                    : "Computational fluid dynamics (CFD) for modeling flows."}
+                </li>
+                <li>
+                  <strong>{language === "es" ? "Control de Sistemas:" : "Control Systems:"}</strong>{" "}
+                  {language === "es"
+                    ? "Simulación y optimización de sistemas de control."
+                    : "Simulation and optimization of control systems."}
+                </li>
+                <li>
+                  <strong>{language === "es" ? "Procesamiento de Señales:" : "Signal Processing:"}</strong>{" "}
+                  {language === "es"
+                    ? "Transformada rápida de Fourier (FFT) y filtrado digital."
+                    : "Fast Fourier Transform (FFT) and digital filtering."}
+                </li>
+                <li>
+                  <strong>{language === "es" ? "Modelado Financiero:" : "Financial Modeling:"}</strong>{" "}
+                  {language === "es"
+                    ? "Valoración de opciones y gestión de riesgos."
+                    : "Option pricing and risk management."}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Aprendizaje Automático:" : "Machine Learning:"}</strong>{" "}
                   {language === "es"
-                    ? "Regresión lineal, redes neuronales y algoritmos de clasificación."
-                    : "Linear regression, neural networks, and classification algorithms."}
-                </li>
-                <li>
-                  <strong>{language === "es" ? "Física:" : "Physics:"}</strong>{" "}
-                  {language === "es"
-                    ? "Mecánica cuántica, teoría de circuitos y mecánica de fluidos."
-                    : "Quantum mechanics, circuit theory, and fluid mechanics."}
-                </li>
-                <li>
-                  <strong>{language === "es" ? "Ingeniería Estructural:" : "Structural Engineering:"}</strong>{" "}
-                  {language === "es"
-                    ? "Análisis de estructuras, método de elementos finitos."
-                    : "Structural analysis, finite element method."}
-                </li>
-                <li>
-                  <strong>{language === "es" ? "Optimización:" : "Optimization:"}</strong>{" "}
-                  {language === "es"
-                    ? "Programación lineal y problemas de optimización."
-                    : "Linear programming and optimization problems."}
+                    ? "Algoritmos de optimización para entrenar modelos."
+                    : "Optimization algorithms for training models."}
                 </li>
               </ul>
 
               <p>
                 {language === "es"
-                  ? "En ingeniería, el álgebra lineal proporciona herramientas esenciales para modelar sistemas, analizar datos y resolver problemas complejos de manera eficiente."
-                  : "In engineering, linear algebra provides essential tools for modeling systems, analyzing data, and solving complex problems efficiently."}
+                  ? "En ingeniería, los métodos numéricos son esenciales para simular y analizar sistemas complejos, optimizar diseños y resolver problemas que no tienen soluciones analíticas cerradas."
+                  : "In engineering, numerical methods are essential for simulating and analyzing complex systems, optimizing designs, and solving problems that do not have closed-form analytical solutions."}
               </p>
             </div>
           </section>
@@ -350,17 +344,17 @@ export default function LinearAlgebraPage() {
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Vectores y Espacios Vectoriales" : "Vectors and Vector Spaces"}
+                        {language === "es" ? "Búsqueda de Raíces" : "Root Finding"}
                       </a>
                     </li>
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Matrices y Operaciones" : "Matrices and Operations"}
+                        {language === "es" ? "Sistemas Lineales" : "Linear Systems"}
                       </a>
                     </li>
                     <li>
                       <a href="#key-topics" className="text-muted-foreground group-hover:text-primary">
-                        {language === "es" ? "Sistemas de Ecuaciones" : "Systems of Equations"}
+                        {language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}
                       </a>
                     </li>
                   </ul>
@@ -380,6 +374,12 @@ export default function LinearAlgebraPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "Temas Relacionados" : "Related Topics"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
+                  <Link href="/topics/mathematics/calculus" className="text-primary hover:underline flex items-center">
+                    <ChevronRight className="h-3 w-3 mr-1" />
+                    {language === "es" ? "Cálculo" : "Calculus"}
+                  </Link>
+                </li>
+                <li>
                   <Link
                     href="/topics/mathematics/differential-equations"
                     className="text-primary hover:underline flex items-center"
@@ -389,18 +389,9 @@ export default function LinearAlgebraPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/topics/mathematics/numerical-methods"
-                    className="text-primary hover:underline flex items-center"
-                  >
+                  <Link href="/topics/software/programming" className="text-primary hover:underline flex items-center">
                     <ChevronRight className="h-3 w-3 mr-1" />
-                    {language === "es" ? "Métodos Numéricos" : "Numerical Methods"}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/topics/physics/mechanics" className="text-primary hover:underline flex items-center">
-                    <ChevronRight className="h-3 w-3 mr-1" />
-                    {language === "es" ? "Mecánica" : "Mechanics"}
+                    {language === "es" ? "Programación" : "Programming"}
                   </Link>
                 </li>
               </ul>
@@ -425,7 +416,7 @@ export default function LinearAlgebraPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=linear-algebra"
+                      href="/resources/solved-problems?topic=numerical-methods"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -441,11 +432,11 @@ export default function LinearAlgebraPage() {
                     <h4 className="text-sm font-medium">{t("common.recommended_reading")}</h4>
                     <p className="text-xs text-muted-foreground mb-1">
                       {language === "es"
-                        ? "Libros y artículos sobre álgebra lineal"
-                        : "Books and articles on linear algebra"}
+                        ? "Libros y artículos sobre métodos numéricos"
+                        : "Books and articles on numerical methods"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=linear-algebra"
+                      href="/resources/bibliography?topic=numerical-methods"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}
@@ -459,14 +450,14 @@ export default function LinearAlgebraPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium">
-                      {language === "es" ? "Calculadora Matricial" : "Matrix Calculator"}
+                      {language === "es" ? "Calculadora Numérica" : "Numerical Calculator"}
                     </h4>
                     <p className="text-xs text-muted-foreground mb-1">
                       {language === "es"
-                        ? "Herramienta interactiva para operaciones matriciales"
-                        : "Interactive tool for matrix operations"}
+                        ? "Herramienta interactiva para métodos numéricos"
+                        : "Interactive tool for numerical methods"}
                     </p>
-                    <Link href="/resources/tools/matrix-calculator" className="text-xs text-primary hover:underline">
+                    <Link href="/resources/tools/numerical-calculator" className="text-xs text-primary hover:underline">
                       {t("common.use_calculator")}
                     </Link>
                   </div>
@@ -480,7 +471,7 @@ export default function LinearAlgebraPage() {
             <div className="relative h-48">
               <Image
                 src="/placeholder.svg?height=200&width=400"
-                alt="Linear transformation visualization"
+                alt="Numerical method visualization"
                 fill
                 className="object-cover"
               />
@@ -488,8 +479,8 @@ export default function LinearAlgebraPage() {
             <CardContent className="pt-4">
               <p className="text-sm text-center text-muted-foreground">
                 {language === "es"
-                  ? "Visualización de una transformación lineal en el plano"
-                  : "Visualization of a linear transformation in the plane"}
+                  ? "Visualización de convergencia en un método numérico iterativo"
+                  : "Visualization of convergence in an iterative numerical method"}
               </p>
             </CardContent>
           </Card>
@@ -503,8 +494,8 @@ export default function LinearAlgebraPage() {
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
                 {language === "es"
-                  ? "Accede a nuestra colección completa de fórmulas matemáticas, incluyendo fórmulas de álgebra lineal."
-                  : "Access our comprehensive collection of mathematical formulas, including linear algebra formulas."}
+                  ? "Accede a nuestra colección completa de fórmulas matemáticas, incluyendo algoritmos de métodos numéricos."
+                  : "Access our comprehensive collection of mathematical formulas, including numerical method algorithms."}
               </p>
               <Button variant="outline" size="sm" asChild className="w-full">
                 <Link href="/resources/tools/formula-database">{t("common.explore_database")}</Link>
@@ -526,16 +517,13 @@ export default function LinearAlgebraPage() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{language === "es" ? "Siguiente Tema" : "Next Topic"}</h3>
-                <Link
-                  href="/topics/mathematics/differential-equations"
-                  className="text-primary hover:underline text-lg"
-                >
-                  {language === "es" ? "Ecuaciones Diferenciales" : "Differential Equations"}
+                <Link href="/topics/software/programming" className="text-primary hover:underline text-lg">
+                  {language === "es" ? "Programación" : "Programming"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
                   {language === "es"
-                    ? "Aprende sobre ecuaciones que involucran derivadas y sus aplicaciones"
-                    : "Learn about equations involving derivatives and their applications"}
+                    ? "Aprende a implementar métodos numéricos en código"
+                    : "Learn to implement numerical methods in code"}
                 </p>
               </div>
             </div>
@@ -550,13 +538,16 @@ export default function LinearAlgebraPage() {
                 <h3 className="font-semibold mb-1">
                   {language === "es" ? "Aplicación Relacionada" : "Related Application"}
                 </h3>
-                <Link href="/topics/physics/mechanics" className="text-primary hover:underline text-lg">
-                  {language === "es" ? "Mecánica" : "Mechanics"}
+                <Link
+                  href="/topics/mechanical/finite-element-analysis"
+                  className="text-primary hover:underline text-lg"
+                >
+                  {language === "es" ? "Análisis de Elementos Finitos" : "Finite Element Analysis"}
                 </Link>
                 <p className="text-sm text-muted-foreground mt-1">
                   {language === "es"
-                    ? "Observa cómo se aplica el álgebra lineal en física e ingeniería"
-                    : "See how linear algebra is applied in physics and engineering"}
+                    ? "Observa cómo se aplican los métodos numéricos en ingeniería mecánica"
+                    : "See how numerical methods are applied in mechanical engineering"}
                 </p>
               </div>
             </div>

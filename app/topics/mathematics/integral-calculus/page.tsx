@@ -50,7 +50,9 @@ export default function IntegralCalculusPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{t("integral.intro")}</h2>
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {t("integral.intro")}
+            </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 {language === "es"
@@ -83,16 +85,18 @@ export default function IntegralCalculusPage() {
 
           {/* Methods of Integration Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-6">{t("integral.methods")}</h2>
+            <h2 id="methods" className="text-2xl font-bold mb-6 scroll-mt-16">
+              {t("integral.methods")}
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Integration by Parts */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card id="integration-by-parts" className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{t("integration.by_parts")}</CardTitle>
                   <CardDescription>{t("integration.by_parts_desc")}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int u \, dv = uv - \int v \, du" />
                   </div>
@@ -115,12 +119,12 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Integration by Substitution */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card id="integration-by-substitution" className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{t("integration.by_substitution")}</CardTitle>
                   <CardDescription>{t("integration.by_substitution_desc")}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int f(g(x))g'(x) \, dx = \int f(u) \, du" />
                   </div>
@@ -143,12 +147,12 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Integration by Trigonometric Substitution */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card id="trigonometric-substitution" className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{t("integration.trigonometric")}</CardTitle>
                   <CardDescription>{t("integration.trigonometric_desc")}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int \sqrt{a^2 - x^2} \, dx \quad \text{let} \quad x = a\sin\theta" />
                   </div>
@@ -171,12 +175,12 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Integration by Universal Substitution */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card id="universal-substitution" className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{t("integration.universal")}</CardTitle>
                   <CardDescription>{t("integration.universal_desc")}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int R(\sin x, \cos x) \, dx \quad \text{let} \quad t = \tan\frac{x}{2}" />
                   </div>
@@ -202,11 +206,13 @@ export default function IntegralCalculusPage() {
 
           {/* Integral Formulas Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-6">{t("integral.formulas")}</h2>
+            <h2 id="formulas" className="text-2xl font-bold mb-6 scroll-mt-16">
+              {t("integral.formulas")}
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Basic Formulas */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{language === "es" ? "Fórmulas Básicas" : "Basic Formulas"}</CardTitle>
                   <CardDescription>
@@ -215,7 +221,7 @@ export default function IntegralCalculusPage() {
                       : "Fundamental integration formulas for common functions"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int x^n \, dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1" />
                   </div>
@@ -235,7 +241,7 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Algebraic Integrals */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{language === "es" ? "Integrales Algebraicas" : "Algebraic Integrals"}</CardTitle>
                   <CardDescription>
@@ -244,7 +250,7 @@ export default function IntegralCalculusPage() {
                       : "Formulas for integrating algebraic expressions"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int \frac{1}{a^2 + x^2} \, dx = \frac{1}{a} \arctan\left(\frac{x}{a}\right) + C" />
                   </div>
@@ -264,7 +270,7 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Trigonometric Integrals */}
-              <Card className="hover:shadow-md transition-shadow">
+              <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
                 <CardHeader>
                   <CardTitle>{language === "es" ? "Integrales Trigonométricas" : "Trigonometric Integrals"}</CardTitle>
                   <CardDescription>
@@ -273,7 +279,7 @@ export default function IntegralCalculusPage() {
                       : "Formulas for integrating trigonometric functions"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="text-center my-4">
                     <MathDisplay math="\int \sin^2(x) \, dx = \frac{x}{2} - \frac{\sin(2x)}{4} + C" />
                   </div>
@@ -293,7 +299,7 @@ export default function IntegralCalculusPage() {
               </Card>
 
               {/* Formula Database */}
-              <Card className="hover:shadow-md transition-shadow bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-100 dark:border-blue-900">
+              <Card className="hover:shadow-md transition-shadow bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-100 dark:border-blue-900 h-full flex flex-col">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Database className="h-5 w-5 mr-2 text-primary" />
@@ -305,7 +311,7 @@ export default function IntegralCalculusPage() {
                       : "Comprehensive collection of integration formulas"}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-sm text-muted-foreground">
                     {language === "es"
                       ? "Accede a nuestra base de datos completa de fórmulas de integración, con búsqueda por tipo, complejidad y función. Incluye fórmulas para todas las integrales estándar y funciones especiales."
@@ -325,7 +331,9 @@ export default function IntegralCalculusPage() {
 
           {/* Applications Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{t("integral.applications")}</h2>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {t("integral.applications")}
+            </h2>
 
             <div className="prose dark:prose-invert max-w-none">
               <p>
@@ -390,44 +398,44 @@ export default function IntegralCalculusPage() {
               <h3 className="font-semibold mb-3">{t("common.on_this_page")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {t("common.introduction")}
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                <li className="group">
+                  <a href="#methods" className="text-muted-foreground group-hover:text-primary">
                     {t("integral.methods")}
                   </a>
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#methods" className="text-muted-foreground group-hover:text-primary">
                         {t("integration.by_parts")}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#methods" className="text-muted-foreground group-hover:text-primary">
                         {t("integration.by_substitution")}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#methods" className="text-muted-foreground group-hover:text-primary">
                         {t("integration.trigonometric")}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#methods" className="text-muted-foreground group-hover:text-primary">
                         {t("integration.universal")}
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#formulas" className="text-muted-foreground hover:text-primary">
                     {t("integral.formulas")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#applications" className="text-muted-foreground hover:text-primary">
                     {t("common.applications")}
                   </a>
                 </li>

@@ -67,7 +67,7 @@ export default function UniversalSubstitutionPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Introducción a la Sustitución Universal" : "Introduction to Universal Substitution"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -118,7 +118,7 @@ export default function UniversalSubstitutionPage() {
 
           {/* When to Use Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="when-to-use" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Cuándo Usar la Sustitución Universal" : "When to Use Universal Substitution"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -162,7 +162,7 @@ export default function UniversalSubstitutionPage() {
 
           {/* Steps for Universal Substitution */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="steps" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Pasos para la Sustitución Universal" : "Steps for Universal Substitution"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -222,7 +222,9 @@ export default function UniversalSubstitutionPage() {
 
           {/* Examples Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Ejemplos" : "Examples"}
+            </h2>
 
             <div className="space-y-4">
               {/* Example 1 */}
@@ -488,7 +490,7 @@ export default function UniversalSubstitutionPage() {
 
           {/* Advantages and Limitations */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="advantages-limitations" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Ventajas y Limitaciones" : "Advantages and Limitations"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -539,7 +541,7 @@ export default function UniversalSubstitutionPage() {
 
           {/* Practice Problems */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="practice-problems" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
             </h2>
 
@@ -603,32 +605,32 @@ export default function UniversalSubstitutionPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#when-to-use" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Cuándo Usar la Sustitución Universal" : "When to Use Universal Substitution"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#steps" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Pasos para la Sustitución Universal" : "Steps for Universal Substitution"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#advantages-limitations" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ventajas y Limitaciones" : "Advantages and Limitations"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#practice-problems" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
                   </a>
                 </li>

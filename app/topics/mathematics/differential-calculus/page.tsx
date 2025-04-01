@@ -65,7 +65,7 @@ export default function DifferentialCalculusPage() {
         <div className="lg:col-span-2 space-y-8">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 id="introduction" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Introducción al Cálculo Diferencial" : "Introduction to Differential Calculus"}
             </h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -92,11 +92,15 @@ export default function DifferentialCalculusPage() {
 
           {/* Key Concepts Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Conceptos Clave" : "Key Concepts"}</h2>
+            <h2 id="key-concepts" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Conceptos Clave" : "Key Concepts"}
+            </h2>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-2">{language === "es" ? "La Derivada" : "The Derivative"}</h3>
+                <h3 id="the-derivative" className="text-xl font-semibold mb-2 scroll-mt-16">
+                  {language === "es" ? "La Derivada" : "The Derivative"}
+                </h3>
                 <div className="prose dark:prose-invert max-w-none">
                   <p>
                     {language === "es"
@@ -111,7 +115,7 @@ export default function DifferentialCalculusPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 id="basic-differentiation-rules" className="text-xl font-semibold mb-2 scroll-mt-16">
                   {language === "es" ? "Reglas Básicas de Diferenciación" : "Basic Differentiation Rules"}
                 </h3>
                 <Card>
@@ -194,7 +198,7 @@ export default function DifferentialCalculusPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 id="common-derivatives" className="text-xl font-semibold mb-2 scroll-mt-16">
                   {language === "es" ? "Derivadas Comunes" : "Common Derivatives"}
                 </h3>
                 <Card>
@@ -245,7 +249,9 @@ export default function DifferentialCalculusPage() {
 
           {/* Examples Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Ejemplos" : "Examples"}</h2>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Ejemplos" : "Examples"}
+            </h2>
 
             <div className="space-y-4">
               {/* Example 1 */}
@@ -437,7 +443,9 @@ export default function DifferentialCalculusPage() {
 
           {/* Applications Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Aplicaciones" : "Applications"}</h2>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {language === "es" ? "Aplicaciones" : "Applications"}
+            </h2>
 
             <div className="prose dark:prose-invert max-w-none">
               <p>
@@ -496,39 +504,39 @@ export default function DifferentialCalculusPage() {
               <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#introduction" className="text-primary hover:underline">
                     {language === "es" ? "Introducción" : "Introduction"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#key-concepts" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Conceptos Clave" : "Key Concepts"}
                   </a>
                   <ul className="pl-4 mt-1 space-y-1">
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#the-derivative" className="text-muted-foreground hover:text-primary">
                         {language === "es" ? "La Derivada" : "The Derivative"}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#basic-differentiation-rules" className="text-muted-foreground hover:text-primary">
                         {language === "es" ? "Reglas Básicas de Diferenciación" : "Basic Differentiation Rules"}
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-muted-foreground hover:text-primary">
+                      <a href="#common-derivatives" className="text-muted-foreground hover:text-primary">
                         {language === "es" ? "Derivadas Comunes" : "Common Derivatives"}
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Ejemplos" : "Examples"}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-primary">
+                  <a href="#applications" className="text-muted-foreground hover:text-primary">
                     {language === "es" ? "Aplicaciones" : "Applications"}
                   </a>
                 </li>
