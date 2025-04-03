@@ -16,7 +16,7 @@ export default function FormulaDatabase() {
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
   const [activeSubcategory, setActiveSubcategory] = useState("all")
-  const [filteredFormulas, setFilteredFormulas] = useState<Formula[]>(formulas)
+  const [filteredFormulas, setFilteredFormulas] = useState<Formula[]>([])
   const [availableSubcategories, setAvailableSubcategories] = useState(subcategories.calculus)
   const [selectedFormula, setSelectedFormula] = useState<Formula | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -68,6 +68,11 @@ export default function FormulaDatabase() {
 
     setFilteredFormulas(filtered)
   }, [searchQuery, activeCategory, activeSubcategory])
+
+  // Initialize filtered formulas
+  useEffect(() => {
+    setFilteredFormulas(formulas)
+  }, [])
 
   // Handle formula card click
   const handleFormulaClick = (formula: Formula) => {

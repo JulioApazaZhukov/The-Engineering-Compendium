@@ -11,11 +11,6 @@ import { cn } from "@/lib/utils"
 
 const topics = [
   {
-    name: "All topics",
-    href: "/topics",
-    subtopics: ["Classical Mechanics", "Thermodynamics", "Electromagnetism", "Optics", "Modern Physics"],
-  },
-  {
     name: "Mathematics",
     href: "/topics/mathematics",
     subtopics: [
@@ -66,7 +61,7 @@ const resources = [
   { name: "Online Tools", href: "/resources/tools" },
 ]
 
-export default function Navbar() {
+export function Navbar() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -143,8 +138,8 @@ export default function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setLanguage("es")}>Español {language === "es" && "✓"}</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setLanguage("en")}>English {language === "en" && "✓"}</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage("es")}>Español {language === "es" && "✓"}</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -240,4 +235,3 @@ export default function Navbar() {
     </header>
   )
 }
-
