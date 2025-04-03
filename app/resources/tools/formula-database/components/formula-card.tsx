@@ -13,11 +13,15 @@ interface FormulaCardProps {
 }
 
 export function FormulaCard({ formula, onClick }: FormulaCardProps) {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
 
   // Find the category label in the current language
   const categoryLabel =
     categories.find((c) => c.value === formula.category)?.label[language as "en" | "es"] || formula.category
+
+  // Translate subcategory
+  const subcategoryKey = `subcategory.${formula.subcategory.toLowerCase().replace(/\s+/g, "_")}`
+  const subcategoryLabel = t(subcategoryKey) !== subcategoryKey ? t(subcategoryKey) : formula.subcategory
 
   return (
     <Card
@@ -33,7 +37,7 @@ export function FormulaCard({ formula, onClick }: FormulaCardProps) {
             {categoryLabel}
           </Badge>
           <Badge variant="outline" className="text-xs">
-            {formula.subcategory}
+            {subcategoryLabel}
           </Badge>
         </div>
       </CardHeader>
