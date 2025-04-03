@@ -1,14 +1,44 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { MathDisplay } from "@/components/math-display"
+import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ChevronRight, FileText, Calculator } from "lucide-react"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-provider"
-import { MathDisplay } from "@/components/math-display"
 
 export default function BasicFormulasPage() {
   const { language } = useLanguage()
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+
+  const handleSectionClick = (sectionId: string) => {
+    setActiveSection(sectionId === activeSection ? null : sectionId)
+  }
+
+  const { t } = useLanguage()
+  const [activeTab, setActiveTab] = useState("basic")
+
+  // Function to handle tab change
+  const handleTabChange = (value: string) => {
+    setActiveTab(value)
+
+    // Add a small delay to ensure the DOM has updated
+    setTimeout(() => {
+      // Check if there's a hash in the URL and scroll to that element
+      if (window.location.hash) {
+        const id = window.location.hash.substring(1)
+        const element = document.getElementById(id)
+        if (element) {
+          // Scroll to the element with offset for the navbar
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: "smooth",
+          })
+        }
+      }
+    }, 100)
+  }
 
   return (
     <div className="container py-12">
@@ -293,7 +323,7 @@ export default function BasicFormulasPage() {
                     </div>
                     <div className="bg-muted/50 p-3 rounded-lg">
                       <div className="text-center">
-                      <MathDisplay math="\int \frac{1}{x\sqrt{x^2-1}} \, dx = \arccos\frac{1}{x} + C = \operatorname{arcsec} x + C" />
+                        <MathDisplay math="\int \frac{1}{x\sqrt{x^2-1}} \, dx = \arccos\frac{1}{x} + C = \operatorname{arcsec} x + C" />
                       </div>
                     </div>
                   </div>
