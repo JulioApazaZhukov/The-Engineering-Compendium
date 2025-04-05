@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 
 export default function TopicsPage() {
   const { t, language } = useLanguage()
-
+  
   const topics = [
     {
       name: language === "es" ? "Matemáticas" : "Mathematics",
@@ -45,22 +45,6 @@ export default function TopicsPage() {
       ],
     },
     {
-      name: language === "es" ? "Ingeniería de Materiales" : "Materials Engineering",
-      description:
-        language === "es"
-          ? "Aprende sobre las propiedades de los materiales y sus aplicaciones en el diseño de ingeniería."
-          : "Learn about material properties and their applications in engineering design.",
-      icon: FileText,
-      href: "/topics/materials",
-      color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
-      subtopics: [
-        language === "es" ? "Propiedades de Materiales" : "Material Properties",
-        language === "es" ? "Materiales Compuestos" : "Composite Materials",
-        language === "es" ? "Materiales Metálicos y Cerámicos" : "Metallic & Ceramic Materials",
-        language === "es" ? "Polímeros" : "Polymers",
-      ],
-    },
-    {
       name: language === "es" ? "Ingeniería Mecánica" : "Mechanical Engineering",
       description:
         language === "es"
@@ -73,22 +57,6 @@ export default function TopicsPage() {
         language === "es" ? "Dinámica de Máquinas" : "Machine Dynamics",
         language === "es" ? "Transferencia de Calor" : "Heat Transfer",
         language === "es" ? "Diseño Mecánico" : "Mechanical Design",
-      ],
-    },
-    {
-      name: language === "es" ? "Ingeniería Eléctrica y Electrónica" : "Electrical & Electronics Engineering",
-      description:
-        language === "es"
-          ? "Estudio de sistemas eléctricos, circuitos y dispositivos electrónicos."
-          : "Study of electrical systems, circuits, and electronic devices.",
-      icon: Zap,
-      href: "/topics/electrical",
-      color: "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100",
-      subtopics: [
-        language === "es" ? "Circuitos Eléctricos" : "Electrical Circuits",
-        language === "es" ? "Electrónica Digital" : "Digital Electronics",
-        language === "es" ? "Sistemas de Control" : "Control Systems",
-        language === "es" ? "Señales y Sistemas" : "Signals & Systems",
       ],
     },
     {
@@ -123,8 +91,40 @@ export default function TopicsPage() {
         language === "es" ? "Simulación de Procesos" : "Process Simulation",
       ],
     },
+    {
+      name: language === "es" ? "Ingeniería Eléctrica y Electrónica" : "Electrical & Electronics Engineering",
+      description:
+        language === "es"
+          ? "Estudio de sistemas eléctricos, circuitos y dispositivos electrónicos."
+          : "Study of electrical systems, circuits, and electronic devices.",
+      icon: Zap,
+      href: "/topics/electrical",
+      color: "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100",
+      subtopics: [
+        language === "es" ? "Circuitos Eléctricos" : "Electrical Circuits",
+        language === "es" ? "Electrónica Digital" : "Digital Electronics",
+        language === "es" ? "Sistemas de Control" : "Control Systems",
+        language === "es" ? "Señales y Sistemas" : "Signals & Systems",
+      ],
+    },
+    {
+      name: language === "es" ? "Ingeniería de Materiales" : "Materials Engineering",
+      description:
+        language === "es"
+          ? "Aprende sobre las propiedades de los materiales y sus aplicaciones en el diseño de ingeniería."
+          : "Learn about material properties and their applications in engineering design.",
+      icon: FileText,
+      href: "/topics/materials",
+      color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
+      subtopics: [
+        language === "es" ? "Propiedades de Materiales" : "Material Properties",
+        language === "es" ? "Materiales Compuestos" : "Composite Materials",
+        language === "es" ? "Materiales Metálicos y Cerámicos" : "Metallic & Ceramic Materials",
+        language === "es" ? "Polímeros" : "Polymers",
+      ],
+    },
   ]
-
+  
   return (
     <div className="container py-12">
       <div className="space-y-6">
