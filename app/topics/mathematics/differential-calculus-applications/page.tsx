@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 
-export default function ApplicationsOfDifferentialsPage() {
+export default function DifferentialCalculusApplicationsPage() {
   const { language } = useLanguage()
 
   // Content for both languages
@@ -16,45 +16,43 @@ export default function ApplicationsOfDifferentialsPage() {
       description: "Explore the practical applications of derivatives in solving real-world problems.",
       backLink: "Back to Mathematics",
       introduction:
-        "Differential calculus provides powerful tools for analyzing rates of change, finding optimal values, and approximating complex functions. These applications extend beyond pure mathematics into fields such as physics, engineering, economics, and computer science.",
+        "Differential calculus has numerous practical applications across various fields. Explore these applications to understand how derivatives can be used to solve real-world problems in physics, engineering, economics, and optimization.",
       exploreTopics: "Explore topic",
       topics: [
         {
           id: "optimization",
           title: "Optimization Problems",
-          description:
-            "Finding maximum and minimum values of functions to solve practical problems in engineering, economics, and other fields.",
+          description: "Learn how to find maximum and minimum values using derivatives.",
           href: "/topics/mathematics/differential-calculus-applications/optimization",
         },
         {
-          id: "lhopital",
+          id: "lhopitals-rule",
           title: "L'Hôpital's Rule",
-          description: "Evaluating limits that result in indeterminate forms such as 0/0 or ∞/∞ using derivatives.",
+          description: "Evaluate limits of indeterminate forms using derivatives.",
           href: "/topics/mathematics/differential-calculus-applications/lhopitals-rule",
         },
         {
           id: "linear-approximation",
           title: "Linear Approximation",
-          description:
-            "Approximating function values using tangent lines and derivatives to simplify complex calculations.",
+          description: "Approximate functions using tangent lines.",
           href: "/topics/mathematics/differential-calculus-applications/linear-approximation",
         },
         {
-          id: "rates-of-change",
+          id: "related-rates",
           title: "Related Rates of Change",
-          description: "Analyzing how related quantities change with respect to time using implicit differentiation.",
+          description: "Study how related quantities change with respect to time.",
           href: "/topics/mathematics/differential-calculus-applications/related-rates",
         },
         {
-          id: "leibniz-rule",
+          id: "leibniz-derivative-rule",
           title: "Leibniz Derivative Rule",
-          description: "Differentiating integrals with variable limits, connecting differential and integral calculus.",
-          href: "/topics/mathematics/differential-calculus-applications/leibniz-rule",
+          description: "Differentiate integrals with variable limits.",
+          href: "/topics/mathematics/differential-calculus-applications/leibniz-derivative-rule",
         },
         {
           id: "newton-raphson",
           title: "Newton-Raphson Method",
-          description: "Using derivatives to find increasingly accurate approximations to the roots of a function.",
+          description: "Find roots of equations using iterative approximations.",
           href: "/topics/mathematics/differential-calculus-applications/newton-raphson",
         },
       ],
@@ -64,48 +62,43 @@ export default function ApplicationsOfDifferentialsPage() {
       description: "Explora las aplicaciones prácticas de las derivadas en la resolución de problemas del mundo real.",
       backLink: "Volver a Matemáticas",
       introduction:
-        "El cálculo diferencial proporciona herramientas poderosas para analizar tasas de cambio, encontrar valores óptimos y aproximar funciones complejas. Estas aplicaciones se extienden más allá de las matemáticas puras a campos como la física, la ingeniería, la economía y la informática.",
+        "El cálculo diferencial tiene numerosas aplicaciones prácticas en diversos campos. Explora estas aplicaciones para entender cómo las derivadas pueden usarse para resolver problemas del mundo real en física, ingeniería, economía y optimización.",
       exploreTopics: "Explorar tema",
       topics: [
         {
           id: "optimization",
           title: "Problemas de Optimización",
-          description:
-            "Encontrar valores máximos y mínimos de funciones para resolver problemas prácticos en ingeniería, economía y otros campos.",
+          description: "Aprende a encontrar valores máximos y mínimos usando derivadas.",
           href: "/topics/mathematics/differential-calculus-applications/optimization",
         },
         {
-          id: "lhopital",
+          id: "lhopitals-rule",
           title: "Regla de L'Hôpital",
-          description: "Evaluación de límites que resultan en formas indeterminadas como 0/0 o ∞/∞ usando derivadas.",
+          description: "Evalúa límites de formas indeterminadas usando derivadas.",
           href: "/topics/mathematics/differential-calculus-applications/lhopitals-rule",
         },
         {
           id: "linear-approximation",
           title: "Aproximación Lineal",
-          description:
-            "Aproximación de valores de funciones utilizando líneas tangentes y derivadas para simplificar cálculos complejos.",
+          description: "Aproxima funciones usando líneas tangentes.",
           href: "/topics/mathematics/differential-calculus-applications/linear-approximation",
         },
         {
-          id: "rates-of-change",
+          id: "related-rates",
           title: "Tasas Relacionadas de Cambio",
-          description:
-            "Análisis de cómo cantidades relacionadas cambian con respecto al tiempo usando diferenciación implícita.",
+          description: "Estudia cómo las cantidades relacionadas cambian con respecto al tiempo.",
           href: "/topics/mathematics/differential-calculus-applications/related-rates",
         },
         {
-          id: "leibniz-rule",
+          id: "leibniz-derivative-rule",
           title: "Regla de Derivación de Leibniz",
-          description:
-            "Diferenciación de integrales con límites variables, conectando el cálculo diferencial e integral.",
-          href: "/topics/mathematics/differential-calculus-applications/leibniz-rule",
+          description: "Diferencia integrales con límites variables.",
+          href: "/topics/mathematics/differential-calculus-applications/leibniz-derivative-rule",
         },
         {
           id: "newton-raphson",
           title: "Método de Newton-Raphson",
-          description:
-            "Uso de derivadas para encontrar aproximaciones cada vez más precisas a las raíces de una función.",
+          description: "Encuentra raíces de ecuaciones usando aproximaciones iterativas.",
           href: "/topics/mathematics/differential-calculus-applications/newton-raphson",
         },
       ],
