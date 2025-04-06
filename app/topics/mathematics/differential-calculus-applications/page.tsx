@@ -24,38 +24,38 @@ export default function ApplicationsOfDifferentialsPage() {
           title: "Optimization Problems",
           description:
             "Finding maximum and minimum values of functions to solve practical problems in engineering, economics, and other fields.",
-          href: "/topics/mathematics/differential-calculus/optimization",
+          href: "/topics/mathematics/differential-calculus-applications/optimization",
         },
         {
           id: "lhopital",
           title: "L'Hôpital's Rule",
           description: "Evaluating limits that result in indeterminate forms such as 0/0 or ∞/∞ using derivatives.",
-          href: "/topics/mathematics/differential-calculus/lhopital",
+          href: "/topics/mathematics/differential-calculus-applications/lhopitals-rule",
         },
         {
           id: "linear-approximation",
           title: "Linear Approximation",
           description:
             "Approximating function values using tangent lines and derivatives to simplify complex calculations.",
-          href: "/topics/mathematics/differential-calculus/linear-approximation",
+          href: "/topics/mathematics/differential-calculus-applications/linear-approximation",
         },
         {
           id: "rates-of-change",
           title: "Related Rates of Change",
           description: "Analyzing how related quantities change with respect to time using implicit differentiation.",
-          href: "/topics/mathematics/differential-calculus/related-rates",
+          href: "/topics/mathematics/differential-calculus-applications/related-rates",
         },
         {
           id: "leibniz-rule",
           title: "Leibniz Derivative Rule",
           description: "Differentiating integrals with variable limits, connecting differential and integral calculus.",
-          href: "/topics/mathematics/differential-calculus/leibniz-rule",
+          href: "/topics/mathematics/differential-calculus-applications/leibniz-rule",
         },
         {
           id: "newton-raphson",
           title: "Newton-Raphson Method",
           description: "Using derivatives to find increasingly accurate approximations to the roots of a function.",
-          href: "/topics/mathematics/differential-calculus/newton-raphson",
+          href: "/topics/mathematics/differential-calculus-applications/newton-raphson",
         },
       ],
     },
@@ -72,41 +72,41 @@ export default function ApplicationsOfDifferentialsPage() {
           title: "Problemas de Optimización",
           description:
             "Encontrar valores máximos y mínimos de funciones para resolver problemas prácticos en ingeniería, economía y otros campos.",
-          href: "/topics/mathematics/differential-calculus/optimization",
+          href: "/topics/mathematics/differential-calculus-applications/optimization",
         },
         {
           id: "lhopital",
           title: "Regla de L'Hôpital",
           description: "Evaluación de límites que resultan en formas indeterminadas como 0/0 o ∞/∞ usando derivadas.",
-          href: "/topics/mathematics/differential-calculus/lhopital",
+          href: "/topics/mathematics/differential-calculus-applications/lhopitals-rule",
         },
         {
           id: "linear-approximation",
           title: "Aproximación Lineal",
           description:
             "Aproximación de valores de funciones utilizando líneas tangentes y derivadas para simplificar cálculos complejos.",
-          href: "/topics/mathematics/differential-calculus/linear-approximation",
+          href: "/topics/mathematics/differential-calculus-applications/linear-approximation",
         },
         {
           id: "rates-of-change",
           title: "Tasas Relacionadas de Cambio",
           description:
             "Análisis de cómo cantidades relacionadas cambian con respecto al tiempo usando diferenciación implícita.",
-          href: "/topics/mathematics/differential-calculus/related-rates",
+          href: "/topics/mathematics/differential-calculus-applications/related-rates",
         },
         {
           id: "leibniz-rule",
           title: "Regla de Derivación de Leibniz",
           description:
             "Diferenciación de integrales con límites variables, conectando el cálculo diferencial e integral.",
-          href: "/topics/mathematics/differential-calculus/leibniz-rule",
+          href: "/topics/mathematics/differential-calculus-applications/leibniz-rule",
         },
         {
           id: "newton-raphson",
           title: "Método de Newton-Raphson",
           description:
             "Uso de derivadas para encontrar aproximaciones cada vez más precisas a las raíces de una función.",
-          href: "/topics/mathematics/differential-calculus/newton-raphson",
+          href: "/topics/mathematics/differential-calculus-applications/newton-raphson",
         },
       ],
     },

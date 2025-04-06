@@ -32,11 +32,11 @@ export default function TopicCategoryPage() {
           href: "/topics/mathematics/differential-calculus",
         },
         {
-          name: language === "es" ? "Aplicaciones de Diferenciales" : "Applications of Differentials",
+          name: language === "es" ? "Aplicaciones de las Derivadas" : "Applications of Differentials",
           description:
             language === "es"
-              ? "Estudio de tasas de cambio y pendientes de curvas, incluyendo derivadas y sus aplicaciones."
-              : "Study of rates of change and slopes of curves, including derivatives and their applications.",
+              ? "Aplicaciones prácticas de las derivadas en problemas de optimización y modelado."
+              : "Practical applications of derivatives in optimization and modeling problems.",
           href: "/topics/mathematics/differential-calculus-applications",
         },
         {
@@ -48,11 +48,11 @@ export default function TopicCategoryPage() {
           href: "/topics/mathematics/integral-calculus",
         },
         {
-          name: language === "es" ? "Aplicaciones de Integrales" : "Applications of Integrals",
+          name: language === "es" ? "Aplicaciones de las Integrales" : "Applications of Integrals",
           description:
             language === "es"
-              ? "Estudio de tasas de cambio y pendientes de curvas, incluyendo derivadas y sus aplicaciones."
-              : "Study of rates of change and slopes of curves, including derivatives and their applications.",
+              ? "Aplicaciones prácticas de las integrales en el cálculo de áreas, volúmenes y más."
+              : "Practical applications of integrals in calculating areas, volumes, and more.",
           href: "/topics/mathematics/integral-calculus-applications",
         },
         {
