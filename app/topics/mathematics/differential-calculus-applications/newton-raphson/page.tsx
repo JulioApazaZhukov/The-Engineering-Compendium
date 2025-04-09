@@ -106,22 +106,52 @@ export default function NewtonRaphsonPage() {
                 <p>{language === "es" ? "donde:" : "where:"}</p>
                 <ul>
                   <li>
-                    {language === "es"
-                      ? "x_n es la aproximación actual de la raíz"
-                      : "x_n is the current approximation of the root"}
+                    {language === "es" ? (
+                      <>
+                        <MathDisplay math="x_n" display={false} /> es la aproximación actual de la raíz
+                      </>
+                    ) : (
+                      <>
+                        <MathDisplay math="x_n" display={false} /> is the current approximation of the root
+                      </>
+                    )}
                   </li>
                   <li>
-                    {language === "es" ? "x_{n+1} es la siguiente aproximación" : "x_{n+1} is the next approximation"}
+                    {language === "es" ? (
+                      <>
+                        <MathDisplay math="x_{n+1}" display={false} /> es la siguiente aproximación
+                      </>
+                    ) : (
+                      <>
+                        <MathDisplay math="x_{n+1}" display={false} /> is the next approximation
+                      </>
+                    )}
                   </li>
                   <li>
-                    {language === "es"
-                      ? "f(x_n) es el valor de la función en la aproximación actual"
-                      : "f(x_n) is the value of the function at the current approximation"}
+                    {language === "es" ? (
+                      <>
+                        <MathDisplay math="f(x_n)" display={false} /> es el valor de la función en la aproximación
+                        actual
+                      </>
+                    ) : (
+                      <>
+                        <MathDisplay math="f(x_n)" display={false} /> is the value of the function at the current
+                        approximation
+                      </>
+                    )}
                   </li>
                   <li>
-                    {language === "es"
-                      ? "f'(x_n) es el valor de la derivada de la función en la aproximación actual"
-                      : "f'(x_n) is the value of the derivative of the function at the current approximation"}
+                    {language === "es" ? (
+                      <>
+                        <MathDisplay math="f'(x_n)" display={false} /> es el valor de la derivada de la función en la
+                        aproximación actual
+                      </>
+                    ) : (
+                      <>
+                        <MathDisplay math="f'(x_n)" display={false} /> is the value of the derivative of the function at
+                        the current approximation
+                      </>
+                    )}
                   </li>
                 </ul>
               </div>
@@ -133,19 +163,29 @@ export default function NewtonRaphsonPage() {
               </h3>
               <ol>
                 <li>
-                  {language === "es"
-                    ? "Elegir una aproximación inicial x_0 cercana a la raíz."
-                    : "Choose an initial approximation x_0 close to the root."}
+                  {language === "es" ? (
+                    <>
+                      Elegir una aproximación inicial <MathDisplay math="x_0" display={false} /> cercana a la raíz.
+                    </>
+                  ) : (
+                    <>
+                      Choose an initial approximation <MathDisplay math="x_0" display={false} /> close to the root.
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Calcular la siguiente aproximación usando la fórmula de iteración."
-                    : "Calculate the next approximation using the iteration formula."}
+                  {language === "es" ? (
+                    <>Calcular la siguiente aproximación usando la fórmula de iteración.</>
+                  ) : (
+                    <>Calculate the next approximation using the iteration formula.</>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Repetir el paso 2 hasta que se alcance la precisión deseada o se cumpla un criterio de parada."
-                    : "Repeat step 2 until the desired accuracy is reached or a stopping criterion is met."}
+                  {language === "es" ? (
+                    <>Repetir el paso 2 hasta que se alcance la precisión deseada o se cumpla un criterio de parada.</>
+                  ) : (
+                    <>Repeat step 2 until the desired accuracy is reached or a stopping criterion is met.</>
+                  )}
                 </li>
               </ol>
 
@@ -159,14 +199,35 @@ export default function NewtonRaphsonPage() {
               </p>
               <ul>
                 <li>
-                  {language === "es"
-                    ? "Cuando el valor absoluto de f(x_n) es menor que una tolerancia predefinida (|f(x_n)| < ε)."
-                    : "When the absolute value of f(x_n) is less than a predefined tolerance (|f(x_n)| < ε)."}
+                  {language === "es" ? (
+                    <>
+                      Cuando el valor absoluto de <MathDisplay math="f(x_n)" display={false} /> es menor que una
+                      tolerancia predefinida (<MathDisplay math="|f(x_n)| < \varepsilon" display={false}/>
+                      ).
+                    </>
+                  ) : (
+                    <>
+                      When the absolute value of <MathDisplay math="f(x_n)" display={false} /> is less than a predefined
+                      tolerance (
+                      <MathDisplay math="|f(x_n)| < \varepsilon" display={false}/>
+                      ).
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Cuando la diferencia entre dos aproximaciones sucesivas es menor que una tolerancia (|x_{n+1} - x_n| < δ)."
-                    : "When the difference between two successive approximations is less than a tolerance (|x_{n+1} - x_n| < δ)."}
+                  {language === "es" ? (
+                    <>
+                      Cuando la diferencia entre dos aproximaciones sucesivas es menor que una tolerancia (
+                      <MathDisplay math="|x_{n+1} - x_n| < \delta" display={false}/>
+                      ).
+                    </>
+                  ) : (
+                    <>
+                      When the difference between two successive approximations is less than a tolerance (
+                      <MathDisplay math="|x_{n+1} - x_n| < \delta" display={false}/>
+                      ).
+                    </>
+                  )}
                 </li>
                 <li>
                   {language === "es"
@@ -192,34 +253,81 @@ export default function NewtonRaphsonPage() {
 
               <ol>
                 <li>
-                  {language === "es"
-                    ? "Comenzamos con un punto x_n en el eje x."
-                    : "We start with a point x_n on the x-axis."}
+                  {language === "es" ? (
+                    <>
+                      Comenzamos con un punto <MathDisplay math="x_n" display={false} /> en el eje x.
+                    </>
+                  ) : (
+                    <>
+                      We start with a point <MathDisplay math="x_n" display={false} /> on the x-axis.
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Calculamos el valor de la función f(x_n) y su derivada f'(x_n) en este punto."
-                    : "We calculate the value of the function f(x_n) and its derivative f'(x_n) at this point."}
+                  {language === "es" ? (
+                    <>
+                      Calculamos el valor de la función <MathDisplay math="f(x_n)" display={false} /> y su derivada{" "}
+                      <MathDisplay math="f'(x_n)" display={false} /> en este punto.
+                    </>
+                  ) : (
+                    <>
+                      We calculate the value of the function <MathDisplay math="f(x_n)" display={false} /> and its
+                      derivative <MathDisplay math="f'(x_n)" display={false} /> at this point.
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Trazamos la recta tangente a la curva y = f(x) en el punto (x_n, f(x_n))."
-                    : "We draw the tangent line to the curve y = f(x) at the point (x_n, f(x_n))."}
+                  {language === "es" ? (
+                    <>
+                      Trazamos la recta tangente a la curva <MathDisplay math="y = f(x)" display={false} /> en el punto{" "}
+                      <MathDisplay math="(x_n, f(x_n))" display={false} />.
+                    </>
+                  ) : (
+                    <>
+                      We draw the tangent line to the curve <MathDisplay math="y = f(x)" display={false} /> at the point{" "}
+                      <MathDisplay math="(x_n, f(x_n))" display={false} />.
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "La ecuación de esta recta tangente es y = f(x_n) + f'(x_n)(x - x_n)."
-                    : "The equation of this tangent line is y = f(x_n) + f'(x_n)(x - x_n)."}
+                  {language === "es" ? (
+                    <>
+                      La ecuación de esta recta tangente es{" "}
+                      <MathDisplay math="y = f(x_n) + f'(x_n)(x - x_n)" display={false} />.
+                    </>
+                  ) : (
+                    <>
+                      The equation of this tangent line is{" "}
+                      <MathDisplay math="y = f(x_n) + f'(x_n)(x - x_n)" display={false} />.
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Encontramos el punto donde esta recta tangente cruza el eje x (y = 0)."
-                    : "We find the point where this tangent line crosses the x-axis (y = 0)."}
+                  {language === "es" ? (
+                    <>
+                      Encontramos el punto donde esta recta tangente cruza el eje x (
+                      <MathDisplay math="y = 0" display={false} />
+                      ).
+                    </>
+                  ) : (
+                    <>
+                      We find the point where this tangent line crosses the x-axis (
+                      <MathDisplay math="y = 0" display={false} />
+                      ).
+                    </>
+                  )}
                 </li>
                 <li>
-                  {language === "es"
-                    ? "Este punto de intersección es nuestra siguiente aproximación x_{n+1}."
-                    : "This intersection point is our next approximation x_{n+1}."}
+                  {language === "es" ? (
+                    <>
+                      Este punto de intersección es nuestra siguiente aproximación{" "}
+                      <MathDisplay math="x_{n+1}" display={false} />.
+                    </>
+                  ) : (
+                    <>
+                      This intersection point is our next approximation <MathDisplay math="x_{n+1}" display={false} />.
+                    </>
+                  )}
                 </li>
               </ol>
 
@@ -230,12 +338,12 @@ export default function NewtonRaphsonPage() {
               </p>
               <div className="my-4">
                 <MathDisplay
-                  math="\begin{align*}
+                  math="\begin{align}
 0 &= f(x_n) + f'(x_n)(x_{n+1} - x_n) \\
 -f(x_n) &= f'(x_n)(x_{n+1} - x_n) \\
 x_{n+1} - x_n &= -\frac{f(x_n)}{f'(x_n)} \\
 x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
-\end{align*}"
+\end{align}"
                 />
               </div>
 
@@ -261,7 +369,15 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
                   onClick={() => toggleExample(1)}
                 >
                   <h3 className="font-medium">
-                    {language === "es" ? "Ejemplo 1: Encontrar √2" : "Example 1: Finding √2"}
+                    {language === "es" ? (
+                      <>
+                        Ejemplo 1: Encontrar <MathDisplay math="\sqrt{2}" display={false} />
+                      </>
+                    ) : (
+                      <>
+                        Example 1: Finding <MathDisplay math="\sqrt{2}" display={false} />
+                      </>
+                    )}
                   </h3>
                   <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
                 </div>
@@ -271,9 +387,16 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
                         <strong>{language === "es" ? "Problema:" : "Problem:"}</strong>{" "}
-                        {language === "es"
-                          ? "Usar el método de Newton-Raphson para encontrar √2."
-                          : "Use the Newton-Raphson method to find √2."}
+                        {language === "es" ? (
+                          <>
+                            Usar el método de Newton-Raphson para encontrar{" "}
+                            <MathDisplay math="\sqrt{2}" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            Use the Newton-Raphson method to find <MathDisplay math="\sqrt{2}" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -281,15 +404,29 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
                       </p>
 
                       <p>
-                        {language === "es"
-                          ? "Podemos reformular este problema como encontrar la raíz de la función f(x) = x² - 2."
-                          : "We can reformulate this problem as finding the root of the function f(x) = x² - 2."}
+                        {language === "es" ? (
+                          <>
+                            Podemos reformular este problema como encontrar la raíz de la función{" "}
+                            <MathDisplay math="f(x) = x^2 - 2" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            We can reformulate this problem as finding the root of the function{" "}
+                            <MathDisplay math="f(x) = x^2 - 2" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
-                        {language === "es"
-                          ? "La derivada de esta función es f'(x) = 2x."
-                          : "The derivative of this function is f'(x) = 2x."}
+                        {language === "es" ? (
+                          <>
+                            La derivada de esta función es <MathDisplay math="f'(x) = 2x" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            The derivative of this function is <MathDisplay math="f'(x) = 2x" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -302,25 +439,40 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
                       </div>
 
                       <p>
-                        {language === "es"
-                          ? "Comenzando con x_0 = 1.5 (una estimación inicial razonable):"
-                          : "Starting with x_0 = 1.5 (a reasonable initial guess):"}
+                        {language === "es" ? (
+                          <>
+                            Comenzando con <MathDisplay math="x_0 = 1.5" display={false} /> (una estimación inicial
+                            razonable):
+                          </>
+                        ) : (
+                          <>
+                            Starting with <MathDisplay math="x_0 = 1.5" display={false} /> (a reasonable initial guess):
+                          </>
+                        )}
                       </p>
                       <div className="my-4">
                         <MathDisplay
-                          math="\begin{align*}
-x_1 &= \frac{1.5 + \frac{2}{1.5}}{2} = \frac{1.5 + 1.333...}{2} = 1.416... \\
-x_2 &= \frac{1.416... + \frac{2}{1.416...}}{2} = 1.414... \\
-x_3 &= \frac{1.414... + \frac{2}{1.414...}}{2} = 1.414213...
-\end{align*}"
+                          math="\begin{align}
+x_1 &= \frac{1.5 + \frac{2}{1.5}}{2} = \frac{1.5 + 1.333\ldots}{2} \approx 1.416\ldots \\
+x_2 &= \frac{1.416\ldots + \frac{2}{1.416\ldots}}{2} \approx 1.414\ldots \\
+x_3 &= \frac{1.414\ldots + \frac{2}{1.414\ldots}}{2} \approx 1.414213\ldots
+\end{align}"
                         />
                       </div>
 
                       <p>
                         <strong>{language === "es" ? "Conclusión:" : "Conclusion:"}</strong>{" "}
-                        {language === "es"
-                          ? "Después de solo 3 iteraciones, hemos obtenido una aproximación muy precisa de √2 ≈ 1.414213..."
-                          : "After just 3 iterations, we have obtained a very accurate approximation of √2 ≈ 1.414213..."}
+                        {language === "es" ? (
+                          <>
+                            Después de solo 3 iteraciones, hemos obtenido una aproximación muy precisa de{" "}
+                            <MathDisplay math="\sqrt{2} \approx 1.414213\ldots" display={false} />
+                          </>
+                        ) : (
+                          <>
+                            After just 3 iterations, we have obtained a very accurate approximation of{" "}
+                            <MathDisplay math="\sqrt{2} \approx 1.414213\ldots" display={false} />
+                          </>
+                        )}
                       </p>
                     </div>
                   </CardContent>
@@ -344,9 +496,18 @@ x_3 &= \frac{1.414... + \frac{2}{1.414...}}{2} = 1.414213...
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
                         <strong>{language === "es" ? "Problema:" : "Problem:"}</strong>{" "}
-                        {language === "es"
-                          ? "Encontrar una raíz de la ecuación f(x) = x - cos(x) = 0 en el intervalo [0, π/2]."
-                          : "Find a root of the equation f(x) = x - cos(x) = 0 in the interval [0, π/2]."}
+                        {language === "es" ? (
+                          <>
+                            Encontrar una raíz de la ecuación{" "}
+                            <MathDisplay math="f(x) = x - \cos(x) = 0" display={false} /> en el intervalo{" "}
+                            <MathDisplay math="[0, \pi/2]" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            Find a root of the equation <MathDisplay math="f(x) = x - \cos(x) = 0" display={false} /> in
+                            the interval <MathDisplay math="[0, \pi/2]" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -354,9 +515,17 @@ x_3 &= \frac{1.414... + \frac{2}{1.414...}}{2} = 1.414213...
                       </p>
 
                       <p>
-                        {language === "es"
-                          ? "Para esta función, f(x) = x - cos(x) y f'(x) = 1 + sin(x)."
-                          : "For this function, f(x) = x - cos(x) and f'(x) = 1 + sin(x)."}
+                        {language === "es" ? (
+                          <>
+                            Para esta función, <MathDisplay math="f(x) = x - \cos(x)" display={false} /> y{" "}
+                            <MathDisplay math="f'(x) = 1 + \sin(x)" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            For this function, <MathDisplay math="f(x) = x - \cos(x)" display={false} /> and{" "}
+                            <MathDisplay math="f'(x) = 1 + \sin(x)" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -369,35 +538,59 @@ x_3 &= \frac{1.414... + \frac{2}{1.414...}}{2} = 1.414213...
                       </div>
 
                       <p>
-                        {language === "es"
-                          ? "Comenzando con x_0 = 0.5 (punto medio del intervalo):"
-                          : "Starting with x_0 = 0.5 (midpoint of the interval):"}
+                        {language === "es" ? (
+                          <>
+                            Comenzando con <MathDisplay math="x_0 = 0.5" display={false} /> (punto medio del intervalo):
+                          </>
+                        ) : (
+                          <>
+                            Starting with <MathDisplay math="x_0 = 0.5" display={false} /> (midpoint of the interval):
+                          </>
+                        )}
                       </p>
                       <div className="my-4">
                         <MathDisplay
-                          math="\begin{align*}
-x_1 &= 0.5 - \frac{0.5 - \cos(0.5)}{1 + \sin(0.5)} = 0.5 - \frac{0.5 - 0.8776...}{1 + 0.4794...} = 0.5 - \frac{-0.3776...}{1.4794...} = 0.5 + 0.2553... = 0.7553... \\
-x_2 &= 0.7553... - \frac{0.7553... - \cos(0.7553...)}{1 + \sin(0.7553...)} = 0.7391... \\
-x_3 &= 0.7391... - \frac{0.7391... - \cos(0.7391...)}{1 + \sin(0.7391...)} = 0.7390851...
-\end{align*}"
+                          math="\begin{align}
+x_1 &= 0.5 - \frac{0.5 - \cos(0.5)}{1 + \sin(0.5)} = 0.5 - \frac{0.5 - 0.8776\ldots}{1 + 0.4794\ldots} \approx 0.7553\ldots \\
+x_2 &= 0.7553\ldots - \frac{0.7553\ldots - \cos(0.7553\ldots)}{1 + \sin(0.7553\ldots)} \approx 0.7391\ldots \\
+x_3 &= 0.7391\ldots - \frac{0.7391\ldots - \cos(0.7391\ldots)}{1 + \sin(0.7391\ldots)} \approx 0.7390851\ldots
+\end{align}"
                         />
                       </div>
 
                       <p>
                         <strong>{language === "es" ? "Verificación:" : "Verification:"}</strong>{" "}
-                        {language === "es"
-                          ? "Podemos verificar que x ≈ 0.7390851 es una buena aproximación calculando f(x):"
-                          : "We can verify that x ≈ 0.7390851 is a good approximation by calculating f(x):"}
+                        {language === "es" ? (
+                          <>
+                            Podemos verificar que <MathDisplay math="x \approx 0.7390851" display={false} /> es una
+                            buena aproximación calculando <MathDisplay math="f(x)" display={false} />:
+                          </>
+                        ) : (
+                          <>
+                            We can verify that <MathDisplay math="x \approx 0.7390851" display={false} /> is a good
+                            approximation by calculating <MathDisplay math="f(x)" display={false} />:
+                          </>
+                        )}
                       </p>
                       <div className="my-4">
-                        <MathDisplay math="f(0.7390851) = 0.7390851 - \cos(0.7390851) \approx 0.7390851 - 0.7390851 = 0" />
+                        <MathDisplay math="f(0.7390851) = 0.7390851 - \cos(0.7390851) \approx 0.7390851 - 0.7390851 \approx 0" />
                       </div>
 
                       <p>
                         <strong>{language === "es" ? "Conclusión:" : "Conclusion:"}</strong>{" "}
-                        {language === "es"
-                          ? "La raíz de la ecuación x - cos(x) = 0 en el intervalo [0, π/2] es aproximadamente x ≈ 0.7390851."
-                          : "The root of the equation x - cos(x) = 0 in the interval [0, π/2] is approximately x ≈ 0.7390851."}
+                        {language === "es" ? (
+                          <>
+                            La raíz de la ecuación <MathDisplay math="x - \cos(x) = 0" display={false} /> en el
+                            intervalo <MathDisplay math="[0, \pi/2]" display={false} /> es aproximadamente{" "}
+                            <MathDisplay math="x \approx 0.7390851" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            The root of the equation <MathDisplay math="x - \cos(x) = 0" /> in the interval{" "}
+                            <MathDisplay math="[0, \pi/2]" display={false} /> is approximately{" "}
+                            <MathDisplay math="x \approx 0.7390851" display={false} />.
+                          </>
+                        )}
                       </p>
                     </div>
                   </CardContent>
@@ -421,9 +614,17 @@ x_3 &= 0.7391... - \frac{0.7391... - \cos(0.7391...)}{1 + \sin(0.7391...)} = 0.7
                     <div className="prose dark:prose-invert max-w-none">
                       <p>
                         <strong>{language === "es" ? "Problema:" : "Problem:"}</strong>{" "}
-                        {language === "es"
-                          ? "Encontrar una raíz real positiva de la ecuación f(x) = x³ - 5x² + 7x - 3 = 0."
-                          : "Find a positive real root of the equation f(x) = x³ - 5x² + 7x - 3 = 0."}
+                        {language === "es" ? (
+                          <>
+                            Encontrar una raíz real positiva de la ecuación{" "}
+                            <MathDisplay math="f(x) = x^3 - 5x^2 + 7x - 3 = 0" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            Find a positive real root of the equation{" "}
+                            <MathDisplay math="f(x) = x^3 - 5x^2 + 7x - 3 = 0" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -431,9 +632,17 @@ x_3 &= 0.7391... - \frac{0.7391... - \cos(0.7391...)}{1 + \sin(0.7391...)} = 0.7
                       </p>
 
                       <p>
-                        {language === "es"
-                          ? "Para esta función, f(x) = x³ - 5x² + 7x - 3 y f'(x) = 3x² - 10x + 7."
-                          : "For this function, f(x) = x³ - 5x² + 7x - 3 and f'(x) = 3x² - 10x + 7."}
+                        {language === "es" ? (
+                          <>
+                            Para esta función, <MathDisplay math="f(x) = x^3 - 5x^2 + 7x - 3" display={false} /> y{" "}
+                            <MathDisplay math="f'(x) = 3x^2 - 10x + 7" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            For this function, <MathDisplay math="f(x) = x^3 - 5x^2 + 7x - 3" display={false} /> and{" "}
+                            <MathDisplay math="f'(x) = 3x^2 - 10x + 7" display={false} />.
+                          </>
+                        )}
                       </p>
 
                       <p>
@@ -446,22 +655,38 @@ x_3 &= 0.7391... - \frac{0.7391... - \cos(0.7391...)}{1 + \sin(0.7391...)} = 0.7
                       </div>
 
                       <p>
-                        {language === "es"
-                          ? "Por el teorema de Descartes, esta ecuación tiene al menos una raíz positiva. Comenzando con x_0 = 1:"
-                          : "By Descartes' rule of signs, this equation has at least one positive root. Starting with x_0 = 1:"}
+                        {language === "es" ? (
+                          <>
+                            Por el teorema de Descartes, esta ecuación tiene al menos una raíz positiva. Comenzando con{" "}
+                            <MathDisplay math="x_0 = 1" display={false} />:
+                          </>
+                        ) : (
+                          <>
+                            By Descartes' rule of signs, this equation has at least one positive root. Starting with{" "}
+                            <MathDisplay math="x_0 = 1" display={false} />:
+                          </>
+                        )}
                       </p>
                       <div className="my-4">
                         <MathDisplay
-                          math="\begin{align*}
+                          math="\begin{align}
 x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7} = 1 - \frac{1 - 5 + 7 - 3}{3 - 10 + 7} = 1 - \frac{0}{0} \text{ (indeterminado)}
-\end{align*}"
+\end{align}"
                         />
                       </div>
 
                       <p>
-                        {language === "es"
-                          ? "Parece que x = 1 es exactamente una raíz (o muy cercana). Verifiquemos:"
-                          : "It appears that x = 1 is exactly a root (or very close). Let's verify:"}
+                        {language === "es" ? (
+                          <>
+                            Parece que <MathDisplay math="x = 1" display={false} /> es exactamente una raíz (o muy
+                            cercana). Verifiquemos:
+                          </>
+                        ) : (
+                          <>
+                            It appears that <MathDisplay math="x = 1" display={false} /> is exactly a root (or very
+                            close). Let's verify:
+                          </>
+                        )}
                       </p>
                       <div className="my-4">
                         <MathDisplay math="f(1) = 1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3 = 1 - 5 + 7 - 3 = 0" />
@@ -469,15 +694,32 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
 
                       <p>
                         <strong>{language === "es" ? "Conclusión:" : "Conclusion:"}</strong>{" "}
-                        {language === "es"
-                          ? "¡Efectivamente, x = 1 es una raíz exacta de la ecuación!"
-                          : "Indeed, x = 1 is an exact root of the equation!"}
+                        {language === "es" ? (
+                          <>
+                            ¡Efectivamente, <MathDisplay math="x = 1" display={false} /> es una raíz exacta de la
+                            ecuación!
+                          </>
+                        ) : (
+                          <>
+                            Indeed, <MathDisplay math="x = 1" display={false} /> is an exact root of the equation!
+                          </>
+                        )}
                       </p>
 
                       <p>
-                        {language === "es"
-                          ? "Para encontrar las otras raíces, podríamos factorizar el polinomio como (x - 1)(x² - 4x + 3) = 0, lo que nos da las raíces adicionales x = 1, x = 3."
-                          : "To find the other roots, we could factorize the polynomial as (x - 1)(x² - 4x + 3) = 0, which gives us the additional roots x = 1, x = 3."}
+                        {language === "es" ? (
+                          <>
+                            Para encontrar las otras raíces, podríamos factorizar el polinomio como{" "}
+                            <MathDisplay math="(x - 1)(x^2 - 4x + 3) = 0" display={false} />, lo que nos da las raíces
+                            adicionales <MathDisplay math="x = 1, x = 3" display={false} />.
+                          </>
+                        ) : (
+                          <>
+                            To find the other roots, we could factorize the polynomial as{" "}
+                            <MathDisplay math="(x - 1)(x^2 - 4x + 3) = 0" display={false} />, which gives us the
+                            additional roots <MathDisplay math="x = 1, x = 3" display={false} />.
+                          </>
+                        )}
                       </p>
                     </div>
                   </CardContent>
@@ -503,23 +745,44 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
               <ul>
                 <li>
                   <strong>{language === "es" ? "Convergencia Local:" : "Local Convergence:"}</strong>{" "}
-                  {language === "es"
-                    ? "Si la derivada de la función no es cero en la raíz y la estimación inicial está suficientemente cerca de la raíz, el método converge cuadráticamente."
-                    : "If the derivative of the function is not zero at the root and the initial guess is sufficiently close to the root, the method converges quadratically."}
+                  {language === "es" ? (
+                    <>
+                      Si la derivada de la función no es cero en la raíz y la estimación inicial está suficientemente
+                      cerca de la raíz, el método converge cuadráticamente.
+                    </>
+                  ) : (
+                    <>
+                      If the derivative of the function is not zero at the root and the initial guess is sufficiently
+                      close to the root, the method converges quadratically.
+                    </>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Convergencia Cuadrática:" : "Quadratic Convergence:"}</strong>{" "}
-                  {language === "es"
-                    ? "Una vez que estamos lo suficientemente cerca de la raíz, el número de dígitos correctos aproximadamente se duplica en cada iteración."
-                    : "Once we are close enough to the root, the number of correct digits approximately doubles with each iteration."}
+                  {language === "es" ? (
+                    <>
+                      Una vez que estamos lo suficientemente cerca de la raíz, el número de dígitos correctos
+                      aproximadamente se duplica en cada iteración.
+                    </>
+                  ) : (
+                    <>
+                      Once we are close enough to the root, the number of correct digits approximately doubles with each
+                      iteration.
+                    </>
+                  )}
                 </li>
                 <li>
                   <strong>
                     {language === "es" ? "Sensibilidad a la Elección Inicial:" : "Sensitivity to Initial Choice:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "El método puede no converger o converger a una raíz diferente dependiendo de la estimación inicial."
-                    : "The method may not converge or may converge to a different root depending on the initial guess."}
+                  {language === "es" ? (
+                    <>
+                      El método puede no converger o converger a una raíz diferente dependiendo de la estimación
+                      inicial.
+                    </>
+                  ) : (
+                    <>The method may not converge or may converge to a different root depending on the initial guess.</>
+                  )}
                 </li>
               </ul>
 
@@ -533,27 +796,47 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
               <ul>
                 <li>
                   <strong>{language === "es" ? "Derivada Nula:" : "Zero Derivative:"}</strong>{" "}
-                  {language === "es"
-                    ? "El método falla si la derivada f'(x_n) se hace cero o muy cercana a cero durante las iteraciones."
-                    : "The method fails if the derivative f'(x_n) becomes zero or very close to zero during iterations."}
+                  {language === "es" ? (
+                    <>
+                      El método falla si la derivada <MathDisplay math="f'(x_n)" display={false} /> se hace cero o muy
+                      cercana a cero durante las iteraciones.
+                    </>
+                  ) : (
+                    <>
+                      The method fails if the derivative <MathDisplay math="f'(x_n)" display={false} /> becomes zero or
+                      very close to zero during iterations.
+                    </>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Raíces Múltiples:" : "Multiple Roots:"}</strong>{" "}
-                  {language === "es"
-                    ? "La convergencia es más lenta (lineal en lugar de cuadrática) cuando se encuentra una raíz múltiple."
-                    : "Convergence is slower (linear instead of quadratic) when encountering a multiple root."}
+                  {language === "es" ? (
+                    <>
+                      La convergencia es más lenta (lineal en lugar de cuadrática) cuando se encuentra una raíz
+                      múltiple.
+                    </>
+                  ) : (
+                    <>Convergence is slower (linear instead of quadratic) when encountering a multiple root.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Comportamiento Caótico:" : "Chaotic Behavior:"}</strong>{" "}
-                  {language === "es"
-                    ? "Para algunas funciones y valores iniciales, el método puede mostrar comportamiento caótico o diverger."
-                    : "For some functions and initial values, the method may exhibit chaotic behavior or diverge."}
+                  {language === "es" ? (
+                    <>
+                      Para algunas funciones y valores iniciales, el método puede mostrar comportamiento caótico o
+                      diverger.
+                    </>
+                  ) : (
+                    <>For some functions and initial values, the method may exhibit chaotic behavior or diverge.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Costo Computacional:" : "Computational Cost:"}</strong>{" "}
-                  {language === "es"
-                    ? "Requiere el cálculo de la derivada, lo que puede ser costoso para funciones complejas."
-                    : "It requires calculating the derivative, which can be costly for complex functions."}
+                  {language === "es" ? (
+                    <>Requiere el cálculo de la derivada, lo que puede ser costoso para funciones complejas.</>
+                  ) : (
+                    <>It requires calculating the derivative, which can be costly for complex functions.</>
+                  )}
                 </li>
               </ul>
             </div>
@@ -577,47 +860,63 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                   <strong>
                     {language === "es" ? "Solución de Ecuaciones No Lineales:" : "Solving Nonlinear Equations:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Su aplicación más directa, usada en numerosos problemas científicos y de ingeniería."
-                    : "Its most direct application, used in numerous scientific and engineering problems."}
+                  {language === "es" ? (
+                    <>Su aplicación más directa, usada en numerosos problemas científicos y de ingeniería.</>
+                  ) : (
+                    <>Its most direct application, used in numerous scientific and engineering problems.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Optimización:" : "Optimization:"}</strong>{" "}
-                  {language === "es"
-                    ? "Encontrar máximos y mínimos de funciones aplicando el método a la derivada de la función."
-                    : "Finding maxima and minima of functions by applying the method to the derivative of the function."}
+                  {language === "es" ? (
+                    <>Encontrar máximos y mínimos de funciones aplicando el método a la derivada de la función.</>
+                  ) : (
+                    <>
+                      Finding maxima and minima of functions by applying the method to the derivative of the function.
+                    </>
+                  )}
                 </li>
                 <li>
                   <strong>
                     {language === "es" ? "Sistemas de Ecuaciones No Lineales:" : "Systems of Nonlinear Equations:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Extendido a sistemas multivariable mediante el uso de la matriz Jacobiana."
-                    : "Extended to multivariable systems using the Jacobian matrix."}
+                  {language === "es" ? (
+                    <>Extendido a sistemas multivariable mediante el uso de la matriz Jacobiana.</>
+                  ) : (
+                    <>Extended to multivariable systems using the Jacobian matrix.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Cálculo Numérico:" : "Numerical Computation:"}</strong>{" "}
-                  {language === "es"
-                    ? "Cálculo de funciones inversas, raíces cuadradas, y otras operaciones."
-                    : "Computing inverse functions, square roots, and other operations."}
+                  {language === "es" ? (
+                    <>Cálculo de funciones inversas, raíces cuadradas, y otras operaciones.</>
+                  ) : (
+                    <>Computing inverse functions, square roots, and other operations.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Física Computacional:" : "Computational Physics:"}</strong>{" "}
-                  {language === "es"
-                    ? "Resolución de ecuaciones que modelan fenómenos físicos."
-                    : "Solving equations that model physical phenomena."}
+                  {language === "es" ? (
+                    <>Resolución de ecuaciones que modelan fenómenos físicos.</>
+                  ) : (
+                    <>Solving equations that model physical phenomena.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Ingeniería Eléctrica:" : "Electrical Engineering:"}</strong>{" "}
-                  {language === "es"
-                    ? "Análisis de circuitos no lineales y sistemas de potencia."
-                    : "Analyzing nonlinear circuits and power systems."}
+                  {language === "es" ? (
+                    <>Análisis de circuitos no lineales y sistemas de potencia.</>
+                  ) : (
+                    <>Analyzing nonlinear circuits and power systems.</>
+                  )}
                 </li>
                 <li>
                   <strong>{language === "es" ? "Economía:" : "Economics:"}</strong>{" "}
-                  {language === "es"
-                    ? "Cálculo de equilibrios en modelos económicos."
-                    : "Computing equilibria in economic models."}
+                  {language === "es" ? (
+                    <>Cálculo de equilibrios en modelos económicos.</>
+                  ) : (
+                    <>Computing equilibria in economic models.</>
+                  )}
                 </li>
               </ul>
             </div>
@@ -643,15 +942,29 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                       ? "Elegir una aproximación inicial inadecuada:"
                       : "Choosing an inappropriate initial approximation:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Puede llevar a divergencia o convergencia a una raíz no deseada."
-                    : "Can lead to divergence or convergence to an undesired root."}
+                  {language === "es" ? (
+                    <>Puede llevar a divergencia o convergencia a una raíz no deseada.</>
+                  ) : (
+                    <>Can lead to divergence or convergence to an undesired root.</>
+                  )}
                 </li>
                 <li>
-                  <strong>{language === "es" ? "No verificar que f'(x) ≠ 0:" : "Not checking that f'(x) ≠ 0:"}</strong>{" "}
-                  {language === "es"
-                    ? "Puede resultar en división por cero o inestabilidad numérica."
-                    : "Can result in division by zero or numerical instability."}
+                  <strong>
+                    {language === "es" ? (
+                      <>
+                        No verificar que <MathDisplay math="f'(x) \neq 0" display={false} />:
+                      </>
+                    ) : (
+                      <>
+                        Not checking that <MathDisplay math="f'(x) \neq 0" display={false} />:
+                      </>
+                    )}
+                  </strong>{" "}
+                  {language === "es" ? (
+                    <>Puede resultar en división por cero o inestabilidad numérica.</>
+                  ) : (
+                    <>Can result in division by zero or numerical instability.</>
+                  )}
                 </li>
                 <li>
                   <strong>
@@ -659,9 +972,11 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                       ? "Ignorar problemas de convergencia lenta:"
                       : "Ignoring slow convergence issues:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Especialmente cerca de raíces múltiples o cuando la función es casi plana."
-                    : "Especially near multiple roots or when the function is nearly flat."}
+                  {language === "es" ? (
+                    <>Especialmente cerca de raíces múltiples o cuando la función es casi plana.</>
+                  ) : (
+                    <>Especially near multiple roots or when the function is nearly flat.</>
+                  )}
                 </li>
                 <li>
                   <strong>
@@ -669,9 +984,11 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                       ? "No establecer criterios de parada adecuados:"
                       : "Not setting appropriate stopping criteria:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Puede llevar a iteraciones innecesarias o parada prematura."
-                    : "Can lead to unnecessary iterations or premature stopping."}
+                  {language === "es" ? (
+                    <>Puede llevar a iteraciones innecesarias o parada prematura.</>
+                  ) : (
+                    <>Can lead to unnecessary iterations or premature stopping.</>
+                  )}
                 </li>
                 <li>
                   <strong>
@@ -679,9 +996,11 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                       ? "Simplificar incorrectamente las expresiones:"
                       : "Incorrectly simplifying expressions:"}
                   </strong>{" "}
-                  {language === "es"
-                    ? "Errores algebraicos al derivar la función pueden causar resultados erróneos."
-                    : "Algebraic errors when deriving the function can cause erroneous results."}
+                  {language === "es" ? (
+                    <>Errores algebraicos al derivar la función pueden causar resultados erróneos.</>
+                  ) : (
+                    <>Algebraic errors when deriving the function can cause erroneous results.</>
+                  )}
                 </li>
               </ul>
             </div>
@@ -867,9 +1186,11 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
             <CardContent className="pt-6">
               <p className="mb-2">
                 <strong>{language === "es" ? "Problema 1:" : "Problem 1:"}</strong>{" "}
-                {language === "es"
-                  ? "Usa el método de Newton-Raphson para encontrar una raíz de la ecuación:"
-                  : "Use the Newton-Raphson method to find a root of the equation:"}
+                {language === "es" ? (
+                  <>Usa el método de Newton-Raphson para encontrar una raíz de la ecuación:</>
+                ) : (
+                  <>Use the Newton-Raphson method to find a root of the equation:</>
+                )}
               </p>
               <div className="my-4">
                 <MathDisplay math="f(x) = e^x - 3x" />
@@ -884,9 +1205,16 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
             <CardContent className="pt-6">
               <p className="mb-2">
                 <strong>{language === "es" ? "Problema 2:" : "Problem 2:"}</strong>{" "}
-                {language === "es"
-                  ? "Usa el método de Newton-Raphson para encontrar una aproximación de la raíz cúbica de 10 con precisión de 4 decimales."
-                  : "Use the Newton-Raphson method to find an approximation of the cube root of 10 to 4 decimal places."}
+                {language === "es" ? (
+                  <>
+                    Usa el método de Newton-Raphson para encontrar una aproximación de la raíz cúbica de 10 con
+                    precisión de 4 decimales.
+                  </>
+                ) : (
+                  <>
+                    Use the Newton-Raphson method to find an approximation of the cube root of 10 to 4 decimal places.
+                  </>
+                )}
               </p>
               <Button variant="outline" className="w-full mt-4">
                 {language === "es" ? "Mostrar Solución" : "Show Solution"}
