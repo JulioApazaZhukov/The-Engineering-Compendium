@@ -24,19 +24,19 @@ export default function ApplicationsOfIntegralsPage() {
           title: "Area Under the Curve",
           description:
             "Calculating the area between a function and the x-axis, a fundamental application of definite integrals.",
-          href: "/topics/mathematics/integral-calculus/area-under-curve",
+          href: "/topics/mathematics/integral-calculus-applications/area-under-curve",
         },
         {
           id: "area-between-curves",
           title: "Area Between Curves",
           description: "Finding the area enclosed by two or more functions using definite integrals.",
-          href: "/topics/mathematics/integral-calculus/area-between-curves",
+          href: "/topics/mathematics/integral-calculus-applications/area-between-curves",
         },
         {
           id: "volume-solids-revolution",
           title: "Volume of Solids of Revolution",
           description: "Calculating volumes of three-dimensional objects formed by rotating a region around an axis.",
-          href: "/topics/mathematics/integral-calculus/volume-solids-revolution",
+          href: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
         },
         {
           id: "surface-area-revolution",
@@ -71,20 +71,20 @@ export default function ApplicationsOfIntegralsPage() {
           title: "Área Bajo la Curva",
           description:
             "Cálculo del área entre una función y el eje x, una aplicación fundamental de las integrales definidas.",
-          href: "/topics/mathematics/integral-calculus/area-under-curve",
+          href: "/topics/mathematics/integral-calculus-applications/area-under-curve",
         },
         {
           id: "area-between-curves",
           title: "Área Entre Curvas",
           description: "Cálculo del área encerrada por dos o más funciones usando integrales definidas.",
-          href: "/topics/mathematics/integral-calculus/area-between-curves",
+          href: "/topics/mathematics/integral-calculus-applications/area-between-curves",
         },
         {
           id: "volume-solids-revolution",
           title: "Volumen de Sólidos de Revolución",
           description:
             "Cálculo de volúmenes de objetos tridimensionales formados al rotar una región alrededor de un eje.",
-          href: "/topics/mathematics/integral-calculus/volume-solids-revolution",
+          href: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
         },
         {
           id: "surface-area-revolution",
