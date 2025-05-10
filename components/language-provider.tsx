@@ -16,7 +16,6 @@ const translations = {
   en: {
     "nav.topics": "Topics",
     "nav.resources": "Resources",
-    "nav.blog": "Blog",
     "landing.title": "The Engineering Compendium",
     "landing.subtitle": "Your comprehensive resource for engineering education",
     "landing.explore": "Explore Topics",
@@ -73,7 +72,7 @@ const translations = {
     "formula.subtitle": "Access a comprehensive collection of mathematical and engineering formulas",
     "formula.search": "Search formulas...",
     "formula.filters": "Quick Filters:",
-    "formula.results": "Found",
+    "formula.results": "Formulas Found",
     "formula.no_results": "No formulas found",
     "formula.try_adjusting": "Try adjusting your search or filters to find what you're looking for.",
     "formula.reset": "Reset Filters",
@@ -133,7 +132,6 @@ const translations = {
   es: {
     "nav.topics": "Temas",
     "nav.resources": "Recursos",
-    "nav.blog": "Blog",
     "landing.title": "El Compendio de Ingeniería",
     "landing.subtitle": "Tu recurso integral para la educación en ingeniería",
     "landing.explore": "Explorar Temas",
@@ -192,7 +190,7 @@ const translations = {
     "formula.subtitle": "Accede a una colección completa de fórmulas matemáticas y de ingeniería",
     "formula.search": "Buscar fórmulas...",
     "formula.filters": "Filtros Rápidos:",
-    "formula.results": "Encontradas",
+    "formula.results": "Fórmulas Encontradas",
     "formula.no_results": "No se encontraron fórmulas",
     "formula.try_adjusting": "Intenta ajustar tu búsqueda o filtros para encontrar lo que estás buscando.",
     "formula.reset": "Restablecer Filtros",

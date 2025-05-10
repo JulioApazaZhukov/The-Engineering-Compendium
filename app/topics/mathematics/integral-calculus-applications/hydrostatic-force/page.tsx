@@ -1,20 +1,27 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, BookOpen, Calculator, FileText, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
 export default function HydrostaticForcePage() {
   const { language } = useLanguage()
+  const [activeExample, setActiveExample] = useState<number | null>(null)
+
+  const toggleExample = (index: number) => {
+    setActiveExample(activeExample === index ? null : index)
+  }
 
   // Content for both languages
   const content = {
     en: {
       title: "Hydrostatic Force",
-      description: "Calculate the force exerted by a fluid on a submerged surface.",
-      backLink: "Back to Applications",
+      subtitle: "Calculate the force exerted by a fluid on a submerged surface",
+      backLink: "Back to Applications of Integral Calculus",
       introduction:
         "Hydrostatic force is the force exerted by a fluid at rest on a submerged surface due to the pressure of the fluid. This concept is fundamental in fluid mechanics, civil engineering, and naval architecture. Integral calculus provides a powerful method for calculating these forces on surfaces of various shapes and orientations.",
       principle: {
@@ -50,12 +57,13 @@ export default function HydrostaticForcePage() {
           "A is the total area of the submerged surface",
         ],
       },
-      example: {
-        title: "Example",
-        problem:
-          "Calculate the hydrostatic force on a vertical rectangular gate that is 4 meters wide and 3 meters high, with its top edge 2 meters below the water surface. Assume the density of water is 1000 kg/m³ and g = 9.8 m/s².",
-        solution: {
-          title: "Solution:",
+      examples: {
+        title: "Examples",
+        example1: {
+          title: "Example: Rectangular Gate",
+          problem:
+            "Calculate the hydrostatic force on a vertical rectangular gate that is 4 meters wide and 3 meters high, with its top edge 2 meters below the water surface. Assume the density of water is 1000 kg/m³ and g = 9.8 m/s².",
+          solution: "We'll solve this problem using both the centroid method and the integral method:",
           step1: "1. Identify the dimensions and set up a coordinate system:",
           step1Description:
             "Let's place the origin at the water surface, with the positive y-axis pointing downward. The gate extends from y = 2 m to y = 5 m, with a constant width of 4 m.",
@@ -81,7 +89,7 @@ export default function HydrostaticForcePage() {
       },
       applications: {
         title: "Applications",
-        description: "Hydrostatic force calculations are essential in various fields:",
+        content: "Hydrostatic force calculations are essential in various fields:",
         list: [
           "Dam design and analysis",
           "Ship and submarine hull design",
@@ -100,11 +108,37 @@ export default function HydrostaticForcePage() {
           "Different fluids have different densities, affecting the magnitude of the force",
         ],
       },
+      relatedTopics: [
+        { name: "Fluid Statics", path: "/topics/physics/fluid-mechanics/fluid-statics" },
+        { name: "Center of Pressure", path: "/topics/physics/fluid-mechanics/center-of-pressure" },
+        { name: "Applications of Integration", path: "/topics/mathematics/integral-calculus-applications" },
+        { name: "Integral Calculus", path: "/topics/mathematics/integral-calculus" },
+      ],
+      resources: [
+        {
+          title: "Solved Problems",
+          description: "Practice with step-by-step solutions",
+          link: "/resources/solved-problems?topic=hydrostatic-force",
+          linkText: "View problems",
+        },
+        {
+          title: "Interactive Calculator",
+          description: "Calculate hydrostatic forces with our tool",
+          link: "/resources/tools/hydrostatic-calculator",
+          linkText: "Use calculator",
+        },
+        {
+          title: "Recommended Reading",
+          description: "Books and articles on fluid mechanics",
+          link: "/resources/bibliography?topic=fluid-mechanics",
+          linkText: "View bibliography",
+        },
+      ],
     },
     es: {
       title: "Fuerza Hidrostática",
-      description: "Calcula la fuerza ejercida por un fluido sobre una superficie sumergida.",
-      backLink: "Volver a Aplicaciones",
+      subtitle: "Calcula la fuerza ejercida por un fluido sobre una superficie sumergida",
+      backLink: "Volver a Aplicaciones del Cálculo Integral",
       introduction:
         "La fuerza hidrostática es la fuerza ejercida por un fluido en reposo sobre una superficie sumergida debido a la presión del fluido. Este concepto es fundamental en mecánica de fluidos, ingeniería civil y arquitectura naval. El cálculo integral proporciona un método poderoso para calcular estas fuerzas en superficies de diversas formas y orientaciones.",
       principle: {
@@ -140,12 +174,13 @@ export default function HydrostaticForcePage() {
           "A es el área total de la superficie sumergida",
         ],
       },
-      example: {
-        title: "Ejemplo",
-        problem:
-          "Calcula la fuerza hidrostática sobre una compuerta rectangular vertical que tiene 4 metros de ancho y 3 metros de alto, con su borde superior a 2 metros por debajo de la superficie del agua. Asume que la densidad del agua es 1000 kg/m³ y g = 9.8 m/s².",
-        solution: {
-          title: "Solución:",
+      examples: {
+        title: "Ejemplos",
+        example1: {
+          title: "Ejemplo: Compuerta Rectangular",
+          problem:
+            "Calcula la fuerza hidrostática sobre una compuerta rectangular vertical que tiene 4 metros de ancho y 3 metros de alto, con su borde superior a 2 metros por debajo de la superficie del agua. Asume que la densidad del agua es 1000 kg/m³ y g = 9.8 m/s².",
+          solution: "Resolveremos este problema utilizando tanto el método del centroide como el método integral:",
           step1: "1. Identifica las dimensiones y establece un sistema de coordenadas:",
           step1Description:
             "Coloquemos el origen en la superficie del agua, con el eje y positivo apuntando hacia abajo. La compuerta se extiende desde y = 2 m hasta y = 5 m, con un ancho constante de 4 m.",
@@ -171,7 +206,7 @@ export default function HydrostaticForcePage() {
       },
       applications: {
         title: "Aplicaciones",
-        description: "Los cálculos de fuerza hidrostática son esenciales en varios campos:",
+        content: "Los cálculos de fuerza hidrostática son esenciales en varios campos:",
         list: [
           "Diseño y análisis de presas",
           "Diseño de cascos de barcos y submarinos",
@@ -190,153 +225,321 @@ export default function HydrostaticForcePage() {
           "Diferentes fluidos tienen diferentes densidades, afectando la magnitud de la fuerza",
         ],
       },
+      relatedTopics: [
+        { name: "Estática de Fluidos", path: "/topics/physics/fluid-mechanics/fluid-statics" },
+        { name: "Centro de Presión", path: "/topics/physics/fluid-mechanics/center-of-pressure" },
+        { name: "Aplicaciones de Integración", path: "/topics/mathematics/integral-calculus-applications" },
+        { name: "Cálculo Integral", path: "/topics/mathematics/integral-calculus" },
+      ],
+      resources: [
+        {
+          title: "Problemas Resueltos",
+          description: "Practica con soluciones paso a paso",
+          link: "/resources/solved-problems?topic=hydrostatic-force",
+          linkText: "Ver problemas",
+        },
+        {
+          title: "Calculadora Interactiva",
+          description: "Calcula fuerzas hidrostáticas con nuestra herramienta",
+          link: "/resources/tools/hydrostatic-calculator",
+          linkText: "Usar calculadora",
+        },
+        {
+          title: "Lecturas Recomendadas",
+          description: "Libros y artículos sobre mecánica de fluidos",
+          link: "/resources/bibliography?topic=fluid-mechanics",
+          linkText: "Ver bibliografía",
+        },
+      ],
     },
   }
 
   const currentContent = language === "es" ? content.es : content.en
 
   return (
-    <div className="container py-8">
-      <div className="flex justify-start mb-8">
-        <Button variant="outline" asChild className="gap-1">
-          <Link href="/topics/mathematics/integral-calculus-applications">
-            <ArrowLeft className="h-4 w-4" />
+    <div className="container py-12">
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center text-sm text-muted-foreground mb-6">
+        <Link href="/" className="hover:text-foreground">
+          {language === "es" ? "Inicio" : "Home"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics" className="hover:text-foreground">
+          {language === "es" ? "Temas" : "Topics"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics/mathematics" className="hover:text-foreground">
+          {language === "es" ? "Matemáticas" : "Mathematics"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics/mathematics/integral-calculus-applications" className="hover:text-foreground">
+          {language === "es" ? "Aplicaciones del Cálculo Integral" : "Applications of Integral Calculus"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <span className="text-foreground font-medium">{currentContent.title}</span>
+      </div>
+
+      {/* Page Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">{currentContent.title}</h1>
+          <p className="text-muted-foreground">{currentContent.subtitle}</p>
+        </div>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/topics/mathematics/integral-calculus-applications" className="flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
             {currentContent.backLink}
           </Link>
         </Button>
       </div>
 
-      <div className="space-y-8 max-w-4xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">{currentContent.title}</h1>
-          <p className="text-xl text-muted-foreground">{currentContent.description}</p>
-        </div>
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content Column */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Introduction Section */}
+          <section>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.introduction}</p>
+            </div>
+          </section>
 
-        <div>
-          <p className="mb-6">{currentContent.introduction}</p>
-        </div>
+          {/* Principle Section */}
+          <section>
+            <h2 id="principle" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.principle.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.principle.description}</p>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.principle.title}</h2>
-          <p className="mb-4">{currentContent.principle.description}</p>
+              <div className="my-4 flex justify-center">
+                <MathDisplay math={currentContent.principle.pressureFormula} />
+              </div>
 
-          <div className="flex justify-center my-4">
-            <MathDisplay math={currentContent.principle.pressureFormula} />
-          </div>
+              <p className="font-medium">{currentContent.principle.pressureWhere}</p>
+              <ul>
+                {currentContent.principle.pressureWhereDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-          <div>
-            <p className="font-medium mb-2">{currentContent.principle.pressureWhere}</p>
-            <ul className="list-disc pl-6 space-y-1">
-              {currentContent.principle.pressureWhereDescription.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+          {/* Formula Section */}
+          <section>
+            <h2 id="formula" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.formula.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.formula.description}</p>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.formula.title}</h2>
-          <p className="mb-4">{currentContent.formula.description}</p>
+              <div className="my-4 flex justify-center">
+                <MathDisplay math={currentContent.formula.formula} />
+              </div>
 
-          <div className="flex justify-center my-4">
-            <MathDisplay math={currentContent.formula.formula} />
-          </div>
+              <p className="font-medium">{currentContent.formula.where}</p>
+              <ul>
+                {currentContent.formula.whereDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
 
-          <div className="mb-4">
-            <p className="font-medium mb-2">{currentContent.formula.where}</p>
-            <ul className="list-disc pl-6 space-y-1">
-              {currentContent.formula.whereDescription.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
+              <div className="my-4 flex justify-center">
+                <MathDisplay math={currentContent.formula.centroidFormula} />
+              </div>
 
-          <div className="flex justify-center my-4">
-            <MathDisplay math={currentContent.formula.centroidFormula} />
-          </div>
+              <p className="font-medium">{currentContent.formula.centroidWhere}</p>
+              <ul>
+                {currentContent.formula.centroidWhereDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-          <div>
-            <p className="font-medium mb-2">{currentContent.formula.centroidWhere}</p>
-            <ul className="list-disc pl-6 space-y-1">
-              {currentContent.formula.centroidWhereDescription.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.example.title}</h2>
-          <p className="mb-4 font-medium">{currentContent.example.problem}</p>
-
-          <div>
-            <p className="font-semibold mb-2">{currentContent.example.solution.title}</p>
+          {/* Examples Section */}
+          <section>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.examples.title}
+            </h2>
 
             <div className="space-y-4">
-              <div>
-                <p>{currentContent.example.solution.step1}</p>
-                <p className="ml-4 my-2">{currentContent.example.solution.step1Description}</p>
-              </div>
-
-              <div>
-                <p>{currentContent.example.solution.step2}</p>
-                <p className="ml-4 my-2">{currentContent.example.solution.step2a}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step2aFormula} />
+              {/* Example 1 */}
+              <Card className="overflow-hidden">
+                <div
+                  className="p-4 bg-muted cursor-pointer flex justify-between items-center"
+                  onClick={() => toggleExample(1)}
+                >
+                  <h3 className="font-medium">{currentContent.examples.example1.title}</h3>
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
                 </div>
 
-                <p className="ml-4 my-2">{currentContent.example.solution.step2b}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step2bFormula} />
-                </div>
+                {activeExample === 1 && (
+                  <CardContent className="pt-4">
+                    <div className="prose dark:prose-invert max-w-none">
+                      <p>
+                        <strong>{currentContent.examples.example1.problem}</strong>
+                      </p>
+                      <p>{currentContent.examples.example1.solution}</p>
 
-                <p className="ml-4 my-2">{currentContent.example.solution.step2c}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step2cFormula} />
-                </div>
+                      <p>{currentContent.examples.example1.step1}</p>
+                      <p className="ml-4">{currentContent.examples.example1.step1Description}</p>
 
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step2dFormula} />
-                </div>
-              </div>
+                      <p>{currentContent.examples.example1.step2}</p>
+                      <p className="ml-4">{currentContent.examples.example1.step2a}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2aFormula} />
+                      </div>
 
-              <div>
-                <p>{currentContent.example.solution.step3}</p>
-                <p className="ml-4 my-2">{currentContent.example.solution.step3a}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step3aFormula} />
-                </div>
+                      <p className="ml-4">{currentContent.examples.example1.step2b}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2bFormula} />
+                      </div>
 
-                <p className="ml-4 my-2">{currentContent.example.solution.step3b}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step3bFormula} />
-                </div>
+                      <p className="ml-4">{currentContent.examples.example1.step2c}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2cFormula} />
+                      </div>
 
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step3cFormula} />
-                </div>
-              </div>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2dFormula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step3}</p>
+                      <p className="ml-4">{currentContent.examples.example1.step3a}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step3aFormula} />
+                      </div>
+
+                      <p className="ml-4">{currentContent.examples.example1.step3b}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step3bFormula} />
+                      </div>
+
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step3cFormula} />
+                      </div>
+                    </div>
+                  </CardContent>
+                )}
+              </Card>
             </div>
-          </div>
+          </section>
+
+          {/* Applications Section */}
+          <section>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.applications.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.applications.content}</p>
+              <ul>
+                {currentContent.applications.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Considerations Section */}
+          <section>
+            <h2 id="considerations" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.considerations.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <ul>
+                {currentContent.considerations.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
         </div>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.applications.title}</h2>
-          <p className="mb-4">{currentContent.applications.description}</p>
-          <ul className="list-disc pl-6 space-y-1">
-            {currentContent.applications.list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {/* Sidebar Column */}
+        <div className="space-y-6">
+          {/* Table of Contents */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a href="#principle" className="text-primary hover:underline">
+                    {currentContent.principle.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#formula" className="text-muted-foreground hover:text-primary">
+                    {currentContent.formula.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
+                    {currentContent.examples.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#applications" className="text-muted-foreground hover:text-primary">
+                    {currentContent.applications.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#considerations" className="text-muted-foreground hover:text-primary">
+                    {currentContent.considerations.title}
+                  </a>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.considerations.title}</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            {currentContent.considerations.list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          {/* Related Topics */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">{language === "es" ? "Temas Relacionados" : "Related Topics"}</h3>
+              <ul className="space-y-2 text-sm">
+                {currentContent.relatedTopics.map((topic, index) => (
+                  <li key={index}>
+                    <Link href={topic.path} className="text-primary hover:underline flex items-center">
+                      <ChevronRight className="h-3 w-3 mr-1" />
+                      {topic.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Resources */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">
+                {language === "es" ? "Recursos de Aprendizaje" : "Learning Resources"}
+              </h3>
+
+              <div className="space-y-4">
+                {currentContent.resources.map((resource, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-2 rounded-md">
+                      {index === 0 ? (
+                        <FileText className="h-4 w-4 text-primary" />
+                      ) : index === 1 ? (
+                        <Calculator className="h-4 w-4 text-primary" />
+                      ) : (
+                        <BookOpen className="h-4 w-4 text-primary" />
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">{resource.title}</h4>
+                      <p className="text-xs text-muted-foreground mb-1">{resource.description}</p>
+                      <Link href={resource.link} className="text-xs text-primary hover:underline">
+                        {resource.linkText}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

@@ -1,20 +1,27 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, BookOpen, Calculator, FileText, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
 export default function PappusTheoremPage() {
   const { language } = useLanguage()
+  const [activeExample, setActiveExample] = useState<number | null>(null)
+
+  const toggleExample = (index: number) => {
+    setActiveExample(activeExample === index ? null : index)
+  }
 
   // Content for both languages
   const content = {
     en: {
       title: "Pappus' Theorem",
-      description: "Calculate volumes and surface areas using centroids of planar regions.",
-      backLink: "Back to Applications",
+      subtitle: "Calculate volumes and surface areas using centroids of planar regions",
+      backLink: "Back to Applications of Integral Calculus",
       introduction:
         "Pappus' Theorem, named after the Greek mathematician Pappus of Alexandria, provides elegant formulas for calculating volumes and surface areas of solids of revolution using the concept of centroids. These theorems simplify complex calculations and offer powerful insights into the properties of three-dimensional objects.",
       firstTheorem: {
@@ -41,12 +48,13 @@ export default function PappusTheoremPage() {
           "\\bar{d} is the distance from the centroid of the curve to the axis of rotation",
         ],
       },
-      example: {
-        title: "Example: Torus Volume",
-        problem:
-          "Calculate the volume of a torus (donut shape) with a circular cross-section of radius r = 2 units, where the distance from the center of the cross-section to the axis of rotation is R = 5 units.",
-        solution: {
-          title: "Solution:",
+      examples: {
+        title: "Examples",
+        example1: {
+          title: "Example: Torus Volume",
+          problem:
+            "Calculate the volume of a torus (donut shape) with a circular cross-section of radius r = 2 units, where the distance from the center of the cross-section to the axis of rotation is R = 5 units.",
+          solution: "We'll use the First Theorem of Pappus-Guldinus:",
           step1: "1. Identify the plane figure and its area:",
           step1Description: "The plane figure is a circle with radius r = 2 units.",
           step1Formula: "A = \\pi r^2 = \\pi \\cdot 2^2 = 4\\pi \\text{ square units}",
@@ -62,7 +70,7 @@ export default function PappusTheoremPage() {
       },
       applications: {
         title: "Applications",
-        description: "Pappus' Theorem has numerous applications in mathematics, engineering, and physics:",
+        content: "Pappus' Theorem has numerous applications in mathematics, engineering, and physics:",
         list: [
           "Calculating volumes and surface areas of complex solids of revolution",
           "Designing and analyzing mechanical parts with rotational symmetry",
@@ -79,11 +87,43 @@ export default function PappusTheoremPage() {
           "The centroid of the figure or curve must be accurately determined for precise results",
         ],
       },
+      relatedTopics: [
+        {
+          name: "Volume of Solids of Revolution",
+          path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
+        },
+        {
+          name: "Surface Area of Solids of Revolution",
+          path: "/topics/mathematics/integral-calculus-applications/surface-area-revolution",
+        },
+        { name: "Centroids and Centers of Mass", path: "/topics/mathematics/integral-calculus-applications/centroids" },
+        { name: "Integral Calculus", path: "/topics/mathematics/integral-calculus" },
+      ],
+      resources: [
+        {
+          title: "Solved Problems",
+          description: "Practice with step-by-step solutions",
+          link: "/resources/solved-problems?topic=pappus-theorem",
+          linkText: "View problems",
+        },
+        {
+          title: "Interactive Calculator",
+          description: "Calculate volumes using Pappus' Theorem",
+          link: "/resources/tools/pappus-calculator",
+          linkText: "Use calculator",
+        },
+        {
+          title: "Recommended Reading",
+          description: "Books and articles on integral applications",
+          link: "/resources/bibliography?topic=integral-applications",
+          linkText: "View bibliography",
+        },
+      ],
     },
     es: {
       title: "Teorema de Pappus",
-      description: "Calcula volúmenes y áreas de superficie utilizando centroides de regiones planas.",
-      backLink: "Volver a Aplicaciones",
+      subtitle: "Calcula volúmenes y áreas de superficie utilizando centroides de regiones planas",
+      backLink: "Volver a Aplicaciones del Cálculo Integral",
       introduction:
         "El Teorema de Pappus, nombrado en honor al matemático griego Pappus de Alejandría, proporciona fórmulas elegantes para calcular volúmenes y áreas de superficie de sólidos de revolución utilizando el concepto de centroides. Estos teoremas simplifican cálculos complejos y ofrecen poderosas perspectivas sobre las propiedades de objetos tridimensionales.",
       firstTheorem: {
@@ -110,12 +150,13 @@ export default function PappusTheoremPage() {
           "\\bar{d} es la distancia desde el centroide de la curva al eje de rotación",
         ],
       },
-      example: {
-        title: "Ejemplo: Volumen de un Toro",
-        problem:
-          "Calcula el volumen de un toro (forma de dona) con una sección transversal circular de radio r = 2 unidades, donde la distancia desde el centro de la sección transversal al eje de rotación es R = 5 unidades.",
-        solution: {
-          title: "Solución:",
+      examples: {
+        title: "Ejemplos",
+        example1: {
+          title: "Ejemplo: Volumen de un Toro",
+          problem:
+            "Calcula el volumen de un toro (forma de dona) con una sección transversal circular de radio r = 2 unidades, donde la distancia desde el centro de la sección transversal al eje de rotación es R = 5 unidades.",
+          solution: "Usaremos el Primer Teorema de Pappus-Guldinus:",
           step1: "1. Identifica la figura plana y su área:",
           step1Description: "La figura plana es un círculo con radio r = 2 unidades.",
           step1Formula: "A = \\pi r^2 = \\pi \\cdot 2^2 = 4\\pi \\text{ unidades cuadradas}",
@@ -131,7 +172,7 @@ export default function PappusTheoremPage() {
       },
       applications: {
         title: "Aplicaciones",
-        description: "El Teorema de Pappus tiene numerosas aplicaciones en matemáticas, ingeniería y física:",
+        content: "El Teorema de Pappus tiene numerosas aplicaciones en matemáticas, ingeniería y física:",
         list: [
           "Cálculo de volúmenes y áreas de superficie de sólidos de revolución complejos",
           "Diseño y análisis de piezas mecánicas con simetría rotacional",
@@ -148,126 +189,300 @@ export default function PappusTheoremPage() {
           "El centroide de la figura o curva debe determinarse con precisión para obtener resultados exactos",
         ],
       },
+      relatedTopics: [
+        {
+          name: "Volumen de Sólidos de Revolución",
+          path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
+        },
+        {
+          name: "Área de Superficie de Sólidos de Revolución",
+          path: "/topics/mathematics/integral-calculus-applications/surface-area-revolution",
+        },
+        { name: "Centroides y Centros de Masa", path: "/topics/mathematics/integral-calculus-applications/centroids" },
+        { name: "Cálculo Integral", path: "/topics/mathematics/integral-calculus" },
+      ],
+      resources: [
+        {
+          title: "Problemas Resueltos",
+          description: "Practica con soluciones paso a paso",
+          link: "/resources/solved-problems?topic=pappus-theorem",
+          linkText: "Ver problemas",
+        },
+        {
+          title: "Calculadora Interactiva",
+          description: "Calcula volúmenes usando el Teorema de Pappus",
+          link: "/resources/tools/pappus-calculator",
+          linkText: "Usar calculadora",
+        },
+        {
+          title: "Lecturas Recomendadas",
+          description: "Libros y artículos sobre aplicaciones de integrales",
+          link: "/resources/bibliography?topic=integral-applications",
+          linkText: "Ver bibliografía",
+        },
+      ],
     },
   }
 
   const currentContent = language === "es" ? content.es : content.en
 
   return (
-    <div className="container py-8">
-      <div className="flex justify-start mb-8">
-        <Button variant="outline" asChild className="gap-1">
-          <Link href="/topics/mathematics/integral-calculus-applications">
-            <ArrowLeft className="h-4 w-4" />
+    <div className="container py-12">
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center text-sm text-muted-foreground mb-6">
+        <Link href="/" className="hover:text-foreground">
+          {language === "es" ? "Inicio" : "Home"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics" className="hover:text-foreground">
+          {language === "es" ? "Temas" : "Topics"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics/mathematics" className="hover:text-foreground">
+          {language === "es" ? "Matemáticas" : "Mathematics"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <Link href="/topics/mathematics/integral-calculus-applications" className="hover:text-foreground">
+          {language === "es" ? "Aplicaciones del Cálculo Integral" : "Applications of Integral Calculus"}
+        </Link>
+        <ChevronRight className="h-4 w-4 mx-1" />
+        <span className="text-foreground font-medium">{currentContent.title}</span>
+      </div>
+
+      {/* Page Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">{currentContent.title}</h1>
+          <p className="text-muted-foreground">{currentContent.subtitle}</p>
+        </div>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/topics/mathematics/integral-calculus-applications" className="flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
             {currentContent.backLink}
           </Link>
         </Button>
       </div>
 
-      <div className="space-y-8 max-w-4xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">{currentContent.title}</h1>
-          <p className="text-xl text-muted-foreground">{currentContent.description}</p>
-        </div>
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content Column */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Introduction Section */}
+          <section>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.introduction}</p>
+            </div>
+          </section>
 
-        <div>
-          <p className="mb-6">{currentContent.introduction}</p>
-        </div>
+          {/* First Theorem Section */}
+          <section>
+            <h2 id="first-theorem" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.firstTheorem.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.firstTheorem.description}</p>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.firstTheorem.title}</h2>
-          <p className="mb-4">{currentContent.firstTheorem.description}</p>
+              <div className="my-4 flex justify-center">
+                <MathDisplay math={currentContent.firstTheorem.formula} />
+              </div>
 
-          <div className="flex justify-center my-4">
-            <MathDisplay math={currentContent.firstTheorem.formula} />
-          </div>
+              <p className="font-medium">{currentContent.firstTheorem.where}</p>
+              <ul>
+                {currentContent.firstTheorem.whereDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-          <div>
-            <p className="font-medium mb-2">{currentContent.firstTheorem.where}</p>
-            <ul className="list-disc pl-6 space-y-1">
-              {currentContent.firstTheorem.whereDescription.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+          {/* Second Theorem Section */}
+          <section>
+            <h2 id="second-theorem" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.secondTheorem.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.secondTheorem.description}</p>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.secondTheorem.title}</h2>
-          <p className="mb-4">{currentContent.secondTheorem.description}</p>
+              <div className="my-4 flex justify-center">
+                <MathDisplay math={currentContent.secondTheorem.formula} />
+              </div>
 
-          <div className="flex justify-center my-4">
-            <MathDisplay math={currentContent.secondTheorem.formula} />
-          </div>
+              <p className="font-medium">{currentContent.secondTheorem.where}</p>
+              <ul>
+                {currentContent.secondTheorem.whereDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-          <div>
-            <p className="font-medium mb-2">{currentContent.secondTheorem.where}</p>
-            <ul className="list-disc pl-6 space-y-1">
-              {currentContent.secondTheorem.whereDescription.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.example.title}</h2>
-          <p className="mb-4 font-medium">{currentContent.example.problem}</p>
-
-          <div>
-            <p className="font-semibold mb-2">{currentContent.example.solution.title}</p>
+          {/* Examples Section */}
+          <section>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.examples.title}
+            </h2>
 
             <div className="space-y-4">
-              <div>
-                <p>{currentContent.example.solution.step1}</p>
-                <p className="ml-4 my-2">{currentContent.example.solution.step1Description}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step1Formula} />
+              {/* Example 1 */}
+              <Card className="overflow-hidden">
+                <div
+                  className="p-4 bg-muted cursor-pointer flex justify-between items-center"
+                  onClick={() => toggleExample(1)}
+                >
+                  <h3 className="font-medium">{currentContent.examples.example1.title}</h3>
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
                 </div>
-              </div>
 
-              <div>
-                <p>{currentContent.example.solution.step2}</p>
-                <p className="ml-4 my-2">{currentContent.example.solution.step2Description}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step2Formula} />
-                </div>
-              </div>
+                {activeExample === 1 && (
+                  <CardContent className="pt-4">
+                    <div className="prose dark:prose-invert max-w-none">
+                      <p>
+                        <strong>{currentContent.examples.example1.problem}</strong>
+                      </p>
+                      <p>{currentContent.examples.example1.solution}</p>
 
-              <div>
-                <p>{currentContent.example.solution.step3}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step3Formula} />
-                </div>
-              </div>
+                      <p>{currentContent.examples.example1.step1}</p>
+                      <p className="ml-4">{currentContent.examples.example1.step1Description}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step1Formula} />
+                      </div>
 
-              <div>
-                <p>{currentContent.example.solution.step4}</p>
-                <div className="flex justify-center my-2">
-                  <MathDisplay math={currentContent.example.solution.step4Formula} />
-                </div>
-              </div>
+                      <p>{currentContent.examples.example1.step2}</p>
+                      <p className="ml-4">{currentContent.examples.example1.step2Description}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step3}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step3Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step4}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step4Formula} />
+                      </div>
+                    </div>
+                  </CardContent>
+                )}
+              </Card>
             </div>
-          </div>
+          </section>
+
+          {/* Applications Section */}
+          <section>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.applications.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.applications.content}</p>
+              <ul>
+                {currentContent.applications.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Limitations Section */}
+          <section>
+            <h2 id="limitations" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.limitations.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <ul>
+                {currentContent.limitations.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
         </div>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.applications.title}</h2>
-          <p className="mb-4">{currentContent.applications.description}</p>
-          <ul className="list-disc pl-6 space-y-1">
-            {currentContent.applications.list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {/* Sidebar Column */}
+        <div className="space-y-6">
+          {/* Table of Contents */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">{language === "es" ? "En Esta Página" : "On This Page"}</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a href="#first-theorem" className="text-primary hover:underline">
+                    {currentContent.firstTheorem.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#second-theorem" className="text-muted-foreground hover:text-primary">
+                    {currentContent.secondTheorem.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
+                    {currentContent.examples.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#applications" className="text-muted-foreground hover:text-primary">
+                    {currentContent.applications.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#limitations" className="text-muted-foreground hover:text-primary">
+                    {currentContent.limitations.title}
+                  </a>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
-        <div className="bg-card p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-4">{currentContent.limitations.title}</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            {currentContent.limitations.list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          {/* Related Topics */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">{language === "es" ? "Temas Relacionados" : "Related Topics"}</h3>
+              <ul className="space-y-2 text-sm">
+                {currentContent.relatedTopics.map((topic, index) => (
+                  <li key={index}>
+                    <Link href={topic.path} className="text-primary hover:underline flex items-center">
+                      <ChevronRight className="h-3 w-3 mr-1" />
+                      {topic.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Resources */}
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3">
+                {language === "es" ? "Recursos de Aprendizaje" : "Learning Resources"}
+              </h3>
+
+              <div className="space-y-4">
+                {currentContent.resources.map((resource, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-2 rounded-md">
+                      {index === 0 ? (
+                        <FileText className="h-4 w-4 text-primary" />
+                      ) : index === 1 ? (
+                        <Calculator className="h-4 w-4 text-primary" />
+                      ) : (
+                        <BookOpen className="h-4 w-4 text-primary" />
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium">{resource.title}</h4>
+                      <p className="text-xs text-muted-foreground mb-1">{resource.description}</p>
+                      <Link href={resource.link} className="text-xs text-primary hover:underline">
+                        {resource.linkText}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

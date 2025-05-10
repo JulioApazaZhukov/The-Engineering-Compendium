@@ -104,7 +104,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Estudio del movimiento, fuerzas y energía en sistemas macroscópicos."
               : "Study of motion, forces, and energy in macroscopic systems.",
-          href: "/topics/physics/classical-mechanics",
+          //href: "/topics/physics/classical-mechanics",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Termodinámica" : "Thermodynamics",
@@ -112,7 +113,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Principios que gobiernan la energía, el calor y el trabajo en sistemas físicos."
               : "Principles governing energy, heat, and work in physical systems.",
-          href: "/topics/physics/thermodynamics",
+          //href: "/topics/physics/thermodynamics",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Electromagnetismo" : "Electromagnetism",
@@ -120,7 +122,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Estudio de fenómenos eléctricos y magnéticos y sus aplicaciones."
               : "Study of electrical and magnetic phenomena and their applications.",
-          href: "/topics/physics/electromagnetism",
+          //href: "/topics/physics/electromagnetism",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Óptica" : "Optics",
@@ -128,7 +131,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Comportamiento y propiedades de la luz, incluyendo reflexión, refracción y difracción."
               : "Behavior and properties of light, including reflection, refraction, and diffraction.",
-          href: "/topics/physics/optics",
+          //href: "/topics/physics/optics",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Física Moderna" : "Modern Physics",
@@ -136,7 +140,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Mecánica cuántica, relatividad y sus aplicaciones en ingeniería."
               : "Quantum mechanics, relativity, and their applications in engineering.",
-          href: "/topics/physics/modern-physics",
+          //href: "/topics/physics/modern-physics",
+          href: "/under-development",
         },
       ],
     },
@@ -155,7 +160,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Propiedades mecánicas, térmicas, eléctricas y químicas de los materiales de ingeniería."
               : "Mechanical, thermal, electrical, and chemical properties of engineering materials.",
-          href: "/topics/materials/properties",
+          //href: "/topics/materials/properties",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Materiales Compuestos" : "Composite Materials",
@@ -163,7 +169,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Diseño y análisis de materiales compuestos por múltiples constituyentes."
               : "Design and analysis of materials composed of multiple constituents.",
-          href: "/topics/materials/composites",
+          //href: "/topics/materials/composites",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Materiales Metálicos y Cerámicos" : "Metallic & Ceramic Materials",
@@ -171,7 +178,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Estructura, propiedades y aplicaciones de metales y cerámicas en ingeniería."
               : "Structure, properties, and applications of metals and ceramics in engineering.",
-          href: "/topics/materials/metallic-ceramic",
+          //href: "/topics/materials/metallic-ceramic",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Polímeros" : "Polymers",
@@ -179,7 +187,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Propiedades y aplicaciones de materiales poliméricos en el diseño de ingeniería."
               : "Properties and applications of polymer materials in engineering design.",
-          href: "/topics/materials/polymers",
+          //href: "/topics/materials/polymers",
+          href: "/under-development",
         },
       ],
     },
@@ -198,7 +207,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Análisis del movimiento y fuerzas en sistemas mecánicos."
               : "Analysis of motion and forces in mechanical systems.",
-          href: "/topics/mechanical/dynamics",
+          //href: "/topics/mechanical/dynamics",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Transferencia de Calor" : "Heat Transfer",
@@ -206,7 +216,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Principios y aplicaciones de conducción, convección y radiación."
               : "Principles and applications of conduction, convection, and radiation.",
-          href: "/topics/mechanical/heat-transfer",
+          //href: "/topics/mechanical/heat-transfer",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Diseño Mecánico" : "Mechanical Design",
@@ -214,7 +225,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Principios y metodologías para diseñar componentes y sistemas mecánicos."
               : "Principles and methodologies for designing mechanical components and systems.",
-          href: "/topics/mechanical/design",
+          //href: "/topics/mechanical/design",
+          href: "/under-development",
         },
       ],
     },
@@ -233,7 +245,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Análisis y diseño de circuitos eléctricos utilizando principios de teoría de circuitos."
               : "Analysis and design of electrical circuits using principles of circuit theory.",
-          href: "/topics/electrical/circuits",
+          //href: "/topics/electrical/circuits",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Electrónica Digital" : "Digital Electronics",
@@ -241,7 +254,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Diseño y análisis de sistemas digitales y circuitos lógicos."
               : "Design and analysis of digital systems and logic circuits.",
-          href: "/topics/electrical/digital",
+          //href: "/topics/electrical/digital",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Sistemas de Control" : "Control Systems",
@@ -249,7 +263,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Teoría y aplicación de sistemas de control en ingeniería."
               : "Theory and application of control systems in engineering.",
-          href: "/topics/electrical/control",
+          //href: "/topics/electrical/control",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Señales y Sistemas" : "Signals & Systems",
@@ -257,7 +272,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Análisis de señales y sistemas en dominios de tiempo y frecuencia."
               : "Analysis of signals and systems in time and frequency domains.",
-          href: "/topics/electrical/signals",
+          //href: "/topics/electrical/signals",
+          href: "/under-development",
         },
       ],
     },
@@ -276,7 +292,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Algoritmos fundamentales y estructuras de datos para computación eficiente."
               : "Fundamental algorithms and data structures for efficient computation.",
-          href: "/topics/software/algorithms",
+          //href: "/topics/software/algorithms",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Programación en Python" : "Python Programming",
@@ -284,7 +301,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Programación en Python para aplicaciones científicas y de ingeniería."
               : "Programming in Python for scientific and engineering applications.",
-          href: "/topics/software/python",
+          //href: "/topics/software/python",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Bases de Datos" : "Databases",
@@ -292,7 +310,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Diseño e implementación de bases de datos para aplicaciones de ingeniería."
               : "Design and implementation of databases for engineering applications.",
-          href: "/topics/software/databases",
+          //href: "/topics/software/databases",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Desarrollo Web" : "Web Development",
@@ -300,7 +319,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Desarrollo de aplicaciones web para propósitos de ingeniería."
               : "Development of web applications for engineering purposes.",
-          href: "/topics/software/web",
+          //href: "/topics/software/web",
+          href: "/under-development",
         },
       ],
     },
@@ -319,7 +339,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Técnicas matemáticas para optimizar sistemas y procesos de ingeniería."
               : "Mathematical techniques for optimizing engineering systems and processes.",
-          href: "/topics/industrial/optimization",
+          //href: "/topics/industrial/optimization",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Manufactura Esbelta" : "Lean Manufacturing",
@@ -327,7 +348,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Principios y prácticas para eliminar desperdicios en procesos de fabricación."
               : "Principles and practices for eliminating waste in manufacturing processes.",
-          href: "/topics/industrial/lean",
+          //href: "/topics/industrial/lean",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Logística y Cadena de Suministro" : "Logistics & Supply Chain",
@@ -335,7 +357,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Gestión y optimización de cadenas de suministro y sistemas logísticos."
               : "Management and optimization of supply chains and logistics systems.",
-          href: "/topics/industrial/logistics",
+          //href: "/topics/industrial/logistics",
+          href: "/under-development",
         },
         {
           name: language === "es" ? "Simulación de Procesos" : "Process Simulation",
@@ -343,7 +366,8 @@ export default function TopicCategoryPage() {
             language === "es"
               ? "Modelado y simulación de procesos industriales para análisis y optimización."
               : "Modeling and simulation of industrial processes for analysis and optimization.",
-          href: "/topics/industrial/simulation",
+          //href: "/topics/industrial/simulation",
+          href: "/under-development",
         },
       ],
     },
@@ -400,7 +424,8 @@ export default function TopicCategoryPage() {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
+      {/* It would be interesting to add additional resources, but at the moment their development is unfeasible. */}
+      {/* <div className="mt-12 text-center">
         <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Recursos Relacionados" : "Related Resources"}</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
           {language === "es"
@@ -469,7 +494,7 @@ export default function TopicCategoryPage() {
             </CardFooter>
           </Card>
         </div>
-      </div>
+      </div>*/}
     </div>
   )
 }

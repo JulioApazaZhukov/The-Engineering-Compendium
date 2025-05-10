@@ -122,10 +122,6 @@ export function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
-              {t("nav.blog")}
-            </Link>
           </nav>
         </div>
 
@@ -138,8 +134,8 @@ export function Navbar() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setLanguage("es")}>Español {language === "es" && "✓"}</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setLanguage("en")}>English {language === "en" && "✓"}</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage("es")}>Español {language === "es" && "✓"}</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -219,15 +215,6 @@ export function Navbar() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <Link
-                href="/blog"
-                className="text-muted-foreground hover:text-foreground"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t("nav.blog")}
-              </Link>
             </div>
           </div>
         </div>

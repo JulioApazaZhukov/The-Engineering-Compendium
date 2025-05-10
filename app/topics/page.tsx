@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 
 export default function TopicsPage() {
   const { t, language } = useLanguage()
-  
+
   const topics = [
     {
       name: language === "es" ? "Matemáticas" : "Mathematics",
@@ -45,18 +45,50 @@ export default function TopicsPage() {
       ],
     },
     {
+      name: language === "es" ? "Ingeniería de Materiales" : "Materials Engineering",
+      description:
+        language === "es"
+          ? "Aprende sobre las propiedades de los materiales y sus aplicaciones en el diseño de ingeniería."
+          : "Learn about material properties and their applications in engineering design.",
+      icon: FileText,
+      href: "/under-development",
+      color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
+      subtopics: [
+        language === "es" ? "Propiedades de Materiales" : "Material Properties",
+        language === "es" ? "Materiales Compuestos" : "Composite Materials",
+        language === "es" ? "Materiales Metálicos y Cerámicos" : "Metallic & Ceramic Materials",
+        language === "es" ? "Polímeros" : "Polymers",
+      ],
+    },
+    {
       name: language === "es" ? "Ingeniería Mecánica" : "Mechanical Engineering",
       description:
         language === "es"
           ? "Explora los principios de mecánica, termodinámica y diseño mecánico."
           : "Explore the principles of mechanics, thermodynamics, and mechanical design.",
       icon: Cog,
-      href: "/topics/mechanical",
+      href: "/under-development",
       color: "bg-purple-100 dark:bg-purple-900 text-purple-900 dark:text-purple-100",
       subtopics: [
         language === "es" ? "Dinámica de Máquinas" : "Machine Dynamics",
         language === "es" ? "Transferencia de Calor" : "Heat Transfer",
         language === "es" ? "Diseño Mecánico" : "Mechanical Design",
+      ],
+    },
+    {
+      name: language === "es" ? "Ingeniería Eléctrica y Electrónica" : "Electrical & Electronics Engineering",
+      description:
+        language === "es"
+          ? "Estudio de sistemas eléctricos, circuitos y dispositivos electrónicos."
+          : "Study of electrical systems, circuits, and electronic devices.",
+      icon: Zap,
+      href: "/under-development",
+      color: "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100",
+      subtopics: [
+        language === "es" ? "Circuitos Eléctricos" : "Electrical Circuits",
+        language === "es" ? "Electrónica Digital" : "Digital Electronics",
+        language === "es" ? "Sistemas de Control" : "Control Systems",
+        language === "es" ? "Señales y Sistemas" : "Signals & Systems",
       ],
     },
     {
@@ -66,7 +98,7 @@ export default function TopicsPage() {
           ? "Principios y prácticas de desarrollo de software para aplicaciones de ingeniería."
           : "Principles and practices of software development for engineering applications.",
       icon: Code,
-      href: "/topics/software",
+      href: "/under-development",
       color: "bg-cyan-100 dark:bg-cyan-900 text-cyan-900 dark:text-cyan-100",
       subtopics: [
         language === "es" ? "Algoritmos y Estructuras de Datos" : "Algorithms & Data Structures",
@@ -82,7 +114,7 @@ export default function TopicsPage() {
           ? "Optimización de procesos complejos, sistemas y organizaciones."
           : "Optimization of complex processes, systems, and organizations.",
       icon: BookOpen,
-      href: "/topics/industrial",
+      href: "/under-development",
       color: "bg-orange-100 dark:bg-orange-900 text-orange-900 dark:text-orange-100",
       subtopics: [
         language === "es" ? "Optimización" : "Optimization",
@@ -91,40 +123,8 @@ export default function TopicsPage() {
         language === "es" ? "Simulación de Procesos" : "Process Simulation",
       ],
     },
-    {
-      name: language === "es" ? "Ingeniería Eléctrica y Electrónica" : "Electrical & Electronics Engineering",
-      description:
-        language === "es"
-          ? "Estudio de sistemas eléctricos, circuitos y dispositivos electrónicos."
-          : "Study of electrical systems, circuits, and electronic devices.",
-      icon: Zap,
-      href: "/topics/electrical",
-      color: "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100",
-      subtopics: [
-        language === "es" ? "Circuitos Eléctricos" : "Electrical Circuits",
-        language === "es" ? "Electrónica Digital" : "Digital Electronics",
-        language === "es" ? "Sistemas de Control" : "Control Systems",
-        language === "es" ? "Señales y Sistemas" : "Signals & Systems",
-      ],
-    },
-    {
-      name: language === "es" ? "Ingeniería de Materiales" : "Materials Engineering",
-      description:
-        language === "es"
-          ? "Aprende sobre las propiedades de los materiales y sus aplicaciones en el diseño de ingeniería."
-          : "Learn about material properties and their applications in engineering design.",
-      icon: FileText,
-      href: "/topics/materials",
-      color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
-      subtopics: [
-        language === "es" ? "Propiedades de Materiales" : "Material Properties",
-        language === "es" ? "Materiales Compuestos" : "Composite Materials",
-        language === "es" ? "Materiales Metálicos y Cerámicos" : "Metallic & Ceramic Materials",
-        language === "es" ? "Polímeros" : "Polymers",
-      ],
-    },
   ]
-  
+
   return (
     <div className="container py-12">
       <div className="space-y-6">
