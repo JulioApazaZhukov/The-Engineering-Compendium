@@ -2,6 +2,7 @@
   "name": "the-engineering-compendium",
   "version": "0.0.0.4",
   "private": true,
+  "homepage": "https://julioapazazhukov.github.io/The-Engineering-Compendium/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

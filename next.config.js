@@ -22,6 +22,9 @@ const nextConfig = {
 const webpack = require('webpack');
 
 module.exports = {
+    basePath: '/The-Engineering-Compendium',
+    assetPrefix: '/The-Engineering-Compendium/',
+    trailingSlash: true,
     ...nextConfig,
     webpack: (config) => {
         config.experiments = { ...config.experiments, asyncWebAssembly: true };
