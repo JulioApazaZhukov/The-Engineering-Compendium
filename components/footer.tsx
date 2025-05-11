@@ -16,7 +16,7 @@ export function Footer() {
             <p className="text-gray-600 dark:text-gray-400 text-sm">{t("footer.description")}</p>
             <div className="flex space-x-4 pt-2">
               <a
-                href="https://github.com"
+                href="https://github.com/JulioApazaZhukov/The-Engineering-Compendium"
                 className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
               >
                 <Github size={20} />
@@ -58,14 +58,14 @@ export function Footer() {
                   {t("nav.resources")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 text-sm transition-colors"
                 >
                   {t("nav.blog")}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact"

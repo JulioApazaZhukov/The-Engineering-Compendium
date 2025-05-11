@@ -21,7 +21,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  devIndicators: false,
 }
+
 
 mergeConfig(nextConfig, userConfig)
 
@@ -45,4 +47,6 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default nextConfig
+//nextConfig.devIndicators = false;
+
+export default nextConfig;

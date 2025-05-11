@@ -34,7 +34,8 @@ export default function TopicsPage() {
           ? "Comprende los principios físicos que gobiernan los sistemas y procesos de ingeniería."
           : "Understand the physical principles that govern engineering systems and processes.",
       icon: Lightbulb,
-      href: "/topics/physics",
+      //href: "/topics/physics",
+      href: "/under-development",
       color: "bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100",
       subtopics: [
         language === "es" ? "Mecánica Clásica" : "Classical Mechanics",
@@ -51,6 +52,7 @@ export default function TopicsPage() {
           ? "Aprende sobre las propiedades de los materiales y sus aplicaciones en el diseño de ingeniería."
           : "Learn about material properties and their applications in engineering design.",
       icon: FileText,
+      //href: "/topics/materials",
       href: "/under-development",
       color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
       subtopics: [
@@ -67,6 +69,7 @@ export default function TopicsPage() {
           ? "Explora los principios de mecánica, termodinámica y diseño mecánico."
           : "Explore the principles of mechanics, thermodynamics, and mechanical design.",
       icon: Cog,
+      //href: "/topics/mechanical",
       href: "/under-development",
       color: "bg-purple-100 dark:bg-purple-900 text-purple-900 dark:text-purple-100",
       subtopics: [
@@ -82,6 +85,7 @@ export default function TopicsPage() {
           ? "Estudio de sistemas eléctricos, circuitos y dispositivos electrónicos."
           : "Study of electrical systems, circuits, and electronic devices.",
       icon: Zap,
+      //href: "/topics/electrical",
       href: "/under-development",
       color: "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100",
       subtopics: [
@@ -98,6 +102,7 @@ export default function TopicsPage() {
           ? "Principios y prácticas de desarrollo de software para aplicaciones de ingeniería."
           : "Principles and practices of software development for engineering applications.",
       icon: Code,
+      //href: "/topics/software",
       href: "/under-development",
       color: "bg-cyan-100 dark:bg-cyan-900 text-cyan-900 dark:text-cyan-100",
       subtopics: [
@@ -114,6 +119,7 @@ export default function TopicsPage() {
           ? "Optimización de procesos complejos, sistemas y organizaciones."
           : "Optimization of complex processes, systems, and organizations.",
       icon: BookOpen,
+      //href: "/topics/industrial",
       href: "/under-development",
       color: "bg-orange-100 dark:bg-orange-900 text-orange-900 dark:text-orange-100",
       subtopics: [
