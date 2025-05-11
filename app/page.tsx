@@ -42,7 +42,7 @@ const featuredResources = [
   {
     title: "Formula Database",
     description: "Comprehensive collection of engineering formulas and equations",
-    image: "/formulaDB.png?height=200&width=400",
+    image: "/The-Engineering-Compendium/public/formulaDB.png?height=200&width=400",
     href: "/resources/tools/formula-database",
   },
   {
