@@ -669,7 +669,7 @@ export default function DifferentialCalculusPage() {
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
-                src="/derivative.png?height=200&width=400"
+                src="/The-Engineering-Compendium/derivative.png?height=200&width=400"
                 alt={language === "es" ? "Visualización de derivada" : "Derivative visualization"}
                 fill
                 className="object-cover"

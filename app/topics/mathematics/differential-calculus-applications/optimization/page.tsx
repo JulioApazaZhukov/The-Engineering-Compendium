@@ -238,7 +238,7 @@ export default function OptimizationPage() {
 
                       <div className="my-4 text-center">
                         <Image
-                          src="/placeholder.svg?height=200&width=300"
+                          src="/The-Engineering-Compendium/placeholder.svg?height=200&width=300"
                           alt={language === "es" ? "Rectángulo junto al río" : "Rectangle next to river"}
                           width={300}
                           height={200}

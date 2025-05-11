@@ -19,7 +19,7 @@ export default function ResourcesPage() {
       icon: Lightbulb,
       href: "/under-development",
       color: "bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100",
-      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
+      image: "/The-Engineering-Compendium/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Problemas Resueltos" : "Solved Problems",
@@ -30,7 +30,7 @@ export default function ResourcesPage() {
       icon: FileText,
       href: "/under-development",
       color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
-      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
+      image: "/The-Engineering-Compendium/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Bibliografía Recomendada" : "Recommended Bibliography",
@@ -41,7 +41,7 @@ export default function ResourcesPage() {
       icon: BookOpen,
       href: "/under-development",
       color: "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100",
-      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
+      image: "/The-Engineering-Compendium/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Herramientas en Línea" : "Online Tools",
@@ -52,7 +52,7 @@ export default function ResourcesPage() {
       icon: Calculator,
       href: "/under-development",
       color: "bg-purple-100 dark:bg-purple-900 text-purple-900 dark:text-purple-100",
-      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
+      image: "/The-Engineering-Compendium/tired-of-looking-for-images.jpg?height=200&width=400",
     },
   ]
 
@@ -101,7 +101,7 @@ export default function ResourcesPage() {
           {resources.map((resource) => (
             <Card key={resource.title} className="overflow-hidden h-full flex flex-col">
               <div className="relative h-48 w-full">
-                <Image src={resource.image || "/placeholder.svg"} alt={resource.title} fill className="object-cover" />
+                <Image src={resource.image || "/The-Engineering-Compendium/placeholder.svg"} alt={resource.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 <div
                   className={`absolute top-4 left-4 w-12 h-12 rounded-lg flex items-center justify-center ${resource.color}`}

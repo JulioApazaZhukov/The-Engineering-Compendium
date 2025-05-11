@@ -562,7 +562,7 @@ export default function IntegralCalculusPage() {
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
-                src="/integral.png?height=200&width=400"
+                src="/The-Engineering-Compendium/integral.png?height=200&width=400"
                 alt="Integration visualization"
                 fill
                 className="object-cover"
