@@ -42,19 +42,19 @@ const featuredResources = [
   {
     title: "Formula Database",
     description: "Comprehensive collection of engineering formulas and equations",
-    image: "/The-Engineering-Compendium/public/formulaDB.png?height=200&width=400",
+    image: "/The-Engineering-Compendium/formulaDB.png?height=200&width=400",
     href: "/resources/tools/formula-database",
   },
   {
     title: "Calculator Index",
     description: "Collection of specialized calculators for various engineering problems",
-    image: "/calculatorIndex.jpg?height=200&width=400",
+    image: "/The-Engineering-Compendium/calculatorIndex.jpg?height=200&width=400",
     href: "calculatorIndex.html",
   },
   {
     title: "Material Properties Database",
     description: "Comprehensive database of engineering materials and their properties",
-    image: "/materialPropertiesDB.png?height=200&width=400",
+    image: "/The-Engineering-Compendium/materialPropertiesDB.png?height=200&width=400",
     //href: "/resources/tools/materials-database",
     href: "/under-development"
   },
@@ -86,10 +86,10 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/TEC-logo.svg?height=400&width=600"
+                src="/The-Engineering-Compendium/TEC-logo.svg?height=400&width=600"
                 alt="Engineering illustration"
                 fill
-                className="object-contain" // className="object-contain"
+                className="object-contain"
                 priority
               />
             </div>
@@ -162,7 +162,7 @@ export default function Home() {
               <Card key={resource.title} className="overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 w-full">
                   <Image
-                    src={resource.image || "/placeholder.svg"}
+                    src={resource.image || "/The-Engineering-Compendium/placeholder.svg"}
                     alt={resource.title}
                     fill
                     className="object-cover"
