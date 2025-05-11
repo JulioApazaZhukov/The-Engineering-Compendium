@@ -503,7 +503,8 @@ export default function IntegralCalculusPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=integral-calculus"
+                      //href="/resources/solved-problems?topic=integral-calculus"
+                      href="../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -545,7 +546,8 @@ export default function IntegralCalculusPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      href="/resources/tools/integration-calculator"
+                      //href="/resources/tools/integration-calculator" shall not happen
+                      href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.use_calculator")}
@@ -560,7 +562,7 @@ export default function IntegralCalculusPage() {
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/integral.png?height=200&width=400"
                 alt="Integration visualization"
                 fill
                 className="object-cover"
@@ -622,7 +624,7 @@ export default function IntegralCalculusPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -641,7 +643,7 @@ export default function IntegralCalculusPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

@@ -554,7 +554,8 @@ export default function BasicFormulasPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=basic-integration"
+                      //href="/resources/solved-problems?topic=basic-integration"
+                      href="../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -576,7 +577,7 @@ export default function BasicFormulasPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      href="/resources/tools/integration-calculator"
+                      href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}

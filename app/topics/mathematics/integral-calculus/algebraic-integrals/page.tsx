@@ -441,7 +441,8 @@ export default function AlgebraicIntegralsPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=algebraic-integrals"
+                      //href="/resources/solved-problems?topic=algebraic-integrals"
+                      href="../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -463,7 +464,8 @@ export default function AlgebraicIntegralsPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      href="/resources/tools/integration-calculator"
+                      //href="/resources/tools/integration-calculator"
+                      href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}

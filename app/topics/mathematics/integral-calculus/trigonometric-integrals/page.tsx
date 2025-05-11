@@ -451,7 +451,7 @@ export default function TrigonometricIntegralsPage() {
             </div>
           </section>
 
-          {/* Practice Problems */}
+          {/* Practice Problems
           <section id="practice-problems">
             <h2 className="text-2xl font-bold mb-4">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
@@ -506,7 +506,7 @@ export default function TrigonometricIntegralsPage() {
                 </CardContent>
               </Card>
             </div>
-          </section>
+          </section> */}
         </div>
 
         {/* Sidebar Column */}
@@ -644,7 +644,8 @@ export default function TrigonometricIntegralsPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      href="/resources/tools/integration-calculator"
+                      //href="/resources/tools/integration-calculator"
+                      href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}

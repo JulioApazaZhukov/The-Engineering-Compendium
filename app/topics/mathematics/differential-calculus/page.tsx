@@ -608,7 +608,8 @@ export default function DifferentialCalculusPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=differential-calculus"
+                      //href="/resources/solved-problems?topic=differential-calculus"
+                      href="../../../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -652,7 +653,8 @@ export default function DifferentialCalculusPage() {
                         : "Interactive tool for calculating derivatives"}
                     </p>
                     <Link
-                      href="/resources/tools/derivative-calculator"
+                      //href="/resources/tools/derivative-calculator"
+                      href="https://www.derivative-calculator.net/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}
@@ -667,7 +669,7 @@ export default function DifferentialCalculusPage() {
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/derivative.png?height=200&width=400"
                 alt={language === "es" ? "Visualización de derivada" : "Derivative visualization"}
                 fill
                 className="object-cover"
@@ -685,7 +687,7 @@ export default function DifferentialCalculusPage() {
       </div>
 
       {/* Interactive Practice Section */}
-      <section className="mt-12 bg-muted/50 p-6 rounded-lg">
+      {/* <section className="mt-12 bg-muted/50 p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">
           {language === "es" ? "Práctica Interactiva" : "Interactive Practice"}
         </h2>
@@ -807,7 +809,7 @@ export default function DifferentialCalculusPage() {
             </div>
           </TabsContent>
         </Tabs>
-      </section>
+      </section> */}
 
       {/* Next Steps */}
       <section className="mt-12">
@@ -833,7 +835,7 @@ export default function DifferentialCalculusPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -852,7 +854,7 @@ export default function DifferentialCalculusPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

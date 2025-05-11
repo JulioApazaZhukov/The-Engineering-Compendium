@@ -422,7 +422,8 @@ export default function ProbabilityStatisticsPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=probability-statistics"
+                      //href="/resources/solved-problems?topic=probability-statistics"
+                      href="../../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -450,7 +451,7 @@ export default function ProbabilityStatisticsPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                {/* <div className="flex items-start gap-3">
                   <div className="bg-primary/10 p-2 rounded-md">
                     <Calculator className="h-4 w-4 text-primary" />
                   </div>
@@ -470,12 +471,12 @@ export default function ProbabilityStatisticsPage() {
                       {t("common.use_calculator")}
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
 
-          {/* Visual Aid */}
+          {/* Visual Aid: Not now
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
@@ -492,7 +493,7 @@ export default function ProbabilityStatisticsPage() {
                   : "Visualization of the normal distribution and its properties"}
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Formula Database Promo */}
           <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-100 dark:border-blue-900">
@@ -538,7 +539,7 @@ export default function ProbabilityStatisticsPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -557,7 +558,7 @@ export default function ProbabilityStatisticsPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

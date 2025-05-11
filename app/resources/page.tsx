@@ -17,9 +17,9 @@ export default function ResourcesPage() {
           ? "Guías paso a paso para ayudarte a dominar conceptos y técnicas clave de ingeniería."
           : "Step-by-step guides to help you master key engineering concepts and techniques.",
       icon: Lightbulb,
-      href: "/resources/tutorials",
+      href: "/under-development",
       color: "bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Problemas Resueltos" : "Solved Problems",
@@ -28,9 +28,9 @@ export default function ResourcesPage() {
           ? "Practica con ejemplos resueltos para fortalecer tu comprensión de los principios de ingeniería."
           : "Practice with solved examples to strengthen your understanding of engineering principles.",
       icon: FileText,
-      href: "/resources/solved-problems",
+      href: "/under-development",
       color: "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Bibliografía Recomendada" : "Recommended Bibliography",
@@ -39,9 +39,9 @@ export default function ResourcesPage() {
           ? "Colección seleccionada de libros, artículos y documentos para un aprendizaje en profundidad."
           : "Curated collection of books, articles, and papers for in-depth learning.",
       icon: BookOpen,
-      href: "/resources/bibliography",
+      href: "/under-development",
       color: "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
     },
     {
       title: language === "es" ? "Herramientas en Línea" : "Online Tools",
@@ -50,9 +50,9 @@ export default function ResourcesPage() {
           ? "Calculadoras, simuladores y software interactivos para aplicar conceptos de ingeniería."
           : "Interactive calculators, simulators, and software to apply engineering concepts.",
       icon: Calculator,
-      href: "/resources/tools",
+      href: "/under-development",
       color: "bg-purple-100 dark:bg-purple-900 text-purple-900 dark:text-purple-100",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/tired-of-looking-for-images.jpg?height=200&width=400",
     },
   ]
 
@@ -63,7 +63,7 @@ export default function ResourcesPage() {
         language === "es"
           ? "Herramienta interactiva para resolver y visualizar ecuaciones diferenciales"
           : "Interactive tool to solve and visualize differential equations",
-      href: "/resources/tools/differential-equations",
+      //href: "/resources/tools/differential-equations",
     },
     {
       title: language === "es" ? "Base de Datos de Propiedades de Materiales" : "Material Properties Database",
@@ -71,7 +71,7 @@ export default function ResourcesPage() {
         language === "es"
           ? "Base de datos completa de materiales de ingeniería y sus propiedades"
           : "Comprehensive database of engineering materials and their properties",
-      href: "/resources/tools/materials-database",
+      //href: "/resources/tools/materials-database",
     },
     {
       title: language === "es" ? "Simulador de Circuitos" : "Circuit Simulator",
@@ -79,7 +79,7 @@ export default function ResourcesPage() {
         language === "es"
           ? "Diseña y analiza circuitos eléctricos con este simulador interactivo"
           : "Design and analyze electrical circuits with this interactive simulator",
-      href: "/resources/tools/circuit-simulator",
+      //href: "/resources/tools/circuit-simulator",
     },
   ]
 
@@ -150,7 +150,9 @@ export default function ResourcesPage() {
                 </CardContent>
                 <CardFooter>
                   <Link
-                    href={tool.href}
+                    //href={tool.href}
+                    //I won't lie, the AI recommended me to add these tools, but I'm too lazy to look for or try to create any of those tools, so I'd better link the cards to “Never Gonna Give You Up”.
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
                   >
                     {language === "es" ? "Probar Herramienta" : "Try Tool"}
@@ -161,7 +163,7 @@ export default function ResourcesPage() {
           </div>
         </div>
 
-        <div className="bg-muted rounded-lg p-6 md:p-8">
+        {/* <div className="bg-muted rounded-lg p-6 md:p-8">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">
               {language === "es" ? "¿Necesitas Recursos Específicos?" : "Need Specific Resources?"}
@@ -178,7 +180,7 @@ export default function ResourcesPage() {
               {language === "es" ? "Solicitar Recursos" : "Request Resources"}
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -425,7 +425,8 @@ export default function LinearAlgebraPage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=linear-algebra"
+                      //href="/resources/solved-problems?topic=linear-algebra"
+                      href="../../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -475,7 +476,7 @@ export default function LinearAlgebraPage() {
             </CardContent>
           </Card>
 
-          {/* Visual Aid */}
+          {/* Visual Aid: Easy but tedious to add
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
@@ -492,7 +493,7 @@ export default function LinearAlgebraPage() {
                   : "Visualization of a linear transformation in the plane"}
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Formula Database Promo */}
           <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-100 dark:border-blue-900">
@@ -541,7 +542,7 @@ export default function LinearAlgebraPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -560,7 +561,7 @@ export default function LinearAlgebraPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

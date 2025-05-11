@@ -42,20 +42,21 @@ const featuredResources = [
   {
     title: "Formula Database",
     description: "Comprehensive collection of engineering formulas and equations",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/formulaDB.png?height=200&width=400",
     href: "/resources/tools/formula-database",
-  },
-  {
-    title: "Material Properties Database",
-    description: "Comprehensive database of engineering materials and their properties",
-    image: "/placeholder.svg?height=200&width=400",
-    href: "/resources/tools/materials-database",
   },
   {
     title: "Calculator Index",
     description: "Collection of specialized calculators for various engineering problems",
-    image: "/placeholder.svg?height=200&width=400",
-    href: "/resources/tools/calculators",
+    image: "/calculatorIndex.jpg?height=200&width=400",
+    href: "calculatorIndex.html",
+  },
+  {
+    title: "Material Properties Database",
+    description: "Comprehensive database of engineering materials and their properties",
+    image: "/materialPropertiesDB.png?height=200&width=400",
+    //href: "/resources/tools/materials-database",
+    href: "/under-development"
   },
 ]
 
@@ -64,7 +65,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 dark:from-primary/10 dark:to-background z-0" />
         <div className="container relative z-10">
@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-muted/50">
+      {/* <section className="py-16 bg-muted/50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold tracking-tight mb-4">{t("newsletter.title")}</h2>
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

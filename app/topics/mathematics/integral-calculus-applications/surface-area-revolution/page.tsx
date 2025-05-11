@@ -1,15 +1,20 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calculator, FileText, ChevronRight, BookOpen } from "lucide-react"
+import { useState } from "react"
 import Link from "next/link"
+import { ArrowLeft, BookOpen, Calculator, FileText, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/components/language-provider"
 import { MathDisplay } from "@/components/math-display"
 
 export default function SurfaceAreaRevolutionPage() {
   const { language } = useLanguage()
+  const [activeExample, setActiveExample] = useState<number | null>(null)
+
+  const toggleExample = (index: number) => {
+    setActiveExample(activeExample === index ? null : index)
+  }
 
   // Content for both languages
   const content = {
@@ -36,51 +41,39 @@ export default function SurfaceAreaRevolutionPage() {
           "[a, b] or [c, d] are the limits of integration",
         ],
       },
-      example: {
-        title: "Example",
-        problem:
-          "Find the surface area of the solid formed by revolving the curve y = x² from x = 0 to x = 2 around the x-axis.",
-        solution: {
-          title: "Solution:",
-          steps: [
-            {
-              text: "1. Identify the function and its derivative:",
-              formula: "f(x) = x^2, \\quad f'(x) = 2x"
-            },
-            {
-              text: "2. Substitute into the surface area formula for rotation around the x-axis:",
-              formula: "S = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + (2x)^2} \\, dx = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + 4x^2} \\, dx"
-            },
-            {
-              text: "3. This integral is challenging to evaluate directly. We can use substitution:",
-              formula: "\\text{Let } u = 1 + 4x^2, \\text{ then } du = 8x \\, dx \\text{ or } dx = \\frac{du}{8x}"
-            },
-            {
-              text: "4. When x = 0, u = 1; when x = 2, u = 17. Rewriting the integral:",
-              formula: "S = 2\\pi \\int_{1}^{17} x^2 \\sqrt{u} \\frac{du}{8x} = \\frac{\\pi}{4} \\int_{1}^{17} x \\sqrt{u} \\, du"
-            },
-            {
-              text: "5. Since u = 1 + 4x², we have x = \\sqrt{\\frac{u-1}{4}} and x² = \\frac{u-1}{4}:",
-              formula: "S = \\frac{\\pi}{4} \\int_{1}^{17} \\sqrt{\\frac{u-1}{4}} \\sqrt{u} \\, du = \\frac{\\pi}{8} \\int_{1}^{17} \\sqrt{u(u-1)} \\, du"
-            },
-            {
-              text: "6. This integral can be evaluated using advanced techniques, resulting in:",
-              formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{u(u-1)}(2u-1) + \\sinh^{-1}\\sqrt{u-1}\\right]_{1}^{17}"
-            },
-            {
-              text: "7. Evaluating at the limits and simplifying:",
-              formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{17 \\cdot 16}(34-1) + \\sinh^{-1}\\sqrt{16} - \\sqrt{1 \\cdot 0}(2-1) - \\sinh^{-1}\\sqrt{0}\\right]"
-            },
-            {
-              text: "8. Further simplification:",
-              formula: "S = \\frac{\\pi}{12}\\left[16.5 \\cdot 33 + \\sinh^{-1}(4) - 0 - 0\\right] \\approx \\frac{\\pi}{12}[544.5 + 2.094] \\approx 143.6\\pi \\approx 451.1 \\text{ square units}"
-            }
-          ]
+      examples: {
+        title: "Examples",
+        example1: {
+          title: "Example: Surface Area of a Paraboloid",
+          problem:
+            "Find the surface area of the solid formed by revolving the curve y = x² from x = 0 to x = 2 around the x-axis.",
+          solution: "We'll use the formula for rotation around the x-axis:",
+          step1: "1. Identify the function and its derivative:",
+          step1Formula: "f(x) = x^2, \\quad f'(x) = 2x",
+          step2: "2. Substitute into the surface area formula for rotation around the x-axis:",
+          step2Formula:
+            "S = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + (2x)^2} \\, dx = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + 4x^2} \\, dx",
+          step3: "3. This integral is challenging to evaluate directly. We can use substitution:",
+          step3Formula: "\\text{Let } u = 1 + 4x^2, \\text{ then } du = 8x \\, dx \\text{ or } dx = \\frac{du}{8x}",
+          step4: "4. When x = 0, u = 1; when x = 2, u = 17. Rewriting the integral:",
+          step4Formula:
+            "S = 2\\pi \\int_{1}^{17} x^2 \\sqrt{u} \\frac{du}{8x} = \\frac{\\pi}{4} \\int_{1}^{17} x \\sqrt{u} \\, du",
+          step5: "5. Since u = 1 + 4x², we have x = \\sqrt{\\frac{u-1}{4}} and x² = \\frac{u-1}{4}:",
+          step5Formula:
+            "S = \\frac{\\pi}{4} \\int_{1}^{17} \\sqrt{\\frac{u-1}{4}} \\sqrt{u} \\, du = \\frac{\\pi}{8} \\int_{1}^{17} \\sqrt{u(u-1)} \\, du",
+          step6: "6. This integral can be evaluated using advanced techniques, resulting in:",
+          step6Formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{u(u-1)}(2u-1) + \\sinh^{-1}\\sqrt{u-1}\\right]_{1}^{17}",
+          step7: "7. Evaluating at the limits and simplifying:",
+          step7Formula:
+            "S = \\frac{\\pi}{12}\\left[\\sqrt{17 \\cdot 16}(34-1) + \\sinh^{-1}\\sqrt{16} - \\sqrt{1 \\cdot 0}(2-1) - \\sinh^{-1}\\sqrt{0}\\right]",
+          step8: "8. Further simplification:",
+          step8Formula:
+            "S = \\frac{\\pi}{12}\\left[16.5 \\cdot 33 + \\sinh^{-1}(4) - 0 - 0\\right] \\approx \\frac{\\pi}{12}[544.5 + 2.094] \\approx 143.6\\pi \\approx 451.1 \\text{ square units}",
         },
       },
       applications: {
         title: "Applications",
-        description: "The surface area of solids of revolution has numerous applications:",
+        content: "The surface area of solids of revolution has numerous applications:",
         list: [
           "Engineering: Designing containers, tanks, and vessels",
           "Manufacturing: Calculating material requirements for curved surfaces",
@@ -88,11 +81,23 @@ export default function SurfaceAreaRevolutionPage() {
           "Architecture: Designing domes and curved structures",
         ],
       },
+      considerations: {
+        title: "Important Considerations",
+        list: [
+          "The formula assumes a smooth, continuous function",
+          "For piecewise functions, the integral must be split into separate parts",
+          "For complex functions, numerical integration methods may be necessary",
+          "The choice of axis affects the complexity of the calculation",
+        ],
+      },
       relatedTopics: [
-        { name: "Volume of Solids of Revolution", path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution" },
-        { name: "Area Under a Curve", path: "/topics/mathematics/integral-calculus-applications/area-under-curve" },
-        { name: "Area Between Curves", path: "/topics/mathematics/integral-calculus-applications/area-between-curves" },
-        { name: "Integration Techniques", path: "/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution" },
+        {
+          name: "Volume of Solids of Revolution",
+          path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
+        },
+        { name: "Pappus' Theorem", path: "/topics/mathematics/integral-calculus-applications/pappus-theorem" },
+        { name: "Arc Length", path: "/topics/mathematics/integral-calculus/arc-length" },
+        { name: "Integral Calculus", path: "/topics/mathematics/integral-calculus" },
       ],
       resources: [
         {
@@ -118,7 +123,7 @@ export default function SurfaceAreaRevolutionPage() {
     es: {
       title: "Área de Superficie de Sólidos de Revolución",
       subtitle: "Calcula el área de superficie generada al girar una curva alrededor de un eje",
-      backLink: "Volver a Aplicaciones",
+      backLink: "Volver a Aplicaciones del Cálculo Integral",
       introduction:
         "Cuando una curva gira alrededor de un eje, genera una superficie tridimensional. El área de superficie de este sólido de revolución puede calcularse utilizando cálculo integral, proporcionando una herramienta poderosa para resolver problemas en ingeniería, física y diseño.",
       formula: {
@@ -138,51 +143,39 @@ export default function SurfaceAreaRevolutionPage() {
           "[a, b] o [c, d] son los límites de integración",
         ],
       },
-      example: {
-        title: "Ejemplo",
-        problem:
-          "Encuentra el área de superficie del sólido formado al girar la curva y = x² desde x = 0 hasta x = 2 alrededor del eje x.",
-        solution: {
-          title: "Solución:",
-          steps: [
-            {
-              text: "1. Identifica la función y su derivada:",
-              formula: "f(x) = x^2, \\quad f'(x) = 2x"
-            },
-            {
-              text: "2. Sustituye en la fórmula del área de superficie para rotación alrededor del eje x:",
-              formula: "S = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + (2x)^2} \\, dx = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + 4x^2} \\, dx"
-            },
-            {
-              text: "3. Esta integral es difícil de evaluar directamente. Podemos usar sustitución:",
-              formula: "\\text{Sea } u = 1 + 4x^2, \\text{ entonces } du = 8x \\, dx \\text{ o } dx = \\frac{du}{8x}"
-            },
-            {
-              text: "4. Cuando x = 0, u = 1; cuando x = 2, u = 17. Reescribiendo la integral:",
-              formula: "S = 2\\pi \\int_{1}^{17} x^2 \\sqrt{u} \\frac{du}{8x} = \\frac{\\pi}{4} \\int_{1}^{17} x \\sqrt{u} \\, du"
-            },
-            {
-              text: "5. Como u = 1 + 4x², tenemos x = \\sqrt{\\frac{u-1}{4}} y x² = \\frac{u-1}{4}:",
-              formula: "S = \\frac{\\pi}{4} \\int_{1}^{17} \\sqrt{\\frac{u-1}{4}} \\sqrt{u} \\, du = \\frac{\\pi}{8} \\int_{1}^{17} \\sqrt{u(u-1)} \\, du"
-            },
-            {
-              text: "6. Esta integral puede evaluarse utilizando técnicas avanzadas, resultando en:",
-              formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{u(u-1)}(2u-1) + \\sinh^{-1}\\sqrt{u-1}\\right]_{1}^{17}"
-            },
-            {
-              text: "7. Evaluando en los límites y simplificando:",
-              formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{17 \\cdot 16}(34-1) + \\sinh^{-1}\\sqrt{16} - \\sqrt{1 \\cdot 0}(2-1) - \\sinh^{-1}\\sqrt{0}\\right]"
-            },
-            {
-              text: "8. Simplificación adicional:",
-              formula: "S = \\frac{\\pi}{12}\\left[16.5 \\cdot 33 + \\sinh^{-1}(4) - 0 - 0\\right] \\approx \\frac{\\pi}{12}[544.5 + 2.094] \\approx 143.6\\pi \\approx 451.1 \\text{ unidades cuadradas}"
-            }
-          ]
+      examples: {
+        title: "Ejemplos",
+        example1: {
+          title: "Ejemplo: Área de Superficie de un Paraboloide",
+          problem:
+            "Encuentra el área de superficie del sólido formado al girar la curva y = x² desde x = 0 hasta x = 2 alrededor del eje x.",
+          solution: "Usaremos la fórmula para rotación alrededor del eje x:",
+          step1: "1. Identifica la función y su derivada:",
+          step1Formula: "f(x) = x^2, \\quad f'(x) = 2x",
+          step2: "2. Sustituye en la fórmula del área de superficie para rotación alrededor del eje x:",
+          step2Formula:
+            "S = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + (2x)^2} \\, dx = 2\\pi \\int_{0}^{2} x^2 \\sqrt{1 + 4x^2} \\, dx",
+          step3: "3. Esta integral es difícil de evaluar directamente. Podemos usar sustitución:",
+          step3Formula: "\\text{Sea } u = 1 + 4x^2, \\text{ entonces } du = 8x \\, dx \\text{ o } dx = \\frac{du}{8x}",
+          step4: "4. Cuando x = 0, u = 1; cuando x = 2, u = 17. Reescribiendo la integral:",
+          step4Formula:
+            "S = 2\\pi \\int_{1}^{17} x^2 \\sqrt{u} \\frac{du}{8x} = \\frac{\\pi}{4} \\int_{1}^{17} x \\sqrt{u} \\, du",
+          step5: "5. Como u = 1 + 4x², tenemos x = \\sqrt{\\frac{u-1}{4}} y x² = \\frac{u-1}{4}:",
+          step5Formula:
+            "S = \\frac{\\pi}{4} \\int_{1}^{17} \\sqrt{\\frac{u-1}{4}} \\sqrt{u} \\, du = \\frac{\\pi}{8} \\int_{1}^{17} \\sqrt{u(u-1)} \\, du",
+          step6: "6. Esta integral puede evaluarse utilizando técnicas avanzadas, resultando en:",
+          step6Formula: "S = \\frac{\\pi}{12}\\left[\\sqrt{u(u-1)}(2u-1) + \\sinh^{-1}\\sqrt{u-1}\\right]_{1}^{17}",
+          step7: "7. Evaluando en los límites y simplificando:",
+          step7Formula:
+            "S = \\frac{\\pi}{12}\\left[\\sqrt{17 \\cdot 16}(34-1) + \\sinh^{-1}\\sqrt{16} - \\sqrt{1 \\cdot 0}(2-1) - \\sinh^{-1}\\sqrt{0}\\right]",
+          step8: "8. Simplificación adicional:",
+          step8Formula:
+            "S = \\frac{\\pi}{12}\\left[16.5 \\cdot 33 + \\sinh^{-1}(4) - 0 - 0\\right] \\approx \\frac{\\pi}{12}[544.5 + 2.094] \\approx 143.6\\pi \\approx 451.1 \\text{ unidades cuadradas}",
         },
       },
       applications: {
         title: "Aplicaciones",
-        description: "El área de superficie de sólidos de revolución tiene numerosas aplicaciones:",
+        content: "El área de superficie de sólidos de revolución tiene numerosas aplicaciones:",
         list: [
           "Ingeniería: Diseño de contenedores, tanques y recipientes",
           "Fabricación: Cálculo de requisitos de material para superficies curvas",
@@ -190,30 +183,42 @@ export default function SurfaceAreaRevolutionPage() {
           "Arquitectura: Diseño de cúpulas y estructuras curvas",
         ],
       },
+      considerations: {
+        title: "Consideraciones Importantes",
+        list: [
+          "La fórmula asume una función suave y continua",
+          "Para funciones por partes, la integral debe dividirse en partes separadas",
+          "Para funciones complejas, pueden ser necesarios métodos de integración numérica",
+          "La elección del eje afecta la complejidad del cálculo",
+        ],
+      },
       relatedTopics: [
-        { name: "Volumen de sólidos de revolución", path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution" },
-        { name: "Área bajo una curva", path: "/topics/mathematics/integral-calculus-applications/area-under-curve" },
-        { name: "Área entre curvas", path: "/topics/mathematics/integral-calculus-applications/area-between-curves" },
-        { name: "Técnicas de integración", path: "/topics/mathematics/integral-calculus/integration-methods/integration-by-substitution" },
+        {
+          name: "Volumen de Sólidos de Revolución",
+          path: "/topics/mathematics/integral-calculus-applications/volume-solids-revolution",
+        },
+        { name: "Teorema de Pappus", path: "/topics/mathematics/integral-calculus-applications/pappus-theorem" },
+        { name: "Longitud de Arco", path: "/topics/mathematics/integral-calculus/arc-length" },
+        { name: "Cálculo Integral", path: "/topics/mathematics/integral-calculus" },
       ],
       resources: [
         {
-          title: "Solved Problems",
-          description: "Practice with step-by-step solutions",
+          title: "Problemas Resueltos",
+          description: "Practica con soluciones paso a paso",
           link: "/resources/solved-problems?topic=surface-area-revolution",
-          linkText: "View problems",
+          linkText: "Ver problemas",
         },
         {
-          title: "Interactive Calculator",
-          description: "Calculate surface areas with our tool",
+          title: "Calculadora Interactiva",
+          description: "Calcula áreas de superficie con nuestra herramienta",
           link: "/resources/tools/surface-area-calculator",
-          linkText: "Use calculator",
+          linkText: "Usar calculadora",
         },
         {
-          title: "Recommended Reading",
-          description: "Books and articles on integral applications",
+          title: "Lecturas Recomendadas",
+          description: "Libros y artículos sobre aplicaciones de integrales",
           link: "/resources/bibliography?topic=integral-applications",
-          linkText: "View bibliography",
+          linkText: "Ver bibliografía",
         },
       ],
     },
@@ -262,76 +267,145 @@ export default function SurfaceAreaRevolutionPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content Column */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Introduction */}
-          <div className="prose dark:prose-invert max-w-none">
-            <p>{currentContent.introduction}</p>
-          </div>
+          {/* Introduction Section */}
+          <section>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.introduction}</p>
+            </div>
+          </section>
 
           {/* Formula Section */}
-          <Card>
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-semibold mb-4">{currentContent.formula.title}</h2>
-              <p className="mb-4">{currentContent.formula.description}</p>
+          <section>
+            <h2 id="formula" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.formula.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.formula.description}</p>
 
-              <div className="mb-4">
-                <p className="font-medium mb-2">{currentContent.formula.xAxis}</p>
-                <div className="flex justify-center my-4">
+              <div className="mt-4">
+                <p className="font-medium">{currentContent.formula.xAxis}</p>
+                <div className="my-3 flex justify-center">
                   <MathDisplay math={currentContent.formula.xAxisFormula} />
                 </div>
               </div>
 
-              <div className="mb-4">
-                <p className="font-medium mb-2">{currentContent.formula.yAxis}</p>
-                <div className="flex justify-center my-4">
+              <div className="mt-4">
+                <p className="font-medium">{currentContent.formula.yAxis}</p>
+                <div className="my-3 flex justify-center">
                   <MathDisplay math={currentContent.formula.yAxisFormula} />
                 </div>
               </div>
 
-              <div>
-                <p className="font-medium mb-2">{currentContent.formula.where}</p>
-                <ul className="list-disc pl-6 space-y-1">
+              <div className="mt-4">
+                <p className="font-medium">{currentContent.formula.where}</p>
+                <ul>
                   {currentContent.formula.whereDescription.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </section>
 
-          {/* Example Section */}
-          <Card>
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-semibold mb-4">{currentContent.example.title}</h2>
-              <p className="mb-4 font-medium">{currentContent.example.problem}</p>
+          {/* Examples Section */}
+          <section>
+            <h2 id="examples" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.examples.title}
+            </h2>
 
-              <div>
-                <p className="font-semibold mb-2">{currentContent.example.solution.title}</p>
-                <div className="space-y-4">
-                  {currentContent.example.solution.steps.map((step, index) => (
-                    <div key={index}>
-                      <p>{step.text}</p>
-                      <div className="flex justify-center my-2">
-                        <MathDisplay math={step.formula} />
+            <div className="space-y-4">
+              {/* Example 1 */}
+              <Card className="overflow-hidden">
+                <div
+                  className="p-4 bg-muted cursor-pointer flex justify-between items-center"
+                  onClick={() => toggleExample(1)}
+                >
+                  <h3 className="font-medium">{currentContent.examples.example1.title}</h3>
+                  <ChevronRight className={`h-5 w-5 transition-transform ${activeExample === 1 ? "rotate-90" : ""}`} />
+                </div>
+
+                {activeExample === 1 && (
+                  <CardContent className="pt-4">
+                    <div className="prose dark:prose-invert max-w-none">
+                      <p>
+                        <strong>{currentContent.examples.example1.problem}</strong>
+                      </p>
+                      <p>{currentContent.examples.example1.solution}</p>
+
+                      <p>{currentContent.examples.example1.step1}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step1Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step2}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step2Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step3}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step3Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step4}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step4Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step5}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step5Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step6}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step6Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step7}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step7Formula} />
+                      </div>
+
+                      <p>{currentContent.examples.example1.step8}</p>
+                      <div className="my-2 flex justify-center">
+                        <MathDisplay math={currentContent.examples.example1.step8Formula} />
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                  </CardContent>
+                )}
+              </Card>
+            </div>
+          </section>
 
           {/* Applications Section */}
-          <Card>
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-semibold mb-4">{currentContent.applications.title}</h2>
-              <p className="mb-4">{currentContent.applications.description}</p>
-              <ul className="list-disc pl-6 space-y-1">
+          <section>
+            <h2 id="applications" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.applications.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>{currentContent.applications.content}</p>
+              <ul>
                 {currentContent.applications.list.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
+            </div>
+          </section>
+
+          {/* Considerations Section */}
+          <section>
+            <h2 id="considerations" className="text-2xl font-bold mb-4 scroll-mt-16">
+              {currentContent.considerations.title}
+            </h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <ul>
+                {currentContent.considerations.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
         </div>
 
         {/* Sidebar Column */}
@@ -347,13 +421,18 @@ export default function SurfaceAreaRevolutionPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#example" className="text-muted-foreground hover:text-primary">
-                    {currentContent.example.title}
+                  <a href="#examples" className="text-muted-foreground hover:text-primary">
+                    {currentContent.examples.title}
                   </a>
                 </li>
                 <li>
                   <a href="#applications" className="text-muted-foreground hover:text-primary">
                     {currentContent.applications.title}
+                  </a>
+                </li>
+                <li>
+                  <a href="#considerations" className="text-muted-foreground hover:text-primary">
+                    {currentContent.considerations.title}
                   </a>
                 </li>
               </ul>

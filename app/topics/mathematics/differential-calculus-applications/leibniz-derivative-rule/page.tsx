@@ -641,7 +641,8 @@ export default function LeibnizDerivativeRulePage() {
                         : "Practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=leibniz-rule"
+                      //href="/resources/solved-problems?topic=leibniz-rule"
+                      href="../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -671,7 +672,7 @@ export default function LeibnizDerivativeRulePage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                {/* <div className="flex items-start gap-3">
                   <div className="bg-primary/10 p-2 rounded-md">
                     <Calculator className="h-4 w-4 text-primary" />
                   </div>
@@ -691,14 +692,14 @@ export default function LeibnizDerivativeRulePage() {
                       {language === "es" ? "Usar calculadora" : "Use calculator"}
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
         </div>
       </div>
 
-      {/* Practice Problems Section */}
+      {/* Practice Problems Section
       <section className="mt-12 bg-muted/50 p-6 rounded-lg">
         <h2 className="text-2xl font-bold mb-4">{language === "es" ? "Problemas de Práctica" : "Practice Problems"}</h2>
 
@@ -737,7 +738,7 @@ export default function LeibnizDerivativeRulePage() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Next Steps */}
       <section className="mt-12">
@@ -766,7 +767,7 @@ export default function LeibnizDerivativeRulePage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -786,7 +787,7 @@ export default function LeibnizDerivativeRulePage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

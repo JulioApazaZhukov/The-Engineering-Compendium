@@ -1,13 +1,14 @@
 # The-Engineering-Compendium
 
+Tomorrow I will try to explain what all this is supposed to be about.
+*Archived to the to-do list that will probably never be reviewed again.*
+
 ### To-do
-- [ ] Correct pages: Pappus' theorem, hydrostatic force and surface of solids of revolution.
-- [ ] Fix cards on the hub pages of differential and integral calculus applications.
-- [ ] Ensure that the calculus content is complete.
-- [ ] Repair landing page.
-- [ ] Create the ‘Under development’ pages.
-- [ ] Delete the blog page and add the link to ‘The Engineering Insight’ to the navigation bar instead.
-- [ ] Comment the practice problem cards.
+- [x] Correct pages: Pappus' theorem, hydrostatic force and surface of solids of revolution.
+- [x] Fix cards on the hub pages of differential and integral calculus applications.
+- [x] Ensure that the calculus content is complete.
+- [x] Repair landing page.
+- [x] Create the ‘Under development’ pages.
+- [x] Comment the practice problem cards.
 - [ ] Add more formulas to the formula database.
-- [ ] Add a means of contact and a suggestion box.
 - [ ] Draft privacy policies.

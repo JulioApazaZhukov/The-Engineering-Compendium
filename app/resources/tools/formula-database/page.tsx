@@ -150,11 +150,11 @@ export default function FormulaDatabase() {
         <FormulaModal formula={selectedFormula} isOpen={isModalOpen} onClose={handleCloseModal} />
 
         {/* Suggestion Section */}
-        <div className="bg-muted/50 p-6 rounded-lg text-center">
+        {/* <div className="bg-muted/50 p-6 rounded-lg text-center">
           <h3 className="text-lg font-medium mb-2">{t("formula.suggest")}</h3>
           <p className="text-muted-foreground mb-4">{t("formula.suggest_desc")}</p>
           <Button>{t("formula.suggest_button")}</Button>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -488,7 +488,7 @@ export default function DifferentialEquationsPage() {
           </Card>
 
           {/* Visual Aid */}
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
                 src="/placeholder.svg?height=200&width=400"
@@ -504,7 +504,7 @@ export default function DifferentialEquationsPage() {
                   : "Visualization of solutions to a differential equation"}
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Formula Database Promo */}
           <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-100 dark:border-blue-900">
@@ -550,7 +550,7 @@ export default function DifferentialEquationsPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden">
+          {/* <Card className="overflow-hidden">
             <div className="p-6 flex items-center gap-4">
               <div className="bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100 p-3 rounded-lg">
                 <FileText className="h-6 w-6" />
@@ -569,7 +569,7 @@ export default function DifferentialEquationsPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </section>
     </div>

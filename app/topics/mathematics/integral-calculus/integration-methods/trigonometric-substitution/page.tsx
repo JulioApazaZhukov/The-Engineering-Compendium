@@ -595,7 +595,7 @@ export default function TrigonometricSubstitutionPage() {
             </div>
           </section>
 
-          {/* Practice Problems */}
+          {/* Practice Problems
           <section>
             <h2 id="practice-problems" className="text-2xl font-bold mb-4 scroll-mt-16">
               {language === "es" ? "Problemas de Práctica" : "Practice Problems"}
@@ -650,7 +650,7 @@ export default function TrigonometricSubstitutionPage() {
                 </CardContent>
               </Card>
             </div>
-          </section>
+          </section> */}
         </div>
 
         {/* Sidebar Column */}
@@ -772,7 +772,8 @@ export default function TrigonometricSubstitutionPage() {
                         : "More practice with step-by-step solutions"}
                     </p>
                     <Link
-                      href="/resources/solved-problems?topic=trigonometric-substitution"
+                      //href="/resources/solved-problems?topic=trigonometric-substitution"
+                      href="../../../../../under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -794,7 +795,8 @@ export default function TrigonometricSubstitutionPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      href="/resources/tools/integration-calculator"
+                      //href="/resources/tools/integration-calculator"
+                      href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}
