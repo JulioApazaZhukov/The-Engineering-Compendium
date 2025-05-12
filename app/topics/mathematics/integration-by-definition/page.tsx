@@ -842,7 +842,7 @@ export default function IntegrationByDefinitionPage() {
           <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/The-Engineering-Compendium/riemann.png?height=200&width=400"
                 alt={language === "es" ? "Visualización de sumas de Riemann" : "Riemann sums visualization"}
                 fill
                 className="object-cover"
