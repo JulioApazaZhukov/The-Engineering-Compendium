@@ -11,6 +11,10 @@ import { cn } from "@/lib/utils"
 
 const topics = [
   {
+    name: "All Topics",
+    href: "/topics",
+  },
+  {
     name: "Mathematics",
     href: "/topics/mathematics",
     subtopics: [
@@ -56,9 +60,9 @@ const topics = [
 
 const resources = [
   { name: "Formula Database", href: "/resources/tools/formula-database" },
-  { name: "Calculator Index", href: "/The-Engineering-Compendium/calculatorIndex.html" },
+  { name: "Calculator Index", href: "/calculatorIndex.html" },
   { name: "Recommended Bibliography", href: "/under-development" },
-  { name: "Online Tools", href: "/resources/tools" },
+  { name: "Online Tools", href: "/under-development" },
 ]
 
 export function Navbar() {
