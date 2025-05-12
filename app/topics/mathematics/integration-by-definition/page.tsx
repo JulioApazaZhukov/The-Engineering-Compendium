@@ -838,8 +838,8 @@ export default function IntegrationByDefinitionPage() {
             </CardContent>
           </Card>
 
-          {/* Visual Aid */}
-          <Card className="overflow-hidden">
+          {/* Visual Aid Nop */ }
+          {/* <Card className="overflow-hidden">
             <div className="relative h-48">
               <Image
                 src="/The-Engineering-Compendium/riemann.png?height=200&width=400"
@@ -855,7 +855,7 @@ export default function IntegrationByDefinitionPage() {
                   : "Visual comparison of different approximation methods"}
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
 
