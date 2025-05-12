@@ -642,7 +642,7 @@ export default function LeibnizDerivativeRulePage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=leibniz-rule"
-                      href="../../../under-development"
+                      href="/The-Engineering-Compendium/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -664,7 +664,8 @@ export default function LeibnizDerivativeRulePage() {
                         : "Books and articles on Leibniz's rule"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=leibniz-rule"
+                      //href="/resources/bibliography?topic=leibniz-rule"
+                      href="/The-Engineering-Compendium/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

@@ -33,7 +33,9 @@ export default function PappusTheoremPage() {
         whereDescription: [
           "V is the volume of the solid of revolution",
           "A is the area of the plane figure being rotated",
-          "\\bar{d} is the distance from the centroid of the figure to the axis of rotation",
+          <>
+            <MathDisplay math="\bar{d}" display={false} /> is the distance from the centroid of the figure to the axis of rotation
+          </>
         ],
       },
       secondTheorem: {
@@ -45,7 +47,9 @@ export default function PappusTheoremPage() {
         whereDescription: [
           "S is the surface area of the solid of revolution",
           "L is the length of the curve being rotated",
-          "\\bar{d} is the distance from the centroid of the curve to the axis of rotation",
+          <>
+            <MathDisplay math="\bar{d}" display={false} /> is the distance from the centroid of the curve to the axis of rotation
+          </>
         ],
       },
       examples: {
@@ -135,7 +139,9 @@ export default function PappusTheoremPage() {
         whereDescription: [
           "V es el volumen del sólido de revolución",
           "A es el área de la figura plana que se está rotando",
-          "\\bar{d} es la distancia desde el centroide de la figura al eje de rotación",
+          <>
+            <MathDisplay math="\bar{d}" display={false} /> es la distancia desde el centroide de la figura al eje de rotación
+          </>
         ],
       },
       secondTheorem: {
@@ -147,7 +153,9 @@ export default function PappusTheoremPage() {
         whereDescription: [
           "S es el área de superficie del sólido de revolución",
           "L es la longitud de la curva que se está rotando",
-          "\\bar{d} es la distancia desde el centroide de la curva al eje de rotación",
+          <>
+            <MathDisplay math="\bar{d}" display={false} /> es la distancia desde el centroide de la curva al eje de rotación
+          </>
         ],
       },
       examples: {

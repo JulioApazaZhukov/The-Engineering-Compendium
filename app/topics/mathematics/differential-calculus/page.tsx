@@ -609,7 +609,7 @@ export default function DifferentialCalculusPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=differential-calculus"
-                      href="../../../../../under-development"
+                      href="/The-Engineering-Compendium/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -631,7 +631,8 @@ export default function DifferentialCalculusPage() {
                         : "Books and articles on differential calculus"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=differential-calculus"
+                      //href="/resources/bibliography?topic=differential-calculus"
+                      href="/The-Engineering-Compendium/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

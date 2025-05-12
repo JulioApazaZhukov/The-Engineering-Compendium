@@ -55,9 +55,9 @@ const topics = [
 ]
 
 const resources = [
-  { name: "Tutorials", href: "/resources/tutorials" },
-  { name: "Solved Problems", href: "/resources/solved-problems" },
-  { name: "Recommended Bibliography", href: "/resources/bibliography" },
+  { name: "Formula Database", href: "/resources/tools/formula-database" },
+  { name: "Calculator Index", href: "/The-Engineering-Compendium/calculatorIndex.html" },
+  { name: "Recommended Bibliography", href: "/under-development" },
   { name: "Online Tools", href: "/resources/tools" },
 ]
 
