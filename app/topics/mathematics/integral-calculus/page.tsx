@@ -468,7 +468,8 @@ export default function IntegralCalculusPage() {
                 </li>
                 <li>
                   <Link
-                    href="/topics/mathematics/multivariable-calculus"
+                    //href="/topics/mathematics/multivariable-calculus"
+                    href="/The-Engineering-Compendium/under-development"
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
@@ -476,7 +477,11 @@ export default function IntegralCalculusPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/topics/physics/mechanics" className="text-primary hover:underline flex items-center">
+                  <Link
+                    //href="/topics/physics/mechanics"
+                    href="/The-Engineering-Compendium/under-development"
+                    className="text-primary hover:underline flex items-center"
+                  >
                     <ChevronRight className="h-3 w-3 mr-1" />
                     {language === "es" ? "Mecánica" : "Mechanics"}
                   </Link>
@@ -504,7 +509,7 @@ export default function IntegralCalculusPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integral-calculus"
-                      href="../../under-development"
+                      href="/The-Engineering-Compendium/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}

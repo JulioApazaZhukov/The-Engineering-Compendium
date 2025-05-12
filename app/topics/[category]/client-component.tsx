@@ -44,6 +44,14 @@ export default function ClientComponent({ category }: Props) {
           href: "/topics/mathematics/differential-calculus-applications",
         },
         {
+          name: language === "es" ? "Integración por Definición" : "Integration by Definition",
+          description:
+            language === "es"
+              ? "Estudio de la integración como el proceso inverso de la diferenciación."
+              : "Study of integration as the reverse process of differentiation.",
+          href: "/topics/mathematics/integration-by-definition",
+        },
+        {
           name: language === "es" ? "Cálculo Integral" : "Integral Calculus",
           description:
             language === "es"
