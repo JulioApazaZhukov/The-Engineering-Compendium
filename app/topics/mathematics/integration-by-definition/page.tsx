@@ -782,7 +782,7 @@ export default function IntegrationByDefinitionPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integration-by-definition"
-                      href="/The-Engineering-Compendium/under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -805,7 +805,7 @@ export default function IntegrationByDefinitionPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integration-by-definition"
-                      href="/The-Engineering-Compendium/under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}
@@ -827,7 +827,7 @@ export default function IntegrationByDefinitionPage() {
                         : "Interactive tool for calculating Riemann sums"}
                     </p>
                     <Link
-                      href="/resources/tools/riemann-sum-calculator"
+                      href="https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Usar calculadora" : "Use calculator"}
