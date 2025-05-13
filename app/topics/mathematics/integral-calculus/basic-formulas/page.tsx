@@ -555,7 +555,7 @@ export default function BasicFormulasPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=basic-integration"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}

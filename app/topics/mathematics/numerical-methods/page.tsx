@@ -417,7 +417,7 @@ export default function NumericalMethodsPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=numerical-methods"
-                      href="../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -437,7 +437,7 @@ export default function NumericalMethodsPage() {
                         : "Books and articles on numerical methods"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=numerical-methods"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

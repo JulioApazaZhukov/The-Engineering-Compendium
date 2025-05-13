@@ -742,7 +742,7 @@ export default function IntegrationBySubstitutionPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integration-by-substitution"
-                      href="../../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -764,7 +764,6 @@ export default function IntegrationBySubstitutionPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      //href="/resources/tools/integration-calculator"
                       href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >

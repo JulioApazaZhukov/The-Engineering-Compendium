@@ -469,7 +469,7 @@ export default function IntegralCalculusPage() {
                 <li>
                   <Link
                     //href="/topics/mathematics/multivariable-calculus"
-                    href="/The-Engineering-Compendium/under-development"
+                    href="/under-development"
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
@@ -479,7 +479,7 @@ export default function IntegralCalculusPage() {
                 <li>
                   <Link
                     //href="/topics/physics/mechanics"
-                    href="/The-Engineering-Compendium/under-development"
+                    href="/under-development"
                     className="text-primary hover:underline flex items-center"
                   >
                     <ChevronRight className="h-3 w-3 mr-1" />
@@ -509,7 +509,7 @@ export default function IntegralCalculusPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integral-calculus"
-                      href="/The-Engineering-Compendium/under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -529,7 +529,7 @@ export default function IntegralCalculusPage() {
                         : "Books and articles on integral calculus"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=integral-calculus"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}
@@ -551,7 +551,6 @@ export default function IntegralCalculusPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      //href="/resources/tools/integration-calculator" shall not happen
                       href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >

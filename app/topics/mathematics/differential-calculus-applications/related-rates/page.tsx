@@ -723,7 +723,7 @@ export default function RelatedRatesPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=related-rates"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -745,7 +745,7 @@ export default function RelatedRatesPage() {
                         : "Books and articles on related rates"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=related-rates"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

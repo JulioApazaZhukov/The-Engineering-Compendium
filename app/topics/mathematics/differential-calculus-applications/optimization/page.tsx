@@ -641,7 +641,7 @@ export default function OptimizationPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=optimization"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -663,7 +663,7 @@ export default function OptimizationPage() {
                         : "Books and articles on optimization"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=optimization"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

@@ -423,7 +423,7 @@ export default function ProbabilityStatisticsPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=probability-statistics"
-                      href="../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -443,7 +443,7 @@ export default function ProbabilityStatisticsPage() {
                         : "Books and articles on probability and statistics"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=probability-statistics"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

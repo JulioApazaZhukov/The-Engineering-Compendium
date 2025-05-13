@@ -775,7 +775,7 @@ export default function IntegrationByPartsPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=integration-by-parts"
-                      href="../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}

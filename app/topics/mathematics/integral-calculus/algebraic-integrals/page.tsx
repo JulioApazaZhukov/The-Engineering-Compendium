@@ -442,7 +442,7 @@ export default function AlgebraicIntegralsPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=algebraic-integrals"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}

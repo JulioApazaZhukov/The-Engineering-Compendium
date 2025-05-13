@@ -603,7 +603,7 @@ export default function LinearApproximationPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=linear-approximation"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -625,7 +625,7 @@ export default function LinearApproximationPage() {
                         : "Books and articles on linear approximation"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=linear-approximation"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

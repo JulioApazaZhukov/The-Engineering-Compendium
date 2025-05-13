@@ -773,7 +773,7 @@ export default function TrigonometricSubstitutionPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=trigonometric-substitution"
-                      href="../../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -795,7 +795,6 @@ export default function TrigonometricSubstitutionPage() {
                         : "Interactive tool for calculating integrals"}
                     </p>
                     <Link
-                      //href="/resources/tools/integration-calculator"
                       href="https://www.integral-calculator.com/"
                       className="text-xs text-primary hover:underline"
                     >

@@ -1121,7 +1121,7 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=newton-raphson"
-                      href="../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver problemas" : "View problems"}
@@ -1143,7 +1143,7 @@ x_1 &= 1 - \frac{1^3 - 5 \cdot 1^2 + 7 \cdot 1 - 3}{3 \cdot 1^2 - 10 \cdot 1 + 7
                         : "Books and articles on the Newton-Raphson method"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=newton-raphson"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

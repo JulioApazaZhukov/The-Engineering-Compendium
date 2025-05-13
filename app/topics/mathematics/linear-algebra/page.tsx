@@ -426,7 +426,7 @@ export default function LinearAlgebraPage() {
                     </p>
                     <Link
                       //href="/resources/solved-problems?topic=linear-algebra"
-                      href="../../../../under-development"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {t("common.view_problems")}
@@ -446,7 +446,7 @@ export default function LinearAlgebraPage() {
                         : "Books and articles on linear algebra"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=linear-algebra"
+                      href="/under-development"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}
