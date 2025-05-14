@@ -18,15 +18,18 @@ export default function TermsPage() {
       },
       aboutTheSite: {
         title: "About The Site",
-        text: "The Engineering Compendium is a free educational resource focused on engineering, developed as an open-source project. Its goal is to provide accessible and up-to-date materials for students, professionals, and enthusiasts in the field. \nThis website is released under the MIT License, which means you are free to use, copy, modify, and distribute both the content and code—even for commercial purposes—as long as you retain the copyright notice and the license disclaimer.",
+        text: [<>"The Engineering Compendium is a free educational resource focused on engineering, developed as an open-source project. Its goal is to provide accessible and up-to-date materials for students, professionals, and enthusiasts in the field. <br></br><br></br>This website is released under the MIT License, which means you are free to use, copy, modify, and distribute both the content and code—even for commercial purposes—as long as you retain the copyright notice and the license disclaimer.</>,
+        ],
       },
       usage: {
         title: "Use of Content",
-        text: "• You may freely use the published content for personal, educational, or commercial purposes, as long as you comply with the applicable license. \n• While we strive to ensure the accuracy of the information, we do not guarantee that all content is error-free or fully up to date. \n• The content is not intended to replace professional or technical advice in contexts where regulatory or scientific precision is required.",
+        text: [<>• You may freely use the published content for personal, educational, or commercial purposes, as long as you comply with the applicable license. <br></br>• While we strive to ensure the accuracy of the information, we do not guarantee that all content is error-free or fully up to date. <br></br>• The content is not intended to replace professional or technical advice in contexts where regulatory or scientific precision is required.</>,
+        ],
       },
       contributions: {
         title: "Contributions",
-        text: "By contributing code, content, or suggestions to the project (e.g., through GitHub or other channels), you agree that your contribution may be modified, distributed, or reused under the terms of the MIT License. \nContribution Guidelines:\n• Do not include plagiarized content or material protected by copyright without permission. \n• Do not upload offensive, discriminatory, or illegal material.",
+        text: [<>By contributing code, content, or suggestions to the project (e.g., through GitHub or other channels), you agree that your contribution may be modified, distributed, or reused under the terms of the MIT License. <br></br><b>Contribution Guidelines:</b><br></br>• Do not include plagiarized content or material protected by copyright without permission. <br></br>• Do not upload offensive, discriminatory, or illegal material.</>,
+        ],
       },
       disclaimer: {
         title: "Disclaimer",
@@ -59,15 +62,25 @@ export default function TermsPage() {
       },
       aboutTheSite: {
         title: "Sobre El Sitio",
-        text: "The Engineering Compendium es un recurso educativo gratuito enfocado en ingeniería, desarrollado como un proyecto de código abierto. Su propósito es proporcionar material accesible y actualizado para estudiantes, profesionales y entusiastas del área. \nEste sitio está disponible bajo la licencia MIT, lo que significa que puedes usar, copiar, modificar y distribuir el contenido y el código, incluso con fines comerciales, siempre que mantengas el aviso de derechos de autor y la renuncia de responsabilidad.",
+        text: [
+          <>The Engineering Compendium es un recurso educativo gratuito enfocado en ingeniería, desarrollado como un proyecto de código abierto. Su propósito es proporcionar material accesible y actualizado para estudiantes, profesionales y entusiastas del área.</>,
+          <><br></br><br></br>Este sitio está disponible bajo la licencia MIT, lo que significa que puedes usar, copiar, modificar y distribuir el contenido y el código, incluso con fines comerciales, siempre que mantengas el aviso de derechos de autor y la renuncia de responsabilidad.</>,
+        ],
       },
       usage: {
         title: "Uso del Contenido",
-        text: "• Puedes utilizar libremente el contenido publicado con fines personales, educativos o comerciales, siempre que respetes la licencia correspondiente. \n• Aunque se hace un esfuerzo por asegurar la precisión del contenido, no garantizamos que toda la información esté libre de errores o completamente actualizada. \n• El contenido no debe ser utilizado como sustituto del asesoramiento profesional o técnico en contextos donde se requiera precisión normativa o científica.",
+        text: [
+          <>• Puedes utilizar libremente el contenido publicado con fines personales, educativos o comerciales, siempre que respetes la licencia correspondiente.</>,
+          <><br></br>• Aunque se hace un esfuerzo por asegurar la precisión del contenido, no garantizamos que toda la información esté libre de errores o completamente actualizada.</>,
+          <><br></br>• El contenido no debe ser utilizado como sustituto del asesoramiento profesional o técnico en contextos donde se requiera precisión normativa o científica.</>,
+        ],
       },
       contributions: {
         title: "Contribuciones",
-        text: "Al contribuir con código, contenido o sugerencias al proyecto (por ejemplo, a través de GitHub u otros canales), aceptas que tu contribución pueda ser modificada, distribuida o reutilizada bajo los términos de la licencia MIT.\nReglas para contribuciones:\n• No incluir contenido plagiado ni material protegido por derechos de autor sin autorización.\n• No subir material ofensivo, discriminatorio o que viole leyes aplicables.",
+        text: [
+          <>Al contribuir con código, contenido o sugerencias al proyecto (por ejemplo, a través de GitHub u otros canales), aceptas que tu contribución pueda ser modificada, distribuida o reutilizada bajo los términos de la licencia MIT.</>,
+          <><br></br><b>Reglas para contribuciones:</b><br></br>• No incluir contenido plagiado ni material protegido por derechos de autor sin autorización.<br></br>• No subir material ofensivo, discriminatorio o que viole leyes aplicables.</>,
+        ],
       },
       disclaimer: {
         title: "Descargo de Responsabilidad",
