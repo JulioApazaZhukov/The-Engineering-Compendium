@@ -82,7 +82,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/legal/privacy"
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 text-sm transition-colors"
                 >
                   {t("footer.privacy")}
@@ -90,7 +90,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="/legal/terms"
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 text-sm transition-colors"
                 >
                   {t("footer.terms")}

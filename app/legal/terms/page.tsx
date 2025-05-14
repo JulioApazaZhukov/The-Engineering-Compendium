@@ -18,7 +18,7 @@ export default function TermsPage() {
       },
       aboutTheSite: {
         title: "About The Site",
-        text: [<>"The Engineering Compendium is a free educational resource focused on engineering, developed as an open-source project. Its goal is to provide accessible and up-to-date materials for students, professionals, and enthusiasts in the field. <br></br><br></br>This website is released under the MIT License, which means you are free to use, copy, modify, and distribute both the content and code—even for commercial purposes—as long as you retain the copyright notice and the license disclaimer.</>,
+        text: [<>The Engineering Compendium is a free educational resource focused on engineering, developed as an open-source project. Its goal is to provide accessible and up-to-date materials for students, professionals, and enthusiasts in the field. <br></br><br></br>This website is released under the MIT License, which means you are free to use, copy, modify, and distribute both the content and code—even for commercial purposes—as long as you retain the copyright notice and the license disclaimer.</>,
         ],
       },
       usage: {
