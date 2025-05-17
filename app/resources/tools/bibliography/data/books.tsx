@@ -58,7 +58,7 @@ export const books: Book[] = [
       en: "This textbook provides a comprehensive introduction to differential equations, covering both ordinary and partial differential equations. It includes numerous examples and applications from various fields of science and engineering.",
       es: "Este libro de texto proporciona una introducción completa a las ecuaciones diferenciales, cubriendo tanto ecuaciones diferenciales ordinarias como parciales. Incluye numerosos ejemplos y aplicaciones de varios campos de la ciencia y la ingeniería.",
     },
-    coverImage: "/books/B-D-M_EDEaBVP.jpg?height=400&width=300",
+    coverImage: "/public/books/B-D-M_EDEaBVP.jpg?height=400&width=300",
     year: 2017,
     pages: 624,
     rating: 4.4,
