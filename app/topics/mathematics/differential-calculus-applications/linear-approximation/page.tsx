@@ -625,7 +625,7 @@ export default function LinearApproximationPage() {
                         : "Books and articles on linear approximation"}
                     </p>
                     <Link
-                      href="/under-development"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

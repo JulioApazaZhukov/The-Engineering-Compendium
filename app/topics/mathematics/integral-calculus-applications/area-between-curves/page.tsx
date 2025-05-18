@@ -143,7 +143,7 @@ export default function AreaBetweenCurvesPage() {
         {
           title: "Recommended Reading",
           description: "Books and articles on integral applications",
-          link: "/resources/bibliography?topic=integral-applications",
+          link: "/resources/tools/bibliography",
           linkText: "View bibliography",
         },
       ],
@@ -279,7 +279,7 @@ export default function AreaBetweenCurvesPage() {
         {
           title: "Lecturas Recomendadas",
           description: "Libros y artículos sobre aplicaciones de integrales",
-          link: "/resources/bibliography?topic=integral-applications",
+          link: "/resources/tools/bibliography",
           linkText: "Ver bibliografía",
         },
       ],

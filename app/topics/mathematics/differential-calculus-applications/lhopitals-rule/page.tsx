@@ -720,7 +720,7 @@ export default function LHopitalsRulePage() {
                         : "Books and articles on L'Hôpital's Rule"}
                     </p>
                     <Link
-                      href="/under-development"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

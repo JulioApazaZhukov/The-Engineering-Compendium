@@ -665,7 +665,7 @@ export default function LeibnizDerivativeRulePage() {
                     </p>
                     <Link
                       //href="/resources/bibliography?topic=leibniz-rule"
-                      href="/under-development"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

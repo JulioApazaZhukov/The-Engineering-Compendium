@@ -745,7 +745,7 @@ export default function RelatedRatesPage() {
                         : "Books and articles on related rates"}
                     </p>
                     <Link
-                      href="/under-development"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

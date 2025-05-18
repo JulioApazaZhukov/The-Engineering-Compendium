@@ -663,7 +663,7 @@ export default function OptimizationPage() {
                         : "Books and articles on optimization"}
                     </p>
                     <Link
-                      href="/under-development"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

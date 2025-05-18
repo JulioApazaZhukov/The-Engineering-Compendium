@@ -454,7 +454,7 @@ export default function DifferentialEquationsPage() {
                         : "Books and articles on differential equations"}
                     </p>
                     <Link
-                      href="/resources/bibliography?topic=differential-equations"
+                      href="/resources/tools/bibliography"
                       className="text-xs text-primary hover:underline"
                     >
                       {language === "es" ? "Ver bibliografía" : "View bibliography"}

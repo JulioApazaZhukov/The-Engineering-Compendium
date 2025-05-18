@@ -61,7 +61,7 @@ const topics = [
 const resources = [
   { name: "Formula Database", href: "/resources/tools/formula-database" },
   { name: "Calculator Index", href: "/calculatorIndex.html" },
-  { name: "Recommended Bibliography", href: "/under-development" },
+  { name: "Recommended Bibliography", href: "/resources/tools/bibliography" },
   { name: "Online Tools", href: "/under-development" },
 ]
 
