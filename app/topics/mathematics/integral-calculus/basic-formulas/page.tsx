@@ -150,7 +150,7 @@ export default function BasicFormulasPage() {
                     <h3 className="text-lg font-semibold mb-2">{language === "es" ? "Ejemplos" : "Examples"}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="bg-muted/30 p-3 rounded-lg">
-                        <div className="text-center mb-2">
+                        <div className="text-center mb-2 overflow-x-auto">
                           <MathDisplay math="\int x^2 \, dx = \frac{x^3}{3} + C" />
                         </div>
                         <p className="text-xs text-muted-foreground">
@@ -158,7 +158,7 @@ export default function BasicFormulasPage() {
                         </p>
                       </div>
                       <div className="bg-muted/30 p-3 rounded-lg">
-                        <div className="text-center mb-2">
+                        <div className="text-center mb-2 overflow-x-auto">
                           <MathDisplay math="\int \sqrt{x} \, dx = \int x^{1/2} \, dx = \frac{x^{3/2}}{3/2} = \frac{2x^{3/2}}{3} + C" />
                         </div>
                         <p className="text-xs text-muted-foreground">
@@ -246,32 +246,32 @@ export default function BasicFormulasPage() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \sin x \, dx = -\cos x + C" />
                         </div>
                       </div>
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \cos x \, dx = \sin x + C" />
                         </div>
                       </div>
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \tan x \, dx = -\ln|\cos x| + C = \ln|\sec x| + C" />
                         </div>
                       </div>
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \cot x \, dx = \ln|\sin x| + C" />
                         </div>
                       </div>
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \sec x \, dx = \ln|\sec x + \tan x| + C" />
                         </div>
                       </div>
                       <div className="bg-muted/50 p-3 rounded-lg">
-                        <div className="text-center">
+                        <div className="text-center overflow-x-auto">
                           <MathDisplay math="\int \csc x \, dx = \ln|\csc x - \cot x| + C" />
                         </div>
                       </div>
@@ -322,7 +322,7 @@ export default function BasicFormulasPage() {
                       </div>
                     </div>
                     <div className="bg-muted/50 p-3 rounded-lg">
-                      <div className="text-center">
+                      <div className="text-center overflow-x-auto">
                         <MathDisplay math="\int \frac{1}{x\sqrt{x^2-1}} \, dx = \arccos\frac{1}{x} + C = \operatorname{arcsec} x + C" />
                       </div>
                     </div>
