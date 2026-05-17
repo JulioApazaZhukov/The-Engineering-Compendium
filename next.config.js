@@ -2,9 +2,6 @@
 const nextConfig = {
     output: 'export',
     distDir: 'dist',
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
     typescript: {
         ignoreBuildErrors: true,
     },
@@ -17,6 +14,7 @@ const nextConfig = {
         parallelServerBuildTraces: true,
         parallelServerCompiles: true,
     },
+    turbopack: {},
 }
 
 const webpack = require('webpack');
